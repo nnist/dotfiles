@@ -35,9 +35,7 @@ set conceallevel=2
 " Disable folding
 let g:vim_markdown_folding_disabled = 1
 
-set nocompatible
-filetype indent plugin on " Enable plugins and indenting per filetype
-syntax on		" Syntax highlighting
+set updatetime=250 " 4000 default, 250 for gitgutter
 
 " Set tabs to 4 spaces
 set tabstop=4
