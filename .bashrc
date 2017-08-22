@@ -115,3 +115,7 @@ fi
 # Custom prompt
 # export PS1="\[$(tput setaf 208)\]\u\[$(tput setaf 220)\] \w \[$(tput setaf 255)\]> \[$(tput sgr0)\]"
 export PS1="\[$(tput setaf 208)\]\u\[$(tput setaf 255)\]@\[$(tput setaf 208)\]\h \[$(tput setaf 220)\]\w \[$(tput setaf 255)\]> "
+
+# Base16-shell
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"

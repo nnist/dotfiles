@@ -5,18 +5,40 @@
 " vim-plug plugins {{{
 call plug#begin('~/.vim/plugged')
 
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-Plug 'https://github.com/vimwiki/vimwiki.git'
-Plug 'alessandroyorba/despacio'
+" Plugins
+"Plug 'junegunn/goyo.vim'
+"Plug 'junegunn/limelight.vim'
+"Plug 'godlygeek/tabular'
+"Plug 'plasticboy/vim-markdown'
+"Plug 'https://github.com/vimwiki/vimwiki.git'
+
+Plug 'sjl/gundo.vim'					" Git-like undo tree
+Plug 'airblade/vim-gitgutter'			" Git diff
+Plug 'scrooloose/nerdtree'				" File explorer tree
+Plug 'Xuyuanp/nerdtree-git-plugin'		" ^ Git plugin
+Plug 'weynhamz/vim-plugin-minibufexpl'	" Buffer explorer
+Plug 'vim-airline/vim-airline'			" Status line
+Plug 'vim-airline/vim-airline-themes'	" Themes for airline
+
+" Themes
+"Plug 'alessandroyorba/despacio'
+Plug 'chriskempson/base16-vim' " Base16 theme
 
 call plug#end()
 " }}}
 
 " Themes
-colorscheme despacio
+"colorscheme despacio
+"let base16colorspace=256  " Access colors present in 256 colorspace
+
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+
+colorscheme base16-default-dark
+
+let g:airline_theme='base16' " Set airline theme to base16
 
 " Conceal bold, italics, underline etc syntax
 set conceallevel=2
