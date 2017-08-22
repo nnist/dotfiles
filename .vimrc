@@ -13,6 +13,7 @@ Plug 'weynhamz/vim-plugin-minibufexpl'	" Buffer explorer
 Plug 'vim-airline/vim-airline'			" Status line
 Plug 'vim-airline/vim-airline-themes'	" Themes for airline
 Plug 'chriskempson/base16-vim'			" Base16 theme
+Plug 'davidhalter/jedi-vim'				" Python autocompletion
 
 call plug#end()
 
@@ -47,11 +48,16 @@ set nobackup
 set noswapfile
 set nowritebackup
 
+" Word wrapping, only insert line breaks on enter
+set wrap
+set linebreak
+set nolist " List disables linebreak
+
 "set ruler
 set number		" Show line numbers on left side
 
 set showmode 	" Always show current mode
-set nowrap		" Don't wrap lines
+"set nowrap		" Don't wrap lines
 set showcmd		" Show partial commands at last line
 set autoindent	" Keep indentation of prev line
 set lazyredraw	" Only redraw when needed
