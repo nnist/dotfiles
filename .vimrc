@@ -26,7 +26,7 @@ let base16colorspace=256		" Access colors present in 256 colorspace
 colorscheme base16-default-dark
 let g:airline_theme='base16'	" Set airline theme to base16
  
-" Use 'Source Code Pro for Powerline (Semibold)' from https://github.com/powerline/fonts
+" Use 'Source Code Pro for Powerline (regular)' from https://github.com/powerline/fonts
 let g:airline_powerline_fonts = 1 " Show proper airline symbols
 
 " Conceal bold, italics, underline etc syntax
