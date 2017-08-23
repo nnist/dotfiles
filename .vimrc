@@ -2,8 +2,8 @@
 
 call plug#begin('~/.vim/plugged')
 
-"Plug 'godlygeek/tabular'
-"Plug 'plasticboy/vim-markdown'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
 Plug 'sjl/gundo.vim'					" Git-like undo tree
 Plug 'airblade/vim-gitgutter'			" Git diff
@@ -32,6 +32,8 @@ let g:airline_powerline_fonts = 1 " Show proper airline symbols
 
 " Conceal bold, italics, underline etc syntax
 set conceallevel=2
+
+set colorcolumn=80 " Set line length marker
 
 " Disable folding
 let g:vim_markdown_folding_disabled = 1
