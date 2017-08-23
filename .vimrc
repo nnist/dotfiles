@@ -4,7 +4,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-
+Plug 'tpope/vim-fugitive'				" Git wrapper
 Plug 'sjl/gundo.vim'					" Git-like undo tree
 Plug 'airblade/vim-gitgutter'			" Git diff
 Plug 'scrooloose/nerdtree'				" File explorer tree
