@@ -118,3 +118,23 @@ map <Leader>gc :Gcommit<CR>
 "map <Leader>ge :Gedit<CR>
 "nmap <Leader>gl :Gpull<cr>
 "nmap <Leader>gp :Gpush $USER HEAD:
+
+" Add indicator for num of commits behind/ahead in airline
+fu! GitAheadBehind()
+  let output = system('git branch -vv')
+  let ahead = matchstr(output, '\* .*ahead \zs\d\+')
+  if ahead != ''
+    return '+' . ahead
+  end
+
+  let behind = matchstr(output, '\* .*behind \zs\d\+')
+  if behind != ''
+    return '-' . behind
+  end
+
+  return ''
+endfu
+fu! AirlineInit()
+  let g:airline_section_b = g:airline_section_b . '%{GitAheadBehind()}'
+endfu
+autocmd User AirlineAfterInit call AirlineInit()
