@@ -102,3 +102,19 @@ let mapleader = ','
 
 " Bind Ctrl-n to toggle NERD tree
 map <C-n> :NERDTreeToggle<CR>
+
+" Bind GitGutter stuff
+nmap <Leader>ga <Plug>GitGutterStageHunk
+nmap <Leader>gu <Plug>GitGutterRevertHunk
+nmap <Leader>gd <Plug>GitGutterPreviewHunk
+
+" vim-fugitive stuff
+"map <Leader>gs :Gstatus<CR>
+"map <Leader>gD :Gvdiff<CR>
+"map <Leader>gr :Gread<CR>
+"map <Leader>gw :Gwrite<CR>
+"map <Leader>gB :Gbrowse <C-R>='<C-R><C-G>' =~ ':' ? '<C-R><C-G>' : '-'<CR><CR>
+map <Leader>gc :Gcommit<CR>
+"map <Leader>ge :Gedit<CR>
+"nmap <Leader>gl :Gpull<cr>
+"nmap <Leader>gp :Gpush $USER HEAD:
