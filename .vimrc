@@ -97,5 +97,8 @@ endif
 
 " Bindings
 
+" Bind leader key to ,
+let mapleader = ','
+
 " Bind Ctrl-n to toggle NERD tree
 map <C-n> :NERDTreeToggle<CR>
