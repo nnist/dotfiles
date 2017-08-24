@@ -80,8 +80,8 @@ set incsearch	" Search as characters are entered
 set hlsearch	" Highlight matches
 
 " Use case insensitive search, except when using capital letters
-	set ignorecase
-	set smartcase
+set ignorecase
+set smartcase
 
 " Allow backspacing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start
