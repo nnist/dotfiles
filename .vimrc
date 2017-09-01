@@ -17,6 +17,9 @@ Plug 'davidhalter/jedi-vim'				" Python autocompletion
 
 call plug#end()
 
+" Disable Jedi docstring popup during completion
+autocmd FileType python setlocal completeopt-=preview
+
 " Base16-shell profile helper
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
