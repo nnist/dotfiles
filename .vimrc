@@ -74,7 +74,7 @@ set visualbell
 set foldenable          " Enable folding
 set foldlevelstart=10   " Enable most folds by default
 set foldnestmax=10      " Limit fold levels
-set foldmethod=manual   " Manual folding
+set foldmethod=indent
 
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
