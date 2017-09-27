@@ -13,12 +13,12 @@ DOOR                  36
 EXEC                  01;32    # files with execute permission
 FIFO                  36       # pipe
 FILE                  0        # normal file
-LINK                  01;35    # symlink
 #LINK                  target  # symlink
-MULTIHARDLINK         01;35
+LINK                  35    # symlink
+MULTIHARDLINK         36
 NORMAL                0        # global default
 ORPHAN                30;41    # symlink to nonexistent file
-OTHER_WRITABLE        36
+OTHER_WRITABLE        31
 SETGID                36
 SETUID                36
 SOCK                  36       # socket
