@@ -101,6 +101,33 @@ if ! shopt -oq posix; then
   fi
 fi
 
+function extract() # Extract program
+{
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)   tar xvjf $1     ;;
+            *.tar.gz)    tar xvzf $1     ;;
+            *.bz2)       bunzip2 $1      ;;
+            *.rar)       unrar x $1      ;;
+            *.gz)        gunzip $1       ;;
+            *.tar)       tar xvf $1      ;;
+            *.tbz2)      tar xvjf $1     ;;
+            *.tgz)       tar xvzf $1     ;;
+            *.zip)       unzip $1        ;;
+            *.Z)         uncompress $1   ;;
+            *.7z)        7z x $1         ;;
+            *)           echo "'$1' cannot be extracted via >extract<" ;;
+        esac
+    else
+        echo "'$1' is not a valid file!"
+	fi
+}
+
+function maketar() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
+function makezip() { zip -r "${1%%/}.zip" "$1"; }
+function sanitize() { chmod -R u=rwX,g-rwxX,o-rwxX "$1"; } # 700
+#function sanitize() { chmod -R u=rwX,g=rX,o="$@" ; }
+
 # Custom prompt
 # export PS1="\[$(tput setaf 208)\]\u\[$(tput setaf 220)\] \w \[$(tput setaf 255)\]> \[$(tput sgr0)\]"
 export PS1="\[$(tput setaf 11)\]\u\[$(tput setaf 007)\]@\[$(tput setaf 11)\]\h \[$(tput setaf 12)\]\w \[$(tput setaf 255)\]> "
