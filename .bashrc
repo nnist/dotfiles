@@ -125,7 +125,7 @@ function extract() # Extract program
 
 function maketar() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
 function makezip() { zip -r "${1%%/}.zip" "$1"; }
-function sanitize() { chmod -R u=rwX,g-rwxX,o-rwxX "$1"; } # 700
+#function sanitize() { chmod -R u=rwX,g-rwxX,o-rwxX "$1"; } # 700
 #function sanitize() { chmod -R u=rwX,g=rX,o="$@" ; }
 
 # Custom prompt
