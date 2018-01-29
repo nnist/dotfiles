@@ -3,3 +3,9 @@ alias gitlog='git log --graph --oneline --all --decorate --pretty="%C(bold)%ad%C
 alias steam-wine='wine .wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe >/dev/null 2>&1 &'
 alias 'c=xclip -selection clipboard'
 alias 'v=xclip -o'
+alias tmux-dev='tmux new-session \; \
+    send-keys 'vim' C-m \; \
+    split-window -h -p 40\; \
+    select-pane -t 0 \; \
+    split-window -v -p 10\; \
+    select-pane -t 0 \;'
