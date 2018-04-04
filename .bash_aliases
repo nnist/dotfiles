@@ -5,7 +5,7 @@ alias 'c=xclip -selection clipboard'
 alias 'v=xclip -o'
 alias tmux-dev='tmux new-session \; \
     send-keys 'vim' C-m \; \
-    split-window -h -p 40\; \
+    split-window -h -p 39\; \
     select-pane -t 0 \; \
     split-window -v -p 10\; \
     select-pane -t 0 \;'
