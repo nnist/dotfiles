@@ -75,6 +75,7 @@ set foldenable          " Enable folding
 set foldlevelstart=10   " Enable most folds by default
 set foldnestmax=10      " Limit fold levels
 set foldmethod=indent
+let g:markdown_folding=1 " Enable markdown folding
 
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
