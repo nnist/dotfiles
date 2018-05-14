@@ -110,6 +110,8 @@ map <C-n> :NERDTreeToggle<CR>
 nmap <Leader>ga <Plug>GitGutterStageHunk
 nmap <Leader>gu <Plug>GitGutterRevertHunk
 nmap <Leader>gd <Plug>GitGutterPreviewHunk
+nmap <Leader>gn <Plug>GitGutterNextHunk
+nmap <Leader>gp <Plug>GitGutterPrevHunk
 
 " vim-fugitive stuff
 "map <Leader>gs :Gstatus<CR>
