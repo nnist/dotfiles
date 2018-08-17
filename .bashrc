@@ -140,6 +140,17 @@ function mdpreview() # Render .md to html for previewing in browser
     fi
 }
 
+function netinfo()
+{
+    echo "--------------- Network Information ---------------"
+    external_ip=`curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'`
+    local_ip=`ip -c -br a`
+    
+    echo -e "External IP address:\n${external_ip}\n"
+    echo -e "Local IP addresses:\n${local_ip}\n"
+    echo "---------------------------------------------------"
+} 
+
 # Custom prompt
 # export PS1="\[$(tput setaf 208)\]\u\[$(tput setaf 220)\] \w \[$(tput setaf 255)\]> \[$(tput sgr0)\]"
 export PS1="\[$(tput setaf 11)\]\u\[$(tput setaf 007)\]@\[$(tput setaf 11)\]\h \[$(tput setaf 12)\]\w \[$(tput setaf 255)\]> "
