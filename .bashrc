@@ -25,7 +25,7 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # Custom prompt
-export PS1="\[$(tput setaf 11)\]\u\[$(tput setaf 007)\]@\[$(tput setaf 11)\]\h \[$(tput setaf 12)\]\w \[$(tput setaf 255)\]> "
+export PS1="\[$(tput setaf 3)\]\u\[$(tput setaf 7)\]@\[$(tput setaf 3)\]\h \[$(tput setaf 4)\]\w \[$(tput setaf 7)\]>\[$(tput sgr0)\] "
 
 # Base16-shell
 BASE16_SHELL=$HOME/.config/base16-shell/
