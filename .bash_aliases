@@ -10,8 +10,7 @@ alias 'v=xclip -o'
 alias tmux-dev='tmux new-session \; \
     send-keys 'vim' C-m \; \
     split-window -h -p 39\; \
-    select-pane -t 0 \; \
-    split-window -v -p 10\; \
+    split-window -v -p 1\; \
     select-pane -t 0 \;'
 alias ports="netstat -tulpn" # List open ports and programs which use them
 alias dirsize="du -ch -d 1" # Recursively get dir disk space usage
