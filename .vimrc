@@ -47,8 +47,8 @@ set updatetime=250 " 4000 default, 250 for gitgutter
 set tabstop=4
 set shiftwidth=4
 
-" Set HTML indentation to 2 spaces
-autocmd BufRead,BufNewFile *.html,*.css,*.scss setlocal ts=2 sw=2
+" Set HTML, CSS, JS indentation to 2 spaces
+autocmd BufRead,BufNewFile *.html,*.css,*.scss,*.js setlocal ts=2 sw=2
 
 set expandtab 	" Replace tabs with spaces
 
