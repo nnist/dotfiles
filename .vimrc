@@ -14,6 +14,7 @@ Plug 'vim-airline/vim-airline'			" Status line
 Plug 'vim-airline/vim-airline-themes'	" Themes for airline
 Plug 'chriskempson/base16-vim'			" Base16 theme
 Plug 'davidhalter/jedi-vim'				" Python autocompletion
+Plug 'nathangrigg/vim-beancount'        " Vim Beancount
 
 call plug#end()
 
