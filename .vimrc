@@ -51,6 +51,9 @@ set shiftwidth=4
 " Set HTML, CSS, JS indentation to 2 spaces
 autocmd BufRead,BufNewFile *.html,*.css,*.scss,*.js setlocal ts=2 sw=2
 
+" Set .beancount indentation to 2 spaces
+autocmd BufRead,BufNewFile *.beancount setlocal ts=2 sw=2
+
 set expandtab 	" Replace tabs with spaces
 
 " Disable swap and backup for safety
