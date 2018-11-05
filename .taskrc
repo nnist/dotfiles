@@ -13,6 +13,8 @@
 # Files
 data.location=~/.task
 
+editor=vim
+
 # Color theme (uncomment one to use)
 #include /usr//usr/share/task/light-16.theme
 #include /usr//usr/share/task/light-256.theme
