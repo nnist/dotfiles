@@ -16,6 +16,7 @@ data.location=~/.task
 editor=vim
 
 # Color theme (uncomment one to use)
+include ~/.task/themes/base16-default-dark.theme
 #include /usr//usr/share/task/light-16.theme
 #include /usr//usr/share/task/light-256.theme
 #include /usr//usr/share/task/dark-16.theme
