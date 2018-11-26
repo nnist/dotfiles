@@ -6,8 +6,8 @@ import argparse
 
 files = ['.bash_aliases', '.bashrc', '.dircolors', '.gitignore', '.pylintrc',
          '.taskrc', '.tmux.conf', '.vim', '.vimrc']
-dotfiles_dir = '/home/nicole/git/dotfiles/'
-home_dir = '/home/nicole/'
+home_dir = os.path.expanduser('~') + '/'
+dotfiles_dir = home_dir + 'git/dotfiles/'
 
 def make_links():
     num_success = 0
