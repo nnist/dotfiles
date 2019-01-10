@@ -4,7 +4,8 @@ import sys
 import os
 import argparse
 
-files = ['.bash_aliases', '.bashrc', '.dircolors', '.gitignore', '.pylintrc',
+files = ['.bash_aliases', '.bashrc', '.bash_completion.d/task.sh',
+         '.dircolors', '.gitignore', '.pylintrc',
          '.taskrc', '.tmux.conf', '.vim', '.vimrc']
 home_dir = os.path.expanduser('~') + '/'
 dotfiles_dir = home_dir + 'git/dotfiles/'
