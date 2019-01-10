@@ -19,6 +19,13 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# Add custom completions
+if [ -d ~/.bash_completion.d ]; then
+    for f in ~/.bash_completion.d/*; do
+        . $f
+    done
+fi
+
 # Enable programmable completion features
 if ! shopt -oq posix; then
     if [ -f /usr/share/bash-completion/bash_completion ]; then
