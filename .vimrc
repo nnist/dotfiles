@@ -10,11 +10,11 @@ Plug 'airblade/vim-gitgutter'			" Git diff
 Plug 'scrooloose/nerdtree'				" File explorer tree
 Plug 'Xuyuanp/nerdtree-git-plugin'		" ^ Git plugin
 Plug 'weynhamz/vim-plugin-minibufexpl'	" Buffer explorer
-Plug 'vim-airline/vim-airline'			" Status line
-Plug 'vim-airline/vim-airline-themes'	" Themes for airline
 Plug 'chriskempson/base16-vim'			" Base16 theme
 Plug 'davidhalter/jedi-vim'				" Python autocompletion
 Plug 'nathangrigg/vim-beancount'        " Vim Beancount
+Plug 'itchyny/lightline.vim'            " Status line
+Plug 'mike-hearn/base16-vim-lightline'  " Base16 theme for lightline
 
 call plug#end()
 
@@ -29,10 +29,13 @@ endif
 
 let base16colorspace=256		" Access colors present in 256 colorspace
 colorscheme base16-default-dark
-let g:airline_theme='base16'	" Set airline theme to base16
- 
-" Use 'Source Code Pro for Powerline (regular)' from https://github.com/powerline/fonts
-let g:airline_powerline_fonts = 1 " Show proper airline symbols
+
+" Settings for vim-lightline
+set laststatus=2    " Show status line
+set noshowmode      " Hide current mode; already shown in status line
+let g:lightline = {
+  \ 'colorscheme': 'base16_default_dark',
+  \ }
 
 " Conceal bold, italics, underline etc syntax
 set conceallevel=2
@@ -69,7 +72,6 @@ set nolist " List disables linebreak
 "set ruler
 set number		" Show line numbers on left side
 
-set showmode 	" Always show current mode
 "set nowrap		" Don't wrap lines
 set showcmd		" Show partial commands at last line
 set autoindent	" Keep indentation of prev line
