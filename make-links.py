@@ -6,7 +6,7 @@ import argparse
 
 files = ['.bash_aliases', '.bashrc', '.bash_completion.d/task.sh',
          '.dircolors', '.gitignore', '.pylintrc',
-         '.taskrc', '.tmux.conf', '.vim', '.vimrc']
+         '.taskrc', '.tmux.conf', '.vim', '.vimrc', '.xinitrc']
 home_dir = os.path.expanduser('~') + '/'
 dotfiles_dir = home_dir + 'git/dotfiles/'
 
