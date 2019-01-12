@@ -114,6 +114,8 @@ status.register("mem",
 status.register("openvpn",
         format="vpn: {status}",
         vpn_name="VPN",
+        color_up="#A1B56C",
+        color_down="#AB4642",
         status_command="bash -c 'systemctl show openvpn-client@client.service | grep ActiveState=active'"
     )
 
