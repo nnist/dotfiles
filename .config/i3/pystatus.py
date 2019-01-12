@@ -105,7 +105,9 @@ status.register("alsa",
     )
 
 status.register("mem",
-        format="mem: {used_mem}/{total_mem}",
+        format="mem: {used_mem}/{total_mem}G",
+        divisor=1073741824,
+        color="#FFFFFF",
         round_size=0,
     )
 
