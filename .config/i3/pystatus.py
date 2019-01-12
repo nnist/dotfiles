@@ -126,7 +126,7 @@ status.register("redshift",
     )
 
 status.register("spotify",
-        format="{title} {status}",
+        format="spotify: {artist} - {title} {status}",
     )
 
 #status.register("syncthing")
