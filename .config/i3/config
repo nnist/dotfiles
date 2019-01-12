@@ -173,7 +173,7 @@ bar {
             background #181818
             statusline #E8E8E8
             separator #585858
-            focused_workspace #7CAFC2 #7CAFC2 #F8F8F8
+            focused_workspace #7CAFC2 #7CAFC2 #181818
             inactive_workspace #383838 #383838 #F8F8F8
             urgent_workspace #F7CA88 #F7CA88 #F8F8F8
         }
