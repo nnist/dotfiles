@@ -99,7 +99,9 @@ status.register("load",
 #    },)
 
 status.register("alsa",
-        format="vol: {volume} {muted}",
+        format="vol: {muted}{volume}%",
+        on_leftclick="",
+        on_rightclick="",
     )
 
 status.register("mem",
