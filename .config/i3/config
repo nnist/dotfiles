@@ -168,6 +168,15 @@ bindsym $mod+r mode "resize"
 bar {
 #        status_command i3status
         status_command python ~/.config/i3/pystatus.py
+        separator_symbol " | "
+        colors {
+            background #181818
+            statusline #E8E8E8
+            separator #585858
+            focused_workspace #7CAFC2 #7CAFC2 #F8F8F8
+            inactive_workspace #383838 #383838 #F8F8F8
+            urgent_workspace #F7CA88 #F7CA88 #F8F8F8
+        }
 }
 
 focus_follows_mouse no
