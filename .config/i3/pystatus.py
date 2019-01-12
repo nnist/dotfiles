@@ -132,7 +132,7 @@ status.register("redshift",
     )
 
 status.register("spotify",
-        format="spotify: {artist} - {title} {status}",
+        format="spotify: {status} {artist} - {title}",
     )
 
 #status.register("syncthing")
