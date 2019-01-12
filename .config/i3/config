@@ -179,4 +179,11 @@ bar {
         }
 }
 
+client.focused #7CAFC2 #7CAFC2 #E8E8E8 #181818 #7CAFC2
+client.focused_inactive #585858 #585858 #E8E8E8 #181818 #585858
+client.unfocused #282828 #282828 #E8E8E8 #181818 #282828
+client.urgent #F7CA88 #F7CA88 #E8E8E8 #181818 #F7CA88
+client.placeholder #000000 #282828 #E8E8E8 #181818 #282828
+client.background #181818
+
 focus_follows_mouse no
