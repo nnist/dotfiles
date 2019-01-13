@@ -187,3 +187,5 @@ client.placeholder #000000 #282828 #E8E8E8 #181818 #282828
 client.background #181818
 
 focus_follows_mouse no
+
+exec "~/.config/i3/workspace-tasks.sh"
