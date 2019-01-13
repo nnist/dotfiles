@@ -1,0 +1,2 @@
+cd ~/.task
+task;bash
