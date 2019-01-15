@@ -95,7 +95,7 @@
             "swallows": [
                {
                // "class": "^Alacritty$",
-                  "instance": "ifconfig-container"
+                  "instance": "iftop-container"
                // "title": "^nicole\\@pixel\\:\\~$"
                }
             ],
