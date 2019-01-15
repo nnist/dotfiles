@@ -8,6 +8,7 @@ else
     (alacritty -d 0 0 --class disk-usage-container -e ".config/i3/system/disk-usage.sh" &)
     (alacritty -d 0 0 --class sensors-container -e ".config/i3/system/sensors.sh" &)
     (alacritty -d 0 0 --class nethogs-container -e ".config/i3/system/nethogs.sh" &)
+    (alacritty -d 0 0 --class ifconfig-container -e ".config/i3/system/ifconfig.sh" &)
     (alacritty -d 0 0 --class htop-container -e ".config/i3/system/htop.sh" &)
     (alacritty -d 0 0 --class logs-container -e ".config/i3/system/logs.sh" &)
     (alacritty -d 0 0 --class rss-container -e ".config/i3/system/rss.sh" &)
