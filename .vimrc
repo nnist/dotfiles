@@ -30,6 +30,8 @@ endif
 let base16colorspace=256		" Access colors present in 256 colorspace
 colorscheme base16-default-dark
 
+export EDITOR=vim
+
 " Settings for vim-lightline
 set laststatus=2    " Show status line
 "set noshowmode      " Hide current mode; already shown in status line
