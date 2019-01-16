@@ -13,5 +13,4 @@ alias tmux-dev='tmux new-session \; \
     split-window -v -p 1\; \
     select-pane -t 0 \;'
 alias ports="netstat -tulpn" # List open ports and programs which use them
-alias dirsize="du -ch -d 1" # Recursively get dir disk space usage
 alias lock="i3lock -c 181818 -e -f"
