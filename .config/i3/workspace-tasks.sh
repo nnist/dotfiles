@@ -7,6 +7,6 @@ else
     # Start applications
     (alacritty -d 0 0 --class task-summary-container -e ".config/i3/tasks/task-summary.sh" &)
     (alacritty -d 0 0 --class task-calendar-container -e ".config/i3/tasks/task-calendar.sh" &)
-    (alacritty -d 0 0 --class vim-journal-container -e ".config/i3/tasks/vim-journal.sh" &)
+    (alacritty -d 0 0 --class vim-inbox-container -e ".config/i3/tasks/vim-inbox.sh" &)
     (alacritty -d 0 0 --class task-container -e ".config/i3/tasks/tasks.sh" &)
 fi
