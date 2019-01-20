@@ -54,8 +54,8 @@ set shiftwidth=4
 
 " Set indentation to 2 spaces for specified filetypes
 autocmd BufRead,BufNewFile 
-      \*.beancount,*.html,*.css,*.scss,*.js,.vimrc
-      \setlocal tabstop=2 shiftwidth=2
+      \ *.beancount,*.html,*.css,*.scss,*.js,.vimrc
+      \ setlocal tabstop=2 shiftwidth=2
 
 set expandtab 	" Replace tabs with spaces
 
