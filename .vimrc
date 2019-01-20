@@ -48,15 +48,14 @@ let g:vim_markdown_folding_disabled = 1
 
 set updatetime=250 " 4000 default, 250 for gitgutter
 
-" Set tabs to 4 spaces
+" Set default indentation to 4 spaces
 set tabstop=4
 set shiftwidth=4
 
-" Set HTML, CSS, JS indentation to 2 spaces
-autocmd BufRead,BufNewFile *.html,*.css,*.scss,*.js setlocal ts=2 sw=2
-
-" Set .beancount indentation to 2 spaces
-autocmd BufRead,BufNewFile *.beancount setlocal ts=2 sw=2
+" Set indentation to 2 spaces for specified filetypes
+autocmd BufRead,BufNewFile 
+      \*.beancount,*.html,*.css,*.scss,*.js,.vimrc
+      \setlocal tabstop=2 shiftwidth=2
 
 set expandtab 	" Replace tabs with spaces
 
