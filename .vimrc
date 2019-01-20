@@ -35,8 +35,15 @@ set laststatus=2    " Show status line
 "set noshowmode      " Hide current mode; already shown in status line
 set showmode
 let g:lightline = {
-  \ 'colorscheme': 'base16_default_dark',
-  \ }
+      \ 'colorscheme': 'base16_default_dark',
+      \ 'active': {
+      \   'left': [ ['mode', 'paste'],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
 
 " Conceal bold, italics, underline etc syntax
 set conceallevel=2
