@@ -85,6 +85,8 @@ set autoindent	" Keep indentation of prev line
 set lazyredraw	" Only redraw when needed
 set showmatch	" Highlight matching [{()}]
 
+set mouse=n " Enable mouse scrolling and selection
+
 " Use visual bell instead of beeping when doing something wrong
 set visualbell
 
