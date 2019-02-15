@@ -119,6 +119,13 @@ status.register("openvpn",
         status_command="bash -c 'systemctl show openvpn-client@client.service | grep ActiveState=active'"
     )
 
+status.register("syncthing",
+        format_up="syncthing: ▲",
+        format_down="sycnthing: ▼",
+        color_up="#A1B56C",
+        color_down="#AB4642",
+    )
+
 #status.register("pomodoro",
 #        format="☯ {current_pomodoro}/{total_pomodoro} {time}",
 #        sound="",
@@ -134,13 +141,6 @@ status.register("redshift",
 
 status.register("spotify",
         format="spotify: {status} {artist} - {title}",
-    )
-
-status.register("syncthing",
-        format_up="syncthing: ▲",
-        format_down="sycnthing: ▼",
-        color_up="#A1B56C",
-        color_down="#AB4642",
     )
 
 #status.register("taskwarrior",
