@@ -136,7 +136,12 @@ status.register("spotify",
         format="spotify: {status} {artist} - {title}",
     )
 
-#status.register("syncthing")
+status.register("syncthing",
+        format_up="syncthing: ▲",
+        format_down="sycnthing: ▼",
+        color_up="#A1B56C",
+        color_down="#AB4642",
+    )
 
 #status.register("taskwarrior",
 #        format="task: {next}",
