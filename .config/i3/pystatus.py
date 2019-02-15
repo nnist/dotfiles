@@ -126,6 +126,7 @@ status.register("pomodoro",
 
 status.register("redshift",
         format="redshift: {inhibit} {temperature}K",
+        error_color="#AB4642",
         redshift_parameters=["-l", "52.1:5.1", "-b", "1.0:1.0",
                              "-t", "6500:1900"
             ],
