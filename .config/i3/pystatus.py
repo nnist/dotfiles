@@ -119,10 +119,10 @@ status.register("openvpn",
         status_command="bash -c 'systemctl show openvpn-client@client.service | grep ActiveState=active'"
     )
 
-status.register("pomodoro",
-        format="☯ {current_pomodoro}/{total_pomodoro} {time}",
-        sound="",
-    )
+#status.register("pomodoro",
+#        format="☯ {current_pomodoro}/{total_pomodoro} {time}",
+#        sound="",
+#    )
 
 status.register("redshift",
         format="redshift: {inhibit} {temperature}K",
