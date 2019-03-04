@@ -15,6 +15,9 @@ data.location=~/.task
 
 editor=vim
 
+urgency.user.tag.maybe.coefficient=-50.0
+urgency.user.tag.someday.coefficient=-100.0
+
 # Color theme (uncomment one to use)
 include ~/.task/themes/base16-default-dark.theme
 #include /usr//usr/share/task/light-16.theme
