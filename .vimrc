@@ -10,7 +10,10 @@ Plug 'airblade/vim-gitgutter'			" Git diff
 Plug 'scrooloose/nerdtree'				" File explorer tree
 Plug 'Xuyuanp/nerdtree-git-plugin'		" ^ Git plugin
 Plug 'weynhamz/vim-plugin-minibufexpl'	" Buffer explorer
-Plug 'chriskempson/base16-vim'			" Base16 theme
+function FixupBase16(info)
+    !sed -i '/Base16hi/\! s/a:\(attr\|guisp\)/l:\1/g' ~/.vim/plugged/base16-vim/colors/*.vim
+endfunction
+Plug 'chriskempson/base16-vim', { 'do': function('FixupBase16') }			" Base16 theme
 Plug 'davidhalter/jedi-vim'				" Python autocompletion
 Plug 'nathangrigg/vim-beancount'        " Vim Beancount
 Plug 'itchyny/lightline.vim'            " Status line
