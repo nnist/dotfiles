@@ -35,3 +35,5 @@ include ~/.task/themes/base16-default-dark.theme
 #include /usr//usr/share/task/solarized-light-256.theme
 #include /usr//usr/share/task/no-color.theme
 
+context.home=+@home or +@pc
+context.work=+@work
