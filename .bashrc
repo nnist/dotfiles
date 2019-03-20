@@ -9,7 +9,9 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 
 shopt -s checkwinsize # Prevent terminal window from messing up
+export EDITOR=vim # Set default editor to vim
 
+# Use dircolors
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
@@ -19,24 +21,19 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# Add custom completions
-if [ -d ~/.bash_completion.d ]; then
-    for f in ~/.bash_completion.d/*; do
-        . $f
-    done
-fi
-
-# Enable programmable completion features
+# Add bash completions
 if ! shopt -oq posix; then
     if [ -f /usr/share/bash-completion/bash_completion ]; then
         . /usr/share/bash-completion/bash_completion
-    elif [ -f /etc/bash_completion ]; then
+    fi
+    if [ -f /etc/bash_completion ]; then
         . /etc/bash_completion
     fi
-fi
-
-if [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
+    if [ -d ~/.bash_completion.d ]; then
+        for f in ~/.bash_completion.d/*; do
+            . $f
+        done
+    fi
 fi
 
 # Add ~/.local/bin to path
@@ -51,10 +48,7 @@ export PS1="\[$(tput setaf 3)\]\u\[$(tput setaf 7)\]@\[$(tput setaf 3)\]\h \[$(t
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
-# Set default editor to vim
-export EDITOR=vim
-
-function extract() # Extract program
+function extract()
 {
     if [ -f $1 ] ; then
         case $1 in
@@ -76,12 +70,12 @@ function extract() # Extract program
 	fi
 }
 
-function maketar() # Create a tar archive
+function maketar()
 {
     tar cvzf "${1%%/}.tar.gz"  "${1%%/}/";
 }
 
-function makezip() # Create a zip archive
+function makezip()
 {
     zip -r "${1%%/}.zip" "$1";
 }
@@ -95,7 +89,7 @@ function mdpreview() # Render .md to html for previewing in browser
     fi
 }
 
-function netinfo() # Display network information
+function netinfo()
 {
     echo "--------------- Network Information ---------------"
     external_ip=`curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'`
@@ -106,7 +100,7 @@ function netinfo() # Display network information
     echo "---------------------------------------------------"
 } 
 
-function calc() # Simple calculator function
+function calc()
 {
     if which bc &>/dev/null; then
         echo "scale=3; $*" | bc -l
