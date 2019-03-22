@@ -4,7 +4,8 @@ import sys
 import os
 import argparse
 
-files = ['.bash_aliases', '.bashrc', '.bash_completion.d/task.sh',
+files = ['bash/.bash_aliases', 'bash/.bashrc',
+         'bash/.bash_completion.d/task.sh',
          '.dircolors', '.gitignore', '.pylintrc',
          '.taskrc', '.tmux.conf', '.vim', '.vimrc', '.xinitrc']
 home_dir = os.path.expanduser('~') + '/'
