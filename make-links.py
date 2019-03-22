@@ -1,3 +1,5 @@
+# TODO Prevent making symlink in .vim directory
+
 import subprocess
 import logging as log
 import sys
