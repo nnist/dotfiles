@@ -17,14 +17,18 @@ targets = ['bash/.bash_aliases', 'bash/.bashrc',
            '.taskrc', '.tmux.conf', '.vim', '.vimrc', '.xinitrc']
 dotfiles_dir = home_dir + 'git/dotfiles/'
 
-def make_links():
+def make_links(force=False):
     num_success = 0
     num_failed = 0
     
     for source in enumerate(sources):
         target = dotfiles_dir + targets[source[0]]
         link = home_dir + source[1]
-        process = subprocess.run(['ln', '-s', target, link],
+        options = ''
+        if force:
+            options += 'f'
+
+        process = subprocess.run(['ln', '-s' + options, target, link],
                                  stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         if process.returncode == 0:
             num_success += 1
@@ -45,6 +49,9 @@ def main(argv):
     parser.add_argument(
         '-v', '--verbose', help="verbose mode", action='store_true'
     )
+    parser.add_argument(
+        '-f', '--force', help="force overwriting links", action='store_true'
+    )
     args = parser.parse_args(argv)
 
     if args.verbose:
@@ -53,7 +60,10 @@ def main(argv):
     else:
         log.basicConfig(format="%(levelname)s: %(message)s")
 
-    num_success, num_failed = make_links()
+    if args.force:
+        log.info('Force overwriting links.')
+
+    num_success, num_failed = make_links(args.force)
     print('Done. Made {} new links.'.format(num_success))
 
 if __name__ == "__main__":
