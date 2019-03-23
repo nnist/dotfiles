@@ -11,12 +11,13 @@ home_dir = os.path.expanduser('~') + '/'
 sources = ['.bash_aliases', '.bashrc',
            '.bash_completion.d/task.sh',
            '.dircolors', '.gitignore', '.pylintrc',
-           '.taskrc', '.tmux.conf', '.vim', '.vimrc', '.xinitrc']
+           '.taskrc', '.tmux.conf', '.vim', '.vimrc', '.xinitrc',
+           'termux.properties']
 targets = ['bash/.bash_aliases', 'bash/.bashrc',
            'bash/.bash_completion.d/task.sh',
            'bash/.dircolors', '.gitignore', 'pylint/.pylintrc',
            'task/.taskrc', 'tmux/.tmux.conf', 'vim/.vim', 'vim/.vimrc',
-           'xorg/.xinitrc']
+           'xorg/.xinitrc', 'termux/termux.properties']
 dotfiles_dir = home_dir + 'git/dotfiles/'
 
 def make_links(force=False):
