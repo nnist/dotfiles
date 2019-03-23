@@ -6,20 +6,24 @@ import sys
 import os
 import argparse
 
-files = ['bash/.bash_aliases', 'bash/.bashrc',
-         'bash/.bash_completion.d/task.sh',
-         '.dircolors', '.gitignore', '.pylintrc',
-         '.taskrc', '.tmux.conf', '.vim', '.vimrc', '.xinitrc']
 home_dir = os.path.expanduser('~') + '/'
+sources = ['.bash_aliases', '.bashrc',
+           '.bash_completion.d/task.sh',
+           '.dircolors', '.gitignore', '.pylintrc',
+           '.taskrc', '.tmux.conf', '.vim', '.vimrc', '.xinitrc']
+targets = ['bash/.bash_aliases', 'bash/.bashrc',
+           'bash/.bash_completion.d/task.sh',
+           'bash/.dircolors', '.gitignore', '.pylintrc',
+           '.taskrc', '.tmux.conf', '.vim', '.vimrc', '.xinitrc']
 dotfiles_dir = home_dir + 'git/dotfiles/'
 
 def make_links():
     num_success = 0
     num_failed = 0
     
-    for filename in files:
-        target = dotfiles_dir + filename
-        link = home_dir + filename
+    for source in enumerate(sources):
+        target = dotfiles_dir + targets[source[0]]
+        link = home_dir + source[1]
         process = subprocess.run(['ln', '-s', target, link],
                                  stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         if process.returncode == 0:
