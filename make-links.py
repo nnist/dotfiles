@@ -14,7 +14,7 @@ sources = ['.bash_aliases', '.bashrc',
            '.taskrc', '.tmux.conf', '.vim', '.vimrc', '.xinitrc']
 targets = ['bash/.bash_aliases', 'bash/.bashrc',
            'bash/.bash_completion.d/task.sh',
-           'bash/.dircolors', '.gitignore', '.pylintrc',
+           'bash/.dircolors', '.gitignore', 'pylint/.pylintrc',
            'task/.taskrc', 'tmux/.tmux.conf', 'vim/.vim', 'vim/.vimrc',
            'xorg/.xinitrc']
 dotfiles_dir = home_dir + 'git/dotfiles/'
