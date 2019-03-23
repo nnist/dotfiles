@@ -1,4 +1,5 @@
 # TODO Prevent making symlink in .vim directory
+# TODO Create directories if they don't exist
 
 import subprocess
 import logging as log
