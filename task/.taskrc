@@ -12,3 +12,4 @@ include ~/.task/themes/base16-default-dark.theme
 
 context.home=+@home or +@pc
 context.work=+@work
+context.study=project:Learn. or project:Certificate.
