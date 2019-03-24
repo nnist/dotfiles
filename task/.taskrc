@@ -2,6 +2,7 @@ data.location=~/.task
 
 editor=vim
 
+urgency.user.tag.urgent.coefficient=50.0
 urgency.user.tag.maybe.coefficient=-50.0
 urgency.user.tag.someday.coefficient=-100.0
 
