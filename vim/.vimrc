@@ -18,6 +18,7 @@ Plug 'davidhalter/jedi-vim'				" Python autocompletion
 Plug 'nathangrigg/vim-beancount'        " Vim Beancount
 Plug 'itchyny/lightline.vim'            " Status line
 Plug 'mike-hearn/base16-vim-lightline'  " Base16 theme for lightline
+Plug 'vim-syntastic/syntastic'          " Syntastic
 
 call plug#end()
 
