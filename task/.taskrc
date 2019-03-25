@@ -10,6 +10,6 @@ urgency.user.tag.someday.coefficient=-100.0
 # Color theme
 include ~/.task/themes/base16-default-dark.theme
 
-context.home=+@home or +@pc
+context.home=+@home or +@pc and project.not:Learn. and project.not:Certificate.
 context.work=+@work
 context.study=project:Learn. or project:Certificate.
