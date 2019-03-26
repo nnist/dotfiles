@@ -107,6 +107,10 @@ endif
 " }}}
 
 " Bindings {{{
+" Map F5 and F6 to toggle spellcheck
+map <F5> :setlocal spell! spelllang=en_us<cr>
+map <F6> :setlocal spell! spelllang=nl<cr>
+
 " Bind leader key to ,
 let mapleader = ','
 
