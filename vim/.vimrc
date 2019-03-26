@@ -56,6 +56,8 @@ set incsearch	                         " Search as characters are entered
 set hlsearch	                         " Highlight matches
 set ignorecase smartcase               " Use case insensitive search, except when using capital letters
 set backspace=indent,eol,start         " Allow backspacing over autoindent, line breaks and start of insert action
+"set scrolljump=5
+set scrolloff=5                        " Set scroll offset
 " }}}
 
 " Other {{{
