@@ -71,7 +71,7 @@ def main(argv):
         log.info('Force overwriting links.')
 
     num_success, num_failed = make_links(args.force)
-    print('Done. Made {} new links.'.format(num_success))
+    print('Done. Created {}/{} links.'.format(num_success, num_failed))
 
 
 if __name__ == "__main__":
