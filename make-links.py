@@ -7,41 +7,43 @@ import sys
 import os
 import argparse
 
-home_dir = os.path.expanduser('~') + '/'
-sources = ['.bash_aliases', '.bashrc',
+HOME_DIR = os.path.expanduser('~') + '/'
+SOURCES = ['.bash_aliases', '.bashrc',
            '.bash_completion.d/task.sh',
            '.dircolors', '.gitignore', '.pylintrc',
            '.taskrc', '.tmux.conf', '.vim', '.vimrc', '.xinitrc',
            'termux.properties', '.config/i3',
            '.config/alacritty/alacritty.yml']
-targets = ['bash/.bash_aliases', 'bash/.bashrc',
+TARGETS = ['bash/.bash_aliases', 'bash/.bashrc',
            'bash/.bash_completion.d/task.sh',
            'bash/.dircolors', '.gitignore', 'pylint/.pylintrc',
            'task/.taskrc', 'tmux/.tmux.conf', 'vim/.vim', 'vim/.vimrc',
            'xorg/.xinitrc', 'termux/termux.properties', 'i3',
            'alacritty/alacritty.yml']
-dotfiles_dir = home_dir + 'git/dotfiles/'
+DOTFILES_DIR = HOME_DIR + 'git/dotfiles/'
+
 
 def make_links(force=False):
+    """Create symlinks."""
     num_success = 0
     num_failed = 0
-    
-    for source in enumerate(sources):
-        target = dotfiles_dir + targets[source[0]]
-        link = home_dir + source[1]
+
+    for source in enumerate(SOURCES):
+        target = DOTFILES_DIR + TARGETS[source[0]]
+        link = HOME_DIR + source[1]
         options = ''
         if force:
             options += 'f'
 
         process = subprocess.run(['ln', '-s' + options, target, link],
-                                 stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                                 stdout=subprocess.PIPE,
+                                 stderr=subprocess.PIPE)
         if process.returncode == 0:
             num_success += 1
-            log.info("Made link from '{}' to '{}'.".format(link, target))
+            log.info("Made link from '%s' to '%s'.", link, target)
         else:
             num_failed += 1
-            log.info("Could not make link from '{}' to '{}'."
-                     .format(link, target))
+            log.info("Could not make link from '%s' to '%s'.", link, target)
 
     return num_success, num_failed
 
@@ -71,6 +73,7 @@ def main(argv):
     num_success, num_failed = make_links(args.force)
     print('Done. Made {} new links.'.format(num_success))
 
+
 if __name__ == "__main__":
     try:
         main(sys.argv[1:])
@@ -79,4 +82,4 @@ if __name__ == "__main__":
         try:
             sys.exit(0)
         except SystemExit:
-            os._exit(0) # pylint: disable=protected-access
+            os._exit(0)  # pylint: disable=protected-access
