@@ -138,10 +138,22 @@ map <Leader>gc :Gcommit<CR>
 "nmap <Leader>gp :Gpush $USER HEAD:
 " }}}
 
+" Fuctions {{{
+" Enable * and # in visual selection mode
+function! s:VSetSearch()
+  let temp = @@
+  norm! gvy
+  let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
+  let @@ = temp
+endfunction
+
+vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR>
+vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
+" }}}
+
 " Load .vimrc in git repository {{{
 let git_path = system("git rev-parse --show-toplevel 2>/dev/null")
 let git_vimrc = substitute(git_path, '\n', '', '') . "/.vimrc"
 if !empty(glob(git_vimrc))
   sandbox exec ":source " . git_vimrc
 endif
-" }}}
