@@ -59,6 +59,7 @@ set ignorecase smartcase               " Use case insensitive search, except whe
 set backspace=indent,eol,start         " Allow backspacing over autoindent, line breaks and start of insert action
 "set scrolljump=5
 set scrolloff=5                        " Set scroll offset
+set ttyfast                            " Faster redrawing
 " }}}
 
 " Other {{{
