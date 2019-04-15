@@ -5,8 +5,9 @@ else
     i3-msg "workspace 1: tasks; append_layout ~/.config/i3/tasks/workspace-tasks.json"
     
     # Start applications
+    (alacritty -d 0 0 --class task-container -e ".config/i3/tasks/tasks.sh" &)
+    sleep .5
     (alacritty -d 0 0 --class task-summary-container -e ".config/i3/tasks/task-summary.sh" &)
     (alacritty -d 0 0 --class task-calendar-container -e ".config/i3/tasks/task-calendar.sh" &)
     (alacritty -d 0 0 --class vim-inbox-container -e ".config/i3/tasks/vim-inbox.sh" &)
-    (alacritty -d 0 0 --class task-container -e ".config/i3/tasks/tasks.sh" &)
 fi
