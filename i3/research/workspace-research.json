@@ -1,0 +1,130 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1041,
+       "width": 2556,
+       "x": 0,
+       "y": 0
+    },
+    "name": "Firejail - ArchWiki - Mozilla Firefox",
+    "percent": 0.378515625,
+    "swallows": [
+       {
+          "class": "^Firefox$",
+          "instance": "^Navigator$"
+       // "title": "^Firejail\\ \\-\\ ArchWiki\\ \\-\\ Mozilla\\ Firefox$",
+       // "window_role": "^browser$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    // tabbed split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "tabbed",
+    "percent": 0.337630208333333,
+    "type": "con",
+    "nodes": [
+        //{
+        //    "border": "normal",
+        //    "current_border_width": 2,
+        //    "floating": "auto_off",
+        //    "geometry": {
+        //       "height": 768,
+        //       "width": 1024,
+        //       "x": 0,
+        //       "y": 0
+        //    },
+        //    "name": "firejail evince --class=pdf-container ",
+        //    "percent": 0.5,
+        //    "swallows": [
+        //       {
+        //          "class": "^Alacritty$",
+        //          "instance": "pdf-container$"
+        //       // "title": "^firejail\\ evince\\ \\-\\-class\\=pdf\\-container\\ $"
+        //       }
+        //    ],
+        //    "type": "con"
+        //},
+        {
+            "border": "none",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 656,
+               "width": 610,
+               "x": 0,
+               "y": 0
+            },
+            "name": "Recent Documents",
+            "percent": 0.5,
+            "swallows": [
+               {
+                  //"class": "^pdf-container$",
+                  "instance": "^evince$"
+               // "title": "^Recent\\ Documents$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    // splitv split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.283854166666667,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 768,
+               "width": 1024,
+               "x": 0,
+               "y": 0
+            },
+            "name": "nicole@duotine:~",
+            "percent": 0.384542884071631,
+            "swallows": [
+               {
+                  "class": "^Alacritty$",
+                  "instance": "task-container$"
+               // "title": "^nicole\\@duotine\\:\\~$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 768,
+               "width": 1024,
+               "x": 0,
+               "y": 0
+            },
+            "name": "nicole@duotine:~",
+            "percent": 0.615457115928369,
+            "swallows": [
+               {
+                  "class": "^Alacritty$",
+                  "instance": "^Alacritty$"
+               // "title": "^nicole\\@duotine\\:\\~$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

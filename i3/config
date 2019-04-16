@@ -74,7 +74,7 @@ set $ws3 "3"
 set $ws4 "4: finances"
 set $ws5 "5"
 set $ws6 "6"
-set $ws7 "7"
+set $ws7 "7: research"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
@@ -86,7 +86,7 @@ bindsym $mod+3 workspace $ws3
 bindsym $mod+4 exec "~/.config/i3/workspace-finances.sh"
 bindsym $mod+5 exec "~/.config/i3/workspace-system.sh"
 bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
+bindsym $mod+7 exec "~/.config/i3/workspace-research.sh"
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
