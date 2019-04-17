@@ -136,3 +136,11 @@ map <Leader>gc :Gcommit<CR>
 "nmap <Leader>gl :Gpull<cr>
 "nmap <Leader>gp :Gpush $USER HEAD:
 " }}}
+
+" Load .vimrc in git repository {{{
+let git_path = system("git rev-parse --show-toplevel 2>/dev/null")
+let git_vimrc = substitute(git_path, '\n', '', '') . "/.vimrc"
+if !empty(glob(git_vimrc))
+  sandbox exec ":source " . git_vimrc
+endif
+" }}}
