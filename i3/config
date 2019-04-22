@@ -17,8 +17,8 @@ bindsym $mod+Return exec alacritty
 # Kill focused window
 bindsym $mod+Shift+q kill
 
-# Start dmenu
-bindsym $mod+d exec dmenu_run
+# Start launcher
+rofi -show run
 
 # Lock screen
 bindsym $mod+l exec "i3lock -c 181818 -e -f"
