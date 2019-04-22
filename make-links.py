@@ -1,5 +1,7 @@
+# TODO Print created links by default
 # TODO Prevent making symlink in .vim directory
 # TODO Create directories if they don't exist
+# TODO Store sources and targets in dict?
 
 import subprocess
 import logging as log
@@ -12,14 +14,14 @@ SOURCES = ['.bash_aliases', '.bashrc',
            '.bash_completion.d/task.sh',
            '.dircolors', '.gitignore', '.pylintrc',
            '.tmux.conf', '.vim', '.vimrc', '.xinitrc',
-           'termux.properties', '.config/i3',
+           'termux.properties', '.config/i3', '.config/rofi',
            '.config/alacritty/alacritty.yml']
 TARGETS = ['bash/.bash_aliases', 'bash/.bashrc',
            'bash/.bash_completion.d/task.sh',
            'bash/.dircolors', '.gitignore', 'pylint/.pylintrc',
            'tmux/.tmux.conf', 'vim/.vim', 'vim/.vimrc',
            'xorg/.xinitrc', 'termux/termux.properties', 'i3',
-           'alacritty/alacritty.yml']
+           'rofi', 'alacritty/alacritty.yml']
 DOTFILES_DIR = HOME_DIR + 'git/dotfiles/'
 
 

@@ -18,7 +18,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # Start launcher
-rofi -show run
+rofi -show run -theme base16-default-dark
 
 # Lock screen
 bindsym $mod+l exec "i3lock -c 181818 -e -f"
