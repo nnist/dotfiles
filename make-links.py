@@ -14,7 +14,7 @@ SOURCES = ['.bash_aliases', '.bashrc',
            '.bash_completion.d/task.sh',
            '.dircolors', '.gitignore', '.pylintrc',
            '.tmux.conf', '.vim', '.vimrc', '.xinitrc',
-           'termux.properties', '.config/i3', '.config/rofi',
+           'termux.properties', '.config/i3', '.local/share/rofi',
            '.config/alacritty/alacritty.yml']
 TARGETS = ['bash/.bash_aliases', 'bash/.bashrc',
            'bash/.bash_completion.d/task.sh',
