@@ -19,9 +19,15 @@ Plug 'nathangrigg/vim-beancount'        " Vim Beancount
 Plug 'itchyny/lightline.vim'            " Status line
 Plug 'mike-hearn/base16-vim-lightline'  " Base16 theme for lightline
 Plug 'w0rp/ale'                         " Asynchronous linting/fixing
+Plug 'Yggdroot/indentLine'              " Show code indentation
 "Plug 'vim-syntastic/syntastic'          " Syntastic
 
 call plug#end()
+" }}}
+
+" Plugin settings {{{
+let g:indentLine_color_term = 18
+let g:indentLine_char_list = ['•']
 " }}}
 
 " Basic config {{{
