@@ -16,9 +16,10 @@ endfunction
 Plug 'chriskempson/base16-vim', { 'do': function('FixupBase16') }			" Base16 theme
 Plug 'davidhalter/jedi-vim'				" Python autocompletion
 Plug 'nathangrigg/vim-beancount'        " Vim Beancount
+Plug 'w0rp/ale'                         " Asynchronous linting/fixing
 Plug 'itchyny/lightline.vim'            " Status line
 Plug 'mike-hearn/base16-vim-lightline'  " Base16 theme for lightline
-Plug 'w0rp/ale'                         " Asynchronous linting/fixing
+Plug 'maximbaz/lightline-ale'           " ALE indicator for lightline
 Plug 'Yggdroot/indentLine'              " Show code indentation
 "Plug 'vim-syntastic/syntastic'          " Syntastic
 
@@ -26,8 +27,43 @@ call plug#end()
 " }}}
 
 " Plugin settings {{{
+" indentLine {{{
 let g:indentLine_color_term = 18
 let g:indentLine_char_list = ['•']
+" }}}
+" lightline {{{
+set laststatus=2    " Show status line
+"set noshowmode      " Hide current mode; already shown in status line
+set showmode
+
+let g:lightline = {
+      \ 'colorscheme': 'base16_default_dark',
+      \ 'active': {
+      \   'left': [ ['mode', 'paste'],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+      \   'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ],
+      \              [ 'lineinfo', 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
+
+let g:lightline.component_expand = {
+      \  'linter_checking': 'lightline#ale#checking',
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \  'linter_ok': 'lightline#ale#ok',
+      \ }
+
+let g:lightline.component_type = {
+      \     'linter_checking': 'left',
+      \     'linter_warnings': 'warning',
+      \     'linter_errors': 'error',
+      \     'linter_ok': 'left',
+      \ }
+" }}}
 " }}}
 
 " Basic config {{{
@@ -88,21 +124,6 @@ autocmd FileType python setlocal completeopt-=preview
 autocmd BufRead,BufNewFile 
       \ *.beancount,*.html,*.css,*.scss,*.js,.vimrc
       \ setlocal tabstop=2 shiftwidth=2
-
-" Settings for vim-lightline
-set laststatus=2    " Show status line
-"set noshowmode      " Hide current mode; already shown in status line
-set showmode
-let g:lightline = {
-      \ 'colorscheme': 'base16_default_dark',
-      \ 'active': {
-      \   'left': [ ['mode', 'paste'],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
-      \ },
-      \ }
 
 " Allow cursor change in tmux mode
 if exists('$TMUX')
