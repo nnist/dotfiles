@@ -42,7 +42,7 @@ let g:lightline = {
       \   'left': [ ['mode', 'paste'],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
       \   'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ],
-      \              [ 'lineinfo', 'percent' ],
+      \              [ 'lineinfo'],
       \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
       \ },
       \ 'component_function': {
