@@ -5,6 +5,9 @@ usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
+# Set key repeat rate
+xset r rate 450 35
+
 # Merge in defaults and keymaps
 if [ -f $sysresources ]; then
     xrdb -merge $sysresources
