@@ -21,6 +21,7 @@ Plug 'itchyny/lightline.vim'            " Status line
 Plug 'nnist/base16-vim-lightline'       " Base16 theme for lightline
 Plug 'maximbaz/lightline-ale'           " ALE indicator for lightline
 Plug 'Yggdroot/indentLine'              " Show code indentation
+Plug 'bird-get/lslvimazing'             " LSL syntax
 "Plug 'vim-syntastic/syntastic'          " Syntastic
 
 call plug#end()
