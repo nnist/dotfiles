@@ -126,10 +126,20 @@ status.register("syncthing",
                 color_down="#AB4642",
                 )
 
-#status.register("pomodoro",
-#        format="☯ {current_pomodoro}/{total_pomodoro} {time}",
-#        sound="",
-#    )
+status.register("pomodoro",
+                format="pom: {current_pomodoro}/{total_pomodoro} {time}",
+                inactive_format="pom: inactive",
+                color={
+                    'stopped': '#FFFFFF',
+                    'running': '#7CAFC2',
+                    'break': '#F7CA88'
+                },
+                pomodoro_duration=5,
+                break_duration=5,
+                long_break_duration=5,
+                short_break_count=4,
+                sound="",
+                )
 
 status.register("redshift",
                 format="redshift: {inhibit} {temperature}K",
