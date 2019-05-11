@@ -8,13 +8,13 @@ status = Status()
 # Tue 30 Jul 11:59:46 PM KW31
 #                          ^-- calendar week
 status.register("clock",
-        format="%a %-d %b %H:%M:%S",)
+                format="%a %-d %b %H:%M:%S",)
 
 # Shows the average load of the last minute and the last 5 minutes
 # (the default value for format is used)
 status.register("load",
-        format="load: {avg1}",
-    )
+                format="load: {avg1}",
+                )
 
 # Shows your CPU temperature, if you have a Intel CPU
 #status.register("temp",
@@ -99,32 +99,32 @@ status.register("load",
 #    },)
 
 status.register("alsa",
-        format="vol: {muted}{volume}%",
-        on_leftclick="",
-        on_rightclick="",
-    )
+                format="vol: {muted}{volume}%",
+                on_leftclick="",
+                on_rightclick="",
+                )
 
 status.register("mem",
-        format="mem: {used_mem}/{total_mem}G",
-        divisor=1073741824,
-        color="#FFFFFF",
-        round_size=1,
-    )
+                format="mem: {used_mem}/{total_mem}G",
+                divisor=1073741824,
+                color="#FFFFFF",
+                round_size=1,
+                )
 
 status.register("openvpn",
-        format="vpn: {status}",
-        vpn_name="VPN",
-        color_up="#A1B56C",
-        color_down="#AB4642",
-        status_command="bash -c 'systemctl show openvpn-client@client.service | grep ActiveState=active'"
-    )
+                format="vpn: {status}",
+                vpn_name="VPN",
+                color_up="#A1B56C",
+                color_down="#AB4642",
+                status_command="bash -c 'systemctl show openvpn-client@client.service | grep ActiveState=active'"
+                )
 
 status.register("syncthing",
-        format_up="syncthing: ▲",
-        format_down="sycnthing: ▼",
-        color_up="#A1B56C",
-        color_down="#AB4642",
-    )
+                format_up="syncthing: ▲",
+                format_down="sycnthing: ▼",
+                color_up="#A1B56C",
+                color_down="#AB4642",
+                )
 
 #status.register("pomodoro",
 #        format="☯ {current_pomodoro}/{total_pomodoro} {time}",
@@ -132,16 +132,15 @@ status.register("syncthing",
 #    )
 
 status.register("redshift",
-        format="redshift: {inhibit} {temperature}K",
-        error_color="#AB4642",
-        redshift_parameters=["-l", "52.1:5.1", "-b", "1.0:1.0",
-                             "-t", "6500:1900"
-            ],
-    )
+                format="redshift: {inhibit} {temperature}K",
+                error_color="#AB4642",
+                redshift_parameters=["-l", "52.1:5.1", "-b", "1.0:1.0",
+                                     "-t", "6500:1900"],
+                )
 
 status.register("spotify",
-        format="spotify: {status} {artist} - {title}",
-    )
+                format="spotify: {status} {artist} - {title}",
+                )
 
 #status.register("taskwarrior",
 #        format="task: {next}",
