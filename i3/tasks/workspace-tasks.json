@@ -48,7 +48,9 @@
                     "percent": 0.65,
                     "swallows": [
                        {
-                          "instance": "task-summary-container"
+                           "class": "^Alacritty$",
+                           "instance": "^Alacritty$"
+                           // "title": "^nicole\\@pixel\\:\\~$"
                        }
                     ],
                     "type": "con"
