@@ -165,7 +165,8 @@ focus_follows_mouse no
 
 # Gaps
 for_window [class=".*"] border pixel 2
-gaps inner 20
+gaps outer 10
+gaps inner 10
 #smart_gaps on
 #smart_gaps inverse_outer
 smart_borders on
