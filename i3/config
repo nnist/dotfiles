@@ -175,6 +175,6 @@ smart_borders on
 workspace $ws1 gaps outer 100
 
 exec "compton -b"
-exec --no-startup-id feh --bg-center ~/syncthing/Pictures/backgrounds/by_burned_2560.jpg
+exec "--no-startup-id feh --bg-center ~/syncthing/Pictures/backgrounds/by_burned_2560.jpg"
 exec "~/.config/i3/workspace-tasks.sh"
 exec "xautolock -locker 'i3lock -c 181818 -e -f'"
