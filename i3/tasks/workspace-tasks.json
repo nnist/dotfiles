@@ -12,7 +12,7 @@
             "border": "normal",
             "floating": "auto_off",
             "layout": "splitv",
-            "percent": 0.2984375,
+            "percent": 0.22,
             "type": "con",
             "nodes": [
                 {
@@ -26,7 +26,7 @@
                        "y": 0
                     },
                     "name": "nicole@pixel:~",
-                    "percent": 0.221489161168709,
+                    "percent": 0.34,
                     "swallows": [
                        {
                           "instance": "task-calendar-container"
@@ -45,7 +45,7 @@
                        "y": 0
                     },
                     "name": "nicole@pixel:~",
-                    "percent": 0.778510838831291,
+                    "percent": 0.65,
                     "swallows": [
                        {
                           "instance": "task-summary-container"
@@ -60,7 +60,7 @@
             "border": "normal",
             "floating": "auto_off",
             "layout": "splith",
-            "percent": 0.7015625,
+            "percent": 0.78,
             "type": "con",
             "nodes": [
                 {
@@ -74,7 +74,7 @@
                        "y": 0
                     },
                     "name": "nicole@pixel:~",
-                    "percent": 0.5,
+                    "percent": 0.36,
                     "swallows": [
                        {
                           "instance": "vim-inbox-container"
@@ -93,7 +93,7 @@
                        "y": 0
                     },
                     "name": "nicole@pixel:~",
-                    "percent": 0.5,
+                    "percent": 0.64,
                     "swallows": [
                        {
                           "instance": "task-container"
