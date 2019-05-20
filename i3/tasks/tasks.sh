@@ -1,2 +1,3 @@
 cd ~/.task
-task;bash
+task +urgent rc.verbose= rc.context=none
+bash
