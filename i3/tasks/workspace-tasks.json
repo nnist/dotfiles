@@ -104,23 +104,52 @@
                     "type": "con"
                 },
                 {
+                    // splitv split container with 2 children
                     "border": "normal",
-                    "current_border_width": 2,
                     "floating": "auto_off",
-                    "geometry": {
-                       "height": 768,
-                       "width": 1024,
-                       "x": 0,
-                       "y": 0
-                    },
-                    "name": "nicole@pixel:~",
+                    "layout": "splitv",
                     "percent": 0.64,
-                    "swallows": [
-                       {
-                          "instance": "task-container"
-                       }
-                    ],
-                    "type": "con"
+                    "type": "con",
+                    "nodes": [
+                        {
+                            "border": "pixel",
+                            "current_border_width": 2,
+                            "floating": "auto_off",
+                            "geometry": {
+                                "height": 768,
+                                "width": 1024,
+                                "x": 0,
+                                "y": 0
+                            },
+                            "name": "firejail task schedule ",
+                            "percent": 0.4,
+                            "swallows": [
+                                {
+                                    "instance": "task-schedule-container"
+                                }
+                            ],
+                            "type": "con"
+                        },
+                        {
+                            "border": "normal",
+                            "current_border_width": 2,
+                            "floating": "auto_off",
+                            "geometry": {
+                                "height": 768,
+                                "width": 1024,
+                                "x": 0,
+                                "y": 0
+                            },
+                            "name": "nicole@pixel:~",
+                            "percent": 0.64,
+                            "swallows": [
+                                {
+                                    "instance": "task-container"
+                                }
+                            ],
+                            "type": "con"
+                        }
+                    ]
                 }
             ]
         }
