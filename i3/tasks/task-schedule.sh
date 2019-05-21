@@ -12,7 +12,7 @@ trap finish EXIT
 source .config/base16-shell/scripts/base16-default-dark.sh
 printf "\e[?25l"
 while :; do
-    output=$(clear; firejail --overlay-tmpfs task schedule 2> /dev/null)
+    output=$(clear; firejail --overlay-tmpfs task schedule rc.defaultwidth=144 2> /dev/null)
     echo "$output"
     sleep 1
 done
