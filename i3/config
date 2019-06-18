@@ -182,6 +182,6 @@ workspace $ws3 gaps left 596
 workspace $ws3 gaps right 596
 
 exec "compton -b"
-exec --no-startup-id "feh --bg-center ~/syncthing/Pictures/backgrounds/by_burned_2560.jpg"
+exec "hsetroot -solid '#181818'"
 exec "~/.config/i3/workspace-tasks.sh"
 exec "xautolock -locker 'i3lock -c 181818 -e -f'"
