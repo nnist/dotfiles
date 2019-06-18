@@ -164,7 +164,7 @@ client.background #181818
 focus_follows_mouse no
 
 # Gaps
-for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 1
 gaps outer 10
 gaps inner 10
 #smart_gaps on
