@@ -70,7 +70,7 @@ bindsym $mod+Shift+a focus child
 # Define names for workspaces
 set $ws1 "1: tasks"
 set $ws2 "2: dev"
-set $ws3 "3"
+set $ws3 "3: focus"
 set $ws4 "4: finances"
 set $ws5 "5"
 set $ws6 "6"
@@ -171,8 +171,15 @@ gaps inner 10
 #smart_gaps inverse_outer
 smart_borders on
 
-# Gap settings for workspaces
+# Gap settings for workspaces (2560 x 1080)
 workspace $ws1 gaps outer 100
+
+workspace $ws3 gaps outer 0
+workspace $ws3 gaps inner 0
+workspace $ws3 gaps top 28
+workspace $ws3 gaps bottom 28
+workspace $ws3 gaps left 768
+workspace $ws3 gaps right 768
 
 exec "compton -b"
 exec --no-startup-id "feh --bg-center ~/syncthing/Pictures/backgrounds/by_burned_2560.jpg"
