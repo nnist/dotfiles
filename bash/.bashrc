@@ -7,7 +7,7 @@ HISTCONTROL=ignoreboth # Ignore duplicate lines and lines starting with space
 shopt -s histappend # Append history; don't overwrite
 HISTSIZE=1000
 HISTFILESIZE=2000
-HISTIGNORE="clear:exit*:poweroff*:reboot*"
+HISTIGNORE="clear:exit*:poweroff*:reboot*:git checkout*"
 
 shopt -s checkwinsize # Prevent terminal window from messing up
 export EDITOR=vim # Set default editor to vim
