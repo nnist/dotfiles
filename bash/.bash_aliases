@@ -18,3 +18,6 @@ alias pip-update="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d 
 
 alias task-work="task rc:~/.task-work/.taskrc"
 complete -o nospace -F _task task-work
+
+alias vit-work="vit rc=~/.task-work/.taskrc rc.data.location=~/.task-work"
+complete -o nospace -F _task vit-work
