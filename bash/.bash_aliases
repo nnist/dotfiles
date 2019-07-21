@@ -15,3 +15,6 @@ alias tmux-dev='tmux new-session \; \
 alias ports="netstat -tulpn" # List open ports and programs which use them
 alias lock="i3lock -c 181818 -e -f"
 alias pip-update="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install --user -U"
+
+alias task-work="task rc:~/.task-work/.taskrc"
+complete -o nospace -F _task task-work
