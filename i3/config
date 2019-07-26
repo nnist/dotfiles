@@ -172,14 +172,14 @@ gaps inner 10
 #smart_borders on
 
 # Gap settings for workspaces (2560x1080)
-workspace $ws1 gaps outer 100
+#workspace $ws1 gaps outer 100
 
-workspace $ws3 gaps outer 0
-workspace $ws3 gaps inner 0
-workspace $ws3 gaps top 137
-workspace $ws3 gaps bottom 137
-workspace $ws3 gaps left 596
-workspace $ws3 gaps right 596
+#workspace $ws3 gaps outer 0
+#workspace $ws3 gaps inner 0
+#workspace $ws3 gaps top 137
+#workspace $ws3 gaps bottom 137
+#workspace $ws3 gaps left 596
+#workspace $ws3 gaps right 596
 
 exec "compton -b"
 exec "hsetroot -solid '#181818'"
