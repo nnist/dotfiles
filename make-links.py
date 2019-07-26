@@ -15,13 +15,13 @@ SOURCES = ['.bash_aliases', '.bashrc',
            '.dircolors', '.gitignore', '.pylintrc',
            '.tmux.conf', '.vim', '.vimrc', '.xinitrc', '.xprofile', '.vit',
            'termux.properties', '.config/i3', '.local/share/rofi',
-           '.config/alacritty/alacritty.yml']
+           '.config/alacritty/alacritty.yml', '.config/dunst']
 TARGETS = ['bash/.bash_aliases', 'bash/.bashrc',
            'bash/.bash_completion.d/task.sh',
            'bash/.dircolors', '.gitignore', 'pylint/.pylintrc',
            'tmux/.tmux.conf', 'vim/.vim', 'vim/.vimrc',
            'xorg/.xinitrc', 'xorg/.xprofile', 'vit/.vit', 'termux/termux.properties', 'i3',
-           'rofi', 'alacritty/alacritty.yml']
+           'rofi', 'alacritty/alacritty.yml', 'dunst']
 DOTFILES_DIR = HOME_DIR + 'git/dotfiles/'
 
 
