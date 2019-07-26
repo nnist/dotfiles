@@ -13,14 +13,14 @@ HOME_DIR = os.path.expanduser('~') + '/'
 SOURCES = ['.bash_aliases', '.bashrc',
            '.bash_completion.d/task.sh',
            '.dircolors', '.gitignore', '.pylintrc',
-           '.tmux.conf', '.vim', '.vimrc', '.xinitrc', '.vit',
+           '.tmux.conf', '.vim', '.vimrc', '.xinitrc', '.xprofile', '.vit',
            'termux.properties', '.config/i3', '.local/share/rofi',
            '.config/alacritty/alacritty.yml']
 TARGETS = ['bash/.bash_aliases', 'bash/.bashrc',
            'bash/.bash_completion.d/task.sh',
            'bash/.dircolors', '.gitignore', 'pylint/.pylintrc',
            'tmux/.tmux.conf', 'vim/.vim', 'vim/.vimrc',
-           'xorg/.xinitrc', 'vit/.vit', 'termux/termux.properties', 'i3',
+           'xorg/.xinitrc', 'xorg/.xprofile', 'vit/.vit', 'termux/termux.properties', 'i3',
            'rofi', 'alacritty/alacritty.yml']
 DOTFILES_DIR = HOME_DIR + 'git/dotfiles/'
 

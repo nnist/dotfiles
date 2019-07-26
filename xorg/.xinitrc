@@ -5,6 +5,12 @@ usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
+# Include profile files
+test -f /etc/profile && . /etc/profile
+test -f "$HOME/.profile" && . "$HOME/.profile"
+test -f /etc/xprofile && . /etc/xprofile
+test -f "$HOME/.xprofile" && . "$HOME/.xprofile"
+
 # Set key repeat rate
 #xset r rate 450 35
 xset r rate 300 50
