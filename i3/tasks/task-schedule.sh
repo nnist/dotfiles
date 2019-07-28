@@ -3,7 +3,7 @@
 source .config/base16-shell/scripts/base16-default-dark.sh
 cd git/taskschedule
 source bin/activate
-python3 __main__.py
+python3 __main__.py --from yesterday-2day --to tomorrow+3day
 bash
 
 # Run taskwarrior in firejail every second. Taskwarrior has no read-only
