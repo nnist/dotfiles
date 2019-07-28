@@ -139,20 +139,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar
-bar {
-        status_command python ~/.config/i3/pystatus.py
-        separator_symbol " | "
-        colors {
-            background #181818
-            statusline #E8E8E8
-            separator #585858
-            focused_workspace #7CAFC2 #7CAFC2 #181818
-            inactive_workspace #383838 #383838 #F8F8F8
-            urgent_workspace #F7CA88 #F7CA88 #181818
-        }
-}
-
 client.focused #7CAFC2 #7CAFC2 #181818 #181818 #7CAFC2
 client.focused_inactive #585858 #585858 #E8E8E8 #181818 #585858
 client.unfocused #282828 #282828 #E8E8E8 #181818 #282828
@@ -172,15 +158,17 @@ gaps inner 10
 #smart_borders on
 
 # Gap settings for workspaces (2560x1080)
-workspace $ws1 gaps outer 100
+#workspace $ws1 gaps outer 100
 
-workspace $ws3 gaps outer 0
-workspace $ws3 gaps inner 0
-workspace $ws3 gaps top 137
-workspace $ws3 gaps bottom 137
-workspace $ws3 gaps left 596
-workspace $ws3 gaps right 596
+#workspace $ws3 gaps outer 0
+#workspace $ws3 gaps inner 0
+#workspace $ws3 gaps top 137
+#workspace $ws3 gaps bottom 137
+#workspace $ws3 gaps left 596
+#workspace $ws3 gaps right 596
 
+exec --no-startup-id nm-applet
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec "compton -b"
 exec "hsetroot -solid '#181818'"
 exec "~/.config/i3/workspace-tasks.sh"
