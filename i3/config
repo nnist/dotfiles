@@ -167,6 +167,7 @@ gaps inner 10
 #workspace $ws3 gaps left 596
 #workspace $ws3 gaps right 596
 
+exec --no-startup-id nm-applet
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec "compton -b"
 exec "hsetroot -solid '#181818'"
