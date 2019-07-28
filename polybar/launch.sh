@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # Terminate already running bar instances
 killall -q polybar
@@ -6,12 +6,11 @@ killall -q polybar
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
+# Launch bar on all monitors
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    MONITOR=$m polybar --reload i3bar &
+    MONITOR=$m polybar -c ~/.config/polybar/config.ini --reload main &
   done
 else
-  polybar --reload i3bar &
+  polybar --reload main -c ~/.config/polybar/config.ini &
 fi
-
-echo "Bars launched..."
