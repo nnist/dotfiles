@@ -173,6 +173,10 @@ map <Leader>gc :Gcommit<CR>
 "map <Leader>ge :Gedit<CR>
 "nmap <Leader>gl :Gpull<cr>
 "nmap <Leader>gp :Gpush $USER HEAD:
+
+" Close NerdTree buffer
+nnoremap <Leader>q :bp\|bd #<CR>
+
 " }}}
 
 " Fuctions {{{
