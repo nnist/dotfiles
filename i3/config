@@ -155,8 +155,8 @@ client.background       #181818
 ##### Gaps ####################################################################
 for_window [class=".*"] border pixel 1
 
-gaps outer 10
-gaps inner 10
+gaps outer 0
+gaps inner 5
 #smart_gaps on
 #smart_gaps inverse_outer
 #smart_borders on
