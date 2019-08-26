@@ -175,6 +175,6 @@ gaps inner 5
 exec --no-startup-id nm-applet
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec "compton -b"
-exec "hsetroot -solid '#181818'"
+exec "hsetroot -solid '#000000'"
 exec "~/.config/i3/workspace-tasks.sh"
 exec "xautolock -locker 'i3lock -c 181818 -e -f'"
