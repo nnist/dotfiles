@@ -36,11 +36,24 @@ let g:ale_fix_on_save = 1
 "let g:ale_lint_on_text_changed = 'never'
 "let g:ale_lint_on_enter = 0
 " }}}
-" vimwiki {{{
+" vimwiki and taskwiki {{{
 filetype plugin on
 set nocompatible
 syntax on
 let g:vimwiki_folding = 'expr'
+let g:vimwiki_list = [{
+      \ 'path': '~/.vimwiki',
+      \ 'nested_syntaxes': {
+      \   'javascript': 'javascript',
+      \   'bash': 'sh',
+      \   'python': 'python',
+      \  },
+      \ 'syntax': 'markdown',
+      \ 'ext': '.md',
+      \ 'path_html': '~/vimwiki/site_html/',
+      \ }]
+let g:taskwiki_disable_concealcursor = 1
+let g:taskwiki_markup_syntax = 'markdown'
 " }}}
 " indentLine {{{
 let g:indentLine_color_term = 18
