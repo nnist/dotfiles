@@ -36,6 +36,12 @@ let g:ale_fix_on_save = 1
 "let g:ale_lint_on_text_changed = 'never'
 "let g:ale_lint_on_enter = 0
 " }}}
+" vimwiki {{{
+filetype plugin on
+set nocompatible
+syntax on
+let g:vimwiki_folding = 'expr'
+" }}}
 " indentLine {{{
 let g:indentLine_color_term = 18
 let g:indentLine_char_list = ['•']
