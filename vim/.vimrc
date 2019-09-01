@@ -24,6 +24,8 @@ Plug 'Yggdroot/indentLine'              " Show code indentation
 Plug 'bird-get/lslvimazing'             " LSL syntax
 "Plug 'vim-syntastic/syntastic'          " Syntastic
 Plug 'metakirby5/codi.vim'
+Plug 'vimwiki/vimwiki'
+Plug 'tbabej/taskwiki'
 
 call plug#end()
 " }}}
