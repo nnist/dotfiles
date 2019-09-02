@@ -92,33 +92,33 @@ tabspaces: 8
 font:
   # Normal (roman) font face
   normal:
-    family: monospace
-    hintstyle: hintfull
+    family: Hack
+    hintstyle: hintslight
     rgba: rgb
     lcdfilter: lcddefault
     antialias: true
     # The `style` can be specified to pick a specific face.
-    #style: Regular
+    style: Regular
 
   # Bold font face
   bold:
-    family: monospace
-    hintstyle: hintfull
+    family: Hack
+    hintstyle: hintslight
     rgba: rgb
     lcdfilter: lcddefault
     antialias: true
     # The `style` can be specified to pick a specific face.
-    #style: Bold
+    style: Bold
 
   # Italic font face
   italic:
-    family: monospace
+    family: Hack
     hintstyle: hintfull
     rgba: rgb
     lcdfilter: lcddefault
     antialias: true
     # The `style` can be specified to pick a specific face.
-    #style: Italic
+    style: Italic
 
   # Point size
   size: 10.0

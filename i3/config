@@ -2,7 +2,7 @@
 
 ##### General #################################################################
 # Font for window titles and bar
-font pango:DejaVu Sans Mono 9
+font pango:Hack 9
 
 # Stop focus from following mouse
 focus_follows_mouse no
