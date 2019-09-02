@@ -127,10 +127,13 @@ colorscheme base16-default-dark
 " Disable Jedi docstring popup during completion
 autocmd FileType python setlocal completeopt-=preview
 
-" Set indentation to 2 spaces for specified filetypes
+" Set indentation for specified filetypes
 autocmd BufRead,BufNewFile 
-      \ *.beancount,*.html,*.css,*.scss,*.js,.vimrc
+      \ *.beancount,*.css,*.scss,*.js,.vimrc
       \ setlocal tabstop=2 shiftwidth=2
+autocmd BufRead,BufNewFile 
+      \ *.html
+      \ setlocal tabstop=4 shiftwidth=4
 
 " Allow cursor change in tmux mode
 if exists('$TMUX')
