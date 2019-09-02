@@ -54,6 +54,7 @@ let g:vimwiki_list = [{
       \ }]
 let g:taskwiki_disable_concealcursor = 1
 let g:taskwiki_markup_syntax = 'markdown'
+let g:vimwiki_hl_cb_checked = 1
 " }}}
 " indentLine {{{
 let g:indentLine_color_term = 18
