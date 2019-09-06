@@ -145,16 +145,24 @@ codi() {
 
 function rendermd() # Render a markdown file and reload Firefox.
 {
-    pandoc ".vimwiki/projects/productivity/review.md" --from gfm --to html5 --output ~/Downloads/md-preview.html --standalone --self-contained --highlight-style kate --css ~/git/dotfiles/bash/github-markdown.css
-    local focused_window
-    focused_window=$(xdotool getwindowfocus)
-    xdotool search --onlyvisible --class "Firefox" windowfocus key --window %@ "ctrl+r" || { 1>&2 echo "unable to signal Firefox"; }
-    xdotool windowfocus "$focused_window"
+    if [ "$1" ] ; then
+        pandoc "$1" --from gfm --to html5 --output ~/Downloads/md-preview.html --standalone --self-contained --highlight-style kate --css ~/git/dotfiles/bash/github-markdown.css
+        local focused_window
+        focused_window=$(xdotool getwindowfocus)
+        xdotool search --onlyvisible --class "Firefox" windowfocus key --window %@ "ctrl+r" || { 1>&2 echo "unable to signal Firefox"; }
+        xdotool windowfocus "$focused_window"
+    else
+        echo "'$1' is not a valid file!"
+    fi
 }
 
 function hotreloadmd() # Reload a markdown file when it is changed.
 {
-   find .vimwiki/projects/productivity/review.md | entr -p sh -c "rendermd"
+    if [ "$1" ] ; then
+        find "$1" | entr -p sh -c "rendermd $1"
+    else
+        echo "'$1' is not a valid file!"
+    fi
 }
 
 export PYENV_ROOT="$HOME/.pyenv"
