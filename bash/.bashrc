@@ -138,10 +138,21 @@ codi() {
 rendermd()
 {
     if [ "$1" ] ; then
-        pandoc "$1" --from gfm --to html5 --output ~/Downloads/md-preview.html --standalone --self-contained --highlight-style kate --css ~/git/dotfiles/bash/github-markdown.css
+        pandoc "$1" \
+            --from gfm \
+            --to html5 \
+            --output ~/Downloads/md-preview.html \
+            --standalone \
+            --self-contained \
+            --highlight-style kate \
+            --css ~/git/dotfiles/bash/github-markdown.css
         local focused_window
         focused_window=$(xdotool getwindowfocus)
-        xdotool search --onlyvisible --class "Firefox" windowfocus key --window %@ "ctrl+r" || { 1>&2 echo "unable to signal Firefox"; }
+        xdotool search \
+            --onlyvisible \
+            --class "Firefox" windowfocus key \
+            --window %@ "ctrl+r" \
+            || { 1>&2 echo "unable to signal Firefox"; }
         xdotool windowfocus "$focused_window"
     else
         echo "'$1' is not a valid file!"
