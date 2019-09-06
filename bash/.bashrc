@@ -143,7 +143,8 @@ codi() {
     Codi $syntax" "$@"
 }
 
-function rendermd() # Render a markdown file and reload Firefox.
+# Render a markdown file and reload Firefox
+rendermd()
 {
     if [ "$1" ] ; then
         pandoc "$1" --from gfm --to html5 --output ~/Downloads/md-preview.html --standalone --self-contained --highlight-style kate --css ~/git/dotfiles/bash/github-markdown.css
@@ -155,11 +156,13 @@ function rendermd() # Render a markdown file and reload Firefox.
         echo "'$1' is not a valid file!"
     fi
 }
+export -f rendermd
 
-function hotreloadmd() # Reload a markdown file when it is changed.
+# Reload a markdown file when it is changed
+function hotreloadmd
 {
     if [ "$1" ] ; then
-        find "$1" | entr -p sh -c "rendermd $1"
+        find "$1" | entr -p bash -c "rendermd $1"
     else
         echo "'$1' is not a valid file!"
     fi
