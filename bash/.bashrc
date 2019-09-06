@@ -153,7 +153,7 @@ export -f rendermd
 function hotreloadmd
 {
     if [ "$1" ] ; then
-        find "$1" | entr -p bash -c "rendermd $1"
+        find "$1" | entr -p sh -c "rendermd $1"
     else
         echo "'$1' is not a valid file!"
     fi
