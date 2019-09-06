@@ -81,15 +81,6 @@ function makezip()
     zip -r "${1%%/}.zip" "$1";
 }
 
-function mdpreview() # Render .md to html for previewing in browser
-{
-    if [ $1 ] ; then
-        pandoc $1 --from gfm --to html5 --output /tmp/md-preview.html --standalone --self-contained --highlight-style kate --css ~/git/dotfiles/bash/github-markdown.css
-    else
-        echo "'$1' is not a valid file!"
-    fi
-}
-
 function netinfo()
 {
     echo "--------------- Network Information ---------------"
