@@ -186,3 +186,6 @@ export NVM_DIR="$HOME/.nvm"
 # Add FZF key bindings and completions
 source /usr/share/fzf/key-bindings.bash
 source /usr/share/fzf/completion.bash
+
+# Show hidden files by default
+export FZF_DEFAULT_COMMAND='find .'
