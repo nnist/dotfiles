@@ -26,6 +26,7 @@ Plug 'bird-get/lslvimazing'             " LSL syntax
 Plug 'metakirby5/codi.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'tbabej/taskwiki'
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 " }}}
