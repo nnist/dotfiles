@@ -189,3 +189,5 @@ source /usr/share/fzf/completion.bash
 
 # Show hidden files by default
 export FZF_DEFAULT_COMMAND='find .'
+
+export BAT_THEME="base16"
