@@ -1,43 +1,47 @@
 " vim:fdm=marker
-" Plugins {{{
+
+" {{{ =====  Plugins  =========================================================
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-Plug 'tpope/vim-fugitive'				" Git wrapper
-Plug 'sjl/gundo.vim'					" Git-like undo tree
-Plug 'airblade/vim-gitgutter'			" Git diff
-Plug 'scrooloose/nerdtree'				" File explorer tree
-Plug 'Xuyuanp/nerdtree-git-plugin'		" ^ Git plugin
-Plug 'weynhamz/vim-plugin-minibufexpl'	" Buffer explorer
+Plug 'tpope/vim-fugitive'
+Plug 'sjl/gundo.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'weynhamz/vim-plugin-minibufexpl'
 function FixupBase16(info)
     !sed -i '/Base16hi/\! s/a:\(attr\|guisp\)/l:\1/g' ~/.vim/plugged/base16-vim/colors/*.vim
 endfunction
-Plug 'chriskempson/base16-vim', { 'do': function('FixupBase16') }			" Base16 theme
-Plug 'davidhalter/jedi-vim'				" Python autocompletion
-Plug 'nathangrigg/vim-beancount'        " Vim Beancount
-Plug 'w0rp/ale'                         " Asynchronous linting/fixing
-Plug 'itchyny/lightline.vim'            " Status line
-Plug 'nnist/base16-vim-lightline'       " Base16 theme for lightline
-Plug 'maximbaz/lightline-ale'           " ALE indicator for lightline
-Plug 'Yggdroot/indentLine'              " Show code indentation
-Plug 'bird-get/lslvimazing'             " LSL syntax
-"Plug 'vim-syntastic/syntastic'          " Syntastic
+Plug 'chriskempson/base16-vim', { 'do': function('FixupBase16') }
+Plug 'davidhalter/jedi-vim'
+Plug 'nathangrigg/vim-beancount'
+Plug 'w0rp/ale'
+Plug 'itchyny/lightline.vim'
+Plug 'nnist/base16-vim-lightline'
+Plug 'maximbaz/lightline-ale'
+Plug 'Yggdroot/indentLine'
+Plug 'bird-get/lslvimazing'
 Plug 'metakirby5/codi.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'tbabej/taskwiki'
 Plug 'junegunn/fzf.vim'
 
 call plug#end()
-" }}}
 
-" Plugin settings {{{
-" ALE {{{
+" }}} =========================================================================
+" {{{ =====  PLUGIN SETTINGS  =================================================
+" {{{ ----------  ALE  --------------------------------------------------------
+
 let g:ale_fix_on_save = 1
 "let g:ale_lint_on_text_changed = 'never'
 "let g:ale_lint_on_enter = 0
-" }}}
-" vimwiki and taskwiki {{{
+
+" }}} ------------------------------------------------------------------------- 
+" {{{ ----------  vimwiki and taskwiki  --------------------------------------- 
+
 filetype plugin on
 set nocompatible
 syntax on
@@ -57,13 +61,23 @@ let g:taskwiki_disable_concealcursor = 1
 let g:taskwiki_markup_syntax = 'markdown'
 let g:vimwiki_hl_cb_checked = 1
 let g:vimwiki_conceallevel = 0
-" }}}
-" indentLine {{{
+
+" }}} ------------------------------------------------------------------------- 
+" {{{ ----------  indentLine  -------------------------------------------------
+
 let g:indentLine_color_term = 18
 let g:indentLine_char_list = ['•']
 let g:indentLine_fileTypeExclude = ['markdown', 'json']
-" }}}
-" lightline {{{
+
+" }}} ------------------------------------------------------------------------- 
+" {{{ ----------  jedi  -------------------------------------------------------
+
+" Disable Jedi docstring popup during completion
+autocmd FileType python setlocal completeopt-=preview
+
+" }}} -------------------------------------------------------------------------
+" {{{ ----------  lightline  --------------------------------------------------
+
 set laststatus=2    " Show status line
 "set noshowmode      " Hide current mode; already shown in status line
 set showmode
@@ -95,15 +109,23 @@ let g:lightline.component_type = {
       \     'linter_errors': 'error',
       \     'linter_ok': 'left',
       \ }
-" }}}
-" fzf {{{
+
+" }}} ------------------------------------------------------------------------- 
+" {{{ ---------- vim-markdown  ------------------------------------------------
+
+let g:vim_markdown_folding_disabled = 1
+
+" }}} ------------------------------------------------------------------------- 
+" {{{ ----------  fzf  -------------------------------------------------------- 
+
 " Files command with preview window
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-" }}}
-" }}}
 
-" Basic config {{{
+" }}} ------------------------------------------------------------------------- 
+" }}} =========================================================================
+" {{{ =====  BASIC CONFIG  ====================================================
+
 set conceallevel=2                     " Conceal bold, italics, underline etc syntax
 set tabstop=4                          " Set default indentation to 4 spaces
 set shiftwidth=4                       " '                                 '
@@ -139,11 +161,9 @@ set backspace=indent,eol,start         " Allow backspacing over autoindent, line
 "set scrolljump=5
 set scrolloff=5                        " Set scroll offset
 set ttyfast                            " Faster redrawing
-" }}}
 
-" Other {{{
-" Disable markdown folding
-let g:vim_markdown_folding_disabled = 1
+" }}} =========================================================================
+" {{{ =====  OTHER  ===========================================================
 
 " Base16-shell profile helper
 if filereadable(expand("~/.vimrc_background"))
@@ -154,10 +174,8 @@ endif
 let base16colorspace=256		" Access colors present in 256 colorspace
 colorscheme base16-default-dark
 
-" Disable Jedi docstring popup during completion
-autocmd FileType python setlocal completeopt-=preview
+" {{{ ---------- Set filetype indentation  ------------------------------------
 
-" Set indentation for specified filetypes
 autocmd BufRead,BufNewFile 
       \ *.beancount,*.css,*.scss,*.js,.vimrc
       \ setlocal tabstop=2 shiftwidth=2
@@ -165,7 +183,9 @@ autocmd BufRead,BufNewFile
       \ *.html
       \ setlocal tabstop=4 shiftwidth=4
 
-" Allow cursor change in tmux mode
+" }}} -------------------------------------------------------------------------
+" {{{ ---------- Allow cursor change in tmux mode  ----------------------------
+
 if exists('$TMUX')
 	let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 	let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
@@ -173,30 +193,38 @@ else
 	let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 	let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
-" }}}
 
-" Bindings {{{
-" Close buffer without killing window
-nnoremap <leader>q :bp<cr>:bd #<cr>
+" }}} -------------------------------------------------------------------------
+" {{{ ----------  Load .vimrc in git repository  ------------------------------
+
+let git_path = system("git rev-parse --show-toplevel 2>/dev/null")
+let git_vimrc = substitute(git_path, '\n', '', '') . "/.vimrc"
+if !empty(glob(git_vimrc))
+  sandbox exec ":source " . git_vimrc
+endif
+
+" }}} -------------------------------------------------------------------------
+" }}} =========================================================================
+" {{{ =====  BINDINGS  ========================================================
+
+" Bind leader key to ,
+let mapleader = ','
 
 " Map F5 and F6 to toggle spellcheck
 map <F5> :setlocal spell! spelllang=en_us<cr>
 map <F6> :setlocal spell! spelllang=nl<cr>
 
-" Bind leader key to ,
-let mapleader = ','
+" {{{ ----------  gitgutter  --------------------------------------------------
 
-" Bind Ctrl-n to toggle NERD tree
-map <C-n> :NERDTreeToggle<CR>
-
-" Bind GitGutter stuff
 nmap <Leader>ga <Plug>GitGutterStageHunk
 nmap <Leader>gu <Plug>GitGutterRevertHunk
 nmap <Leader>gd <Plug>GitGutterPreviewHunk
 nmap <Leader>gn <Plug>GitGutterNextHunk
 nmap <Leader>gp <Plug>GitGutterPrevHunk
 
-" vim-fugitive stuff
+" }}} -------------------------------------------------------------------------
+" {{{ ----------  vim-fugitive  -----------------------------------------------
+
 "map <Leader>gs :Gstatus<CR>
 "map <Leader>gD :Gvdiff<CR>
 "map <Leader>gr :Gread<CR>
@@ -207,12 +235,19 @@ map <Leader>gc :Gcommit<CR>
 "nmap <Leader>gl :Gpull<cr>
 "nmap <Leader>gp :Gpush $USER HEAD:
 
-" Close NerdTree buffer
-nnoremap <Leader>q :bp\|bd #<CR>
+" }}} -------------------------------------------------------------------------
+" {{{ ----------  nerdtree  ---------------------------------------------------
 
-" }}}
+" Bind Ctrl-n to toggle NERD tree
+map <C-n> :NERDTreeToggle<CR>
 
-" Fuctions {{{
+" Close buffer without killing window
+nnoremap <leader>q :bp<cr>:bd #<cr>
+
+" }}} -------------------------------------------------------------------------
+" }}} =========================================================================
+" {{{ =====  FUCTIONS  ========================================================
+
 " Enable * and # in visual selection mode
 function! s:VSetSearch()
   let temp = @@
@@ -223,11 +258,5 @@ endfunction
 
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
-" }}}
 
-" Load .vimrc in git repository {{{
-let git_path = system("git rev-parse --show-toplevel 2>/dev/null")
-let git_vimrc = substitute(git_path, '\n', '', '') . "/.vimrc"
-if !empty(glob(git_vimrc))
-  sandbox exec ":source " . git_vimrc
-endif
+" }}} =========================================================================
