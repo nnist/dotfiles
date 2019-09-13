@@ -145,6 +145,7 @@ rendermd()
             --standalone \
             --self-contained \
             --highlight-style kate \
+            --metadata pagetitle="$1" \
             --css ~/git/dotfiles/bash/github-markdown.css
         local focused_window
         focused_window=$(xdotool getwindowfocus)
