@@ -42,4 +42,5 @@ fi
 
 # Start programs
 numlockx &
+unclutter &
 exec i3
