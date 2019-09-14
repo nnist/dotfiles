@@ -28,6 +28,8 @@ Plug 'metakirby5/codi.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'tbabej/taskwiki'
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 
 call plug#end()
 
