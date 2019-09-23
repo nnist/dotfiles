@@ -25,7 +25,7 @@ Plug 'maximbaz/lightline-ale'
 Plug 'Yggdroot/indentLine'
 Plug 'bird-get/lslvimazing'
 Plug 'metakirby5/codi.vim'
-Plug 'vimwiki/vimwiki'
+Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 Plug 'tbabej/taskwiki'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
@@ -219,11 +219,11 @@ map <F6> :setlocal spell! spelllang=nl<cr>
 
 " {{{ ----------  gitgutter  --------------------------------------------------
 
-nmap <Leader>ga <Plug>GitGutterStageHunk
-nmap <Leader>gu <Plug>GitGutterRevertHunk
-nmap <Leader>gd <Plug>GitGutterPreviewHunk
-nmap <Leader>gn <Plug>GitGutterNextHunk
-nmap <Leader>gp <Plug>GitGutterPrevHunk
+nmap <Leader>ga <Plug>(GitGutterStageHunk)
+nmap <Leader>gu <Plug>(GitGutterRevertHunk)
+nmap <Leader>gd <Plug>(GitGutterPreviewHunk)
+nmap <Leader>gn <Plug>(GitGutterNextHunk)
+nmap <Leader>gp <Plug>(GitGutterPrevHunk)
 
 " }}} -------------------------------------------------------------------------
 " {{{ ----------  vim-fugitive  -----------------------------------------------
