@@ -128,6 +128,20 @@ command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 " }}} ------------------------------------------------------------------------- 
+" {{{ ----------  Goyo  ------------------------------------------------------- 
+
+function! s:goyo_enter()
+  GitGutterDisable
+endfunction
+
+function! s:goyo_leave()
+  GitGutterEnable
+  GitGutterBufferEnable
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+" }}} ------------------------------------------------------------------------- 
 " }}} =========================================================================
 " {{{ =====  BASIC CONFIG  ====================================================
 
