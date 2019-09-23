@@ -47,6 +47,7 @@ let g:ale_fix_on_save = 1
 filetype plugin on
 set nocompatible
 syntax on
+autocmd FileType vimwiki setlocal concealcursor=c
 let g:vimwiki_folding = 'expr'
 let g:vimwiki_list = [{
       \ 'path': '~/.vimwiki',
@@ -62,7 +63,6 @@ let g:vimwiki_list = [{
 let g:taskwiki_disable_concealcursor = 1
 let g:taskwiki_markup_syntax = 'markdown'
 let g:vimwiki_hl_cb_checked = 1
-let g:vimwiki_conceallevel = 0
 let g:taskwiki_sort_orders={"S": "scheduled+"}
 
 " }}} ------------------------------------------------------------------------- 
@@ -70,7 +70,7 @@ let g:taskwiki_sort_orders={"S": "scheduled+"}
 
 let g:indentLine_color_term = 18
 let g:indentLine_char_list = ['•']
-let g:indentLine_fileTypeExclude = ['markdown', 'json']
+let g:indentLine_fileTypeExclude = ['markdown', 'json', 'vimwiki']
 
 " }}} ------------------------------------------------------------------------- 
 " {{{ ----------  jedi  -------------------------------------------------------
@@ -130,6 +130,7 @@ command! -bang -nargs=? -complete=dir Files
 " {{{ =====  BASIC CONFIG  ====================================================
 
 set conceallevel=2                     " Conceal bold, italics, underline etc syntax
+set concealcursor=c                    " Do not conceal current line
 set tabstop=4                          " Set default indentation to 4 spaces
 set shiftwidth=4                       " '                                 '
 set updatetime=250                     " 4000 default, 250 for gitgutter
