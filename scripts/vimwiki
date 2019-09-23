@@ -1,2 +1,4 @@
 #!/bin/bash
-alacritty --config-file "$HOME/.config/alacritty/alacritty-typewriter.yml" -e "$HOME/git/dotfiles/scripts/vimwiki.sh"
+alacritty \
+    --config-file "$HOME/.config/alacritty/alacritty-typewriter.yml" \
+    -e "$HOME/git/dotfiles/scripts/vimwiki.sh"
