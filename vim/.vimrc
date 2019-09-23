@@ -64,6 +64,7 @@ let g:taskwiki_disable_concealcursor = 1
 let g:taskwiki_markup_syntax = 'markdown'
 let g:vimwiki_hl_cb_checked = 1
 let g:taskwiki_sort_orders={"S": "scheduled+"}
+let g:vimwiki_conceal_pre = 1
 
 " }}} ------------------------------------------------------------------------- 
 " {{{ ----------  indentLine  -------------------------------------------------
