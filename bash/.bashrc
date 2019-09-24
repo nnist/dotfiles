@@ -171,6 +171,56 @@ function hotreloadmd
     fi
 }
 
+# fbr - checkout git branch (including remote branches)
+#   - sorted by most recent commit
+#   - limit 30 last branches
+fbr() {
+  local branches
+  local num_branches
+  local branch
+  local target
+
+  branches="$(
+    git for-each-ref \
+      --count=30 \
+      --sort=-committerdate \
+      refs/heads/ \
+      --format='%(refname:short)'
+  )" || return
+
+  num_branches="$(wc -l <<< "$branches")"
+
+  branch="$(
+    echo "$branches" \
+      | fzf-tmux -d "$((2 + "$num_branches"))" +m
+  )" || return
+
+  target="$(
+    echo "$branch" \
+      | sed "s/.* //" \
+      | sed "s#remotes/[^/]*/##"
+  )" || return
+
+  git checkout "$target"
+}
+
+# fcoc - checkout git commit
+fcoc() {
+  local commits
+  local commit
+
+  commits="$(
+    git log --pretty=oneline --abbrev-commit --reverse
+  )" || return
+
+  commit="$(
+    echo "$commits" \
+      | fzf --tac +s +m -e
+  )" || return
+
+  git checkout "$(echo "$commit" | sed "s/ .*//")"
+}
+
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
