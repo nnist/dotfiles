@@ -125,7 +125,7 @@ let g:vim_markdown_folding_disabled = 1
 
 " Files command with preview window
 command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('up:60%'), <bang>0)
 
 " Ag command with preview window
 command! -bang -nargs=* Ag
