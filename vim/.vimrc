@@ -314,3 +314,6 @@ vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
 
 " }}} =========================================================================
+
+" Disallow unsafe local vimrc commands
+set secure
