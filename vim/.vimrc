@@ -30,6 +30,7 @@ Plug 'tbabej/taskwiki'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
