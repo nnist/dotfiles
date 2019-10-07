@@ -247,6 +247,12 @@ if !empty(glob(git_vimrc))
 endif
 
 " }}} -------------------------------------------------------------------------
+" {{{ ----------  Miscellaneous -----------------------------------------------
+
+" Stop accidentally saving ';' or ':' files due to typo
+autocmd BufWritePre [:;]* throw 'Forbidden file name: ' . expand('<afile>')
+
+" }}} -------------------------------------------------------------------------
 " }}} =========================================================================
 " {{{ =====  BINDINGS  ========================================================
 
@@ -309,3 +315,6 @@ vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
 
 " }}} =========================================================================
+
+" Disallow unsafe local vimrc commands
+set secure
