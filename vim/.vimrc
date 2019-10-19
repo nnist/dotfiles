@@ -31,6 +31,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'cespare/vim-toml'
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
