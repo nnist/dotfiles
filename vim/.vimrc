@@ -69,6 +69,11 @@ let g:taskwiki_sort_orders={"S": "scheduled+"}
 let g:vimwiki_global_ext = 0
 let g:vimwiki_conceal_pre = 1
 
+" Override colors to fit base16-default-dark theme
+autocmd ColorScheme * highlight TaskWikiTaskActive term=bold cterm=bold ctermfg=2
+autocmd ColorScheme * highlight TaskWikiTaskPriority term=bold cterm=bold ctermfg=3
+autocmd ColorScheme * highlight TaskWikiTaskDeleted ctermfg=1 ctermbg=0
+
 " }}} ------------------------------------------------------------------------- 
 " {{{ ----------  indentLine  -------------------------------------------------
 
