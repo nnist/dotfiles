@@ -268,6 +268,56 @@ fcoc_preview() {
   git checkout $(echo "$commit" | sed "s/ .*//")
 }
 
+# quickcommit - quickly create a git commit, for when message does not matter
+quickcommit() {
+    if git diff-index --quiet HEAD --; then
+        echo "No changes to commit."
+    else
+        if confirm "Are you sure you want to create an autocommit?"; then
+            git add .
+            git commit -m 'Autocommit'
+            git push
+        fi
+    fi
+}
+
+# confirm - ask for confirmation
+confirm() {
+    # from https://gist.github.com/davejamesmiller/1965569
+    local prompt default reply
+
+    if [ "${2:-}" = "Y" ]; then
+        prompt="Y/n"
+        default=Y
+    elif [ "${2:-}" = "N" ]; then
+        prompt="y/N"
+        default=N
+    else
+        prompt="y/n"
+        default=
+    fi
+
+    while true; do
+        # Ask the question (not using "read -p" as it uses stderr not stdout)
+        echo -n "$1 [$prompt] "
+
+        # Read the answer (use /dev/tty in case stdin is redirected from somewhere else)
+        read reply </dev/tty
+
+        # Default?
+        if [ -z "$reply" ]; then
+            reply=$default
+        fi
+
+        # Check if the reply is valid
+        case "$reply" in
+            Y*|y*) return 0 ;;
+            N*|n*) return 1 ;;
+        esac
+
+    done
+}
+
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
