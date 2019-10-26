@@ -69,10 +69,22 @@ let g:taskwiki_sort_orders={"S": "scheduled+"}
 let g:vimwiki_global_ext = 0
 let g:vimwiki_conceal_pre = 1
 
-" Override colors to fit base16-default-dark theme
+" Override taskwiki colors to fit base16-default-dark theme
 autocmd ColorScheme * highlight TaskWikiTaskActive term=bold cterm=bold ctermfg=2
 autocmd ColorScheme * highlight TaskWikiTaskPriority term=bold cterm=bold ctermfg=3
 autocmd ColorScheme * highlight TaskWikiTaskDeleted ctermfg=1 ctermbg=0
+
+" Override vimwiki colors to fit base16-default-dark theme
+autocmd ColorScheme * highlight VimwikiLink ctermfg=16 cterm=underline
+autocmd ColorScheme * highlight VimwikiHR ctermfg=4
+autocmd ColorScheme * highlight VimwikiHeaderChar ctermfg=8
+autocmd ColorScheme * highlight VimwikiHeader1 term=bold cterm=bold ctermfg=4
+autocmd ColorScheme * highlight VimwikiHeader2 term=bold cterm=bold ctermfg=4
+autocmd ColorScheme * highlight VimwikiHeader3 term=bold cterm=bold ctermfg=4
+autocmd ColorScheme * highlight VimwikiHeader4 term=bold cterm=bold ctermfg=4
+autocmd ColorScheme * highlight VimwikiHeader5 term=bold cterm=bold ctermfg=4
+autocmd ColorScheme * highlight VimwikiHeader6 term=bold cterm=bold ctermfg=4
+
 
 " }}} ------------------------------------------------------------------------- 
 " {{{ ----------  indentLine  -------------------------------------------------
