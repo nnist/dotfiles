@@ -61,6 +61,7 @@ let g:vimwiki_list = [{
       \ 'syntax': 'markdown',
       \ 'ext': '.md',
       \ 'path_html': '~/vimwiki/site_html/',
+      \ 'list_margin': 0,
       \ }]
 let g:taskwiki_disable_concealcursor = 1
 let g:taskwiki_markup_syntax = 'markdown'
