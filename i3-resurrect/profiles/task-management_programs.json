@@ -15,7 +15,7 @@
       "--title",
       "taskschedule",
       "-e",
-      "/home/nicole/git/dotfiles/scripts/taskschedule.sh"
+      "/home/nicole/git/dotfiles/scripts/run-taskschedule.sh"
     ],
     "working_directory": "/home/nicole/git/taskschedule"
   },
