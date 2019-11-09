@@ -1,0 +1,28 @@
+[
+  {
+    "command": [
+      "alacritty",
+      "--title",
+      "vimwiki",
+      "-e",
+      "/home/nicole/git/dotfiles/scripts/vimwiki.sh"
+    ],
+    "working_directory": "/home/nicole/.vimwiki"
+  },
+  {
+    "command": [
+      "alacritty",
+      "--title",
+      "taskschedule",
+      "-e",
+      "/home/nicole/git/dotfiles/scripts/taskschedule.sh"
+    ],
+    "working_directory": "/home/nicole/git/taskschedule"
+  },
+  {
+    "command": [
+      "alacritty"
+    ],
+    "working_directory": "/home/nicole"
+  }
+]
