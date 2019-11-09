@@ -182,5 +182,5 @@ exec --no-startup-id nm-applet
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec "compton -b"
 exec "hsetroot -solid '#181818'"
-exec "~/.config/i3/workspace-tasks.sh"
+exec "~/git/dotfiles/scripts/create-workspace.sh 1 task-management"
 exec "xautolock -locker 'i3lock -c 181818 -e -f'"
