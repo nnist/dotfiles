@@ -1,0 +1,39 @@
+[
+  {
+    "command": [
+      "firefox"
+    ],
+    "working_directory": "/home/nicole"
+  },
+  {
+    "command": [
+      "alacritty",
+      "-d",
+      "0",
+      "0"
+    ],
+    "working_directory": "/home/nicole/git/"
+  },
+  {
+    "command": [
+      "alacritty",
+      "-d",
+      "0",
+      "0",
+      "--title",
+      "vimwiki",
+      "-e",
+      "/home/nicole/git/dotfiles/scripts/run_vimwiki.sh"
+    ],
+    "working_directory": "/home/nicole/.vimwiki"
+  },
+  {
+    "command": [
+      "alacritty",
+      "-d",
+      "0",
+      "0"
+    ],
+    "working_directory": "/home/nicole/git/"
+  }
+]
