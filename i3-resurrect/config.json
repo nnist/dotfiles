@@ -1,0 +1,17 @@
+{
+  "window_command_mappings": [
+    {
+      "class": "Gnome-terminal",
+      "command": "gnome-terminal"
+    },
+    {
+      "class": "firefox",
+      "command": "firefox"
+    }
+  ],
+  "window_swallow_criteria": {},
+  "terminals": [
+    "Gnome-terminal",
+    "Alacritty"
+  ]
+}
