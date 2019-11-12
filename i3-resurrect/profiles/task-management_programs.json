@@ -4,6 +4,8 @@
       "alacritty",
       "--title",
       "vimwiki",
+      "--config-file",
+      "/home/nicole/.config/alacritty/alacritty-typewriter.yml",
       "-e",
       "/home/nicole/git/dotfiles/scripts/run-vimwiki.sh"
     ],
