@@ -58,6 +58,7 @@ let g:vimwiki_list = [{
       \   'javascript': 'javascript',
       \   'bash': 'sh',
       \   'python': 'python',
+      \   'json': 'json',
       \  },
       \ 'syntax': 'markdown',
       \ 'ext': '.md',
