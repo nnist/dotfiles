@@ -229,6 +229,9 @@ set ttyfast                            " Faster redrawing
 " }}} =========================================================================
 " {{{ =====  OTHER  ===========================================================
 
+" Override base16 theme highlighting
+autocmd ColorScheme * highlight Folded ctermfg=19 ctermbg=0
+
 " Base16-shell profile helper
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
