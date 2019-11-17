@@ -39,7 +39,7 @@
     "command": [
       "alacritty",
       "--class",
-      "vim-beancount-container",
+      "vim-beancount",
       "-e",
       "/home/nicole/git/dotfiles/scripts/run-vim-beancount.sh"
     ],
