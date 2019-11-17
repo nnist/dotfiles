@@ -1,0 +1,48 @@
+[
+  {
+    "command": [
+      "alacritty",
+      "--class",
+      "fava",
+      "-e",
+      "/home/nicole/git/dotfiles/scripts/run-fava.sh"
+    ],
+    "working_directory": "/home/nicole/beancount"
+  },
+  {
+    "command": [
+      "alacritty",
+      "--class",
+      "vimwiki",
+      "-e",
+      "/home/nicole/git/dotfiles/scripts/run-vimwiki-dark.sh"
+    ],
+    "working_directory": "/home/nicole/.vimwiki"
+  },
+  {
+    "command": [
+      "alacritty",
+      "--working-directory",
+      "/home/nicole/beancount"
+    ],
+    "working_directory": "/home/nicole/beancount"
+  },
+  {
+    "command": [
+      "firefox",
+      "--new-window",
+      "http://localhost:5000/personal-ledger/balance_sheet/"
+    ],
+    "working_directory": "/home/nicole"
+  },
+  {
+    "command": [
+      "alacritty",
+      "--class",
+      "vim-beancount-container",
+      "-e",
+      "/home/nicole/git/dotfiles/scripts/run-vim-beancount.sh"
+    ],
+    "working_directory": "/home/nicole/beancount"
+  }
+]
