@@ -20,7 +20,7 @@
       "-d",
       "0",
       "0",
-      "--title",
+      "--class",
       "vimwiki",
       "-e",
       "/home/nicole/git/dotfiles/scripts/run-vimwiki-dark.sh"

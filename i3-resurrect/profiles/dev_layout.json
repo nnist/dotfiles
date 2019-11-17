@@ -40,8 +40,7 @@
       "swallows": [
         {
           "class": "^firefox$",
-          "instance": "^Navigator$",
-          "title": "^New\\ Tab\\ \\-\\ Mozilla\\ Firefox$"
+          "instance": "^Navigator$"
         }
       ]
     },
@@ -113,8 +112,7 @@
           "swallows": [
             {
               "class": "^Alacritty$",
-              "instance": "^Alacritty$",
-              "title": "^vimwiki$"
+              "instance": "vimwiki"
             }
           ]
         },
