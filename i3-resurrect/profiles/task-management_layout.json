@@ -40,8 +40,7 @@
       "swallows": [
         {
           "class": "^Alacritty$",
-          "instance": "^Alacritty$",
-          "title": "^vimwiki$"
+          "instance": "vimwiki"
         }
       ]
     },
@@ -87,8 +86,7 @@
           "swallows": [
             {
               "class": "^Alacritty$",
-              "instance": "^Alacritty$",
-              "title": "^taskschedule$"
+              "instance": "taskschedule"
             }
           ]
         },
@@ -114,8 +112,7 @@
           "swallows": [
             {
               "class": "^Alacritty$",
-              "instance": "^Alacritty$",
-              "title": "^nicole@duotine:\\~$"
+              "instance": "^Alacritty$"
             }
           ]
         }
