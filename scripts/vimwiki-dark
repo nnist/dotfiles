@@ -1,0 +1,3 @@
+#!/bin/bash
+alacritty \
+    -e "$HOME/git/dotfiles/scripts/run-vimwiki-dark.sh"

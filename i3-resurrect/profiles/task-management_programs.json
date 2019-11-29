@@ -1,0 +1,30 @@
+[
+  {
+    "command": [
+      "alacritty",
+      "--class",
+      "vimwiki",
+      "--config-file",
+      "/home/nicole/.config/alacritty/alacritty-typewriter.yml",
+      "-e",
+      "/home/nicole/git/dotfiles/scripts/run-vimwiki.sh"
+    ],
+    "working_directory": "/home/nicole/.vimwiki"
+  },
+  {
+    "command": [
+      "alacritty",
+      "--class",
+      "taskschedule",
+      "-e",
+      "/home/nicole/git/dotfiles/scripts/run-taskschedule.sh"
+    ],
+    "working_directory": "/home/nicole/git/taskschedule"
+  },
+  {
+    "command": [
+      "alacritty"
+    ],
+    "working_directory": "/home/nicole"
+  }
+]

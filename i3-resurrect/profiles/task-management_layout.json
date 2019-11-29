@@ -1,0 +1,122 @@
+{
+  "border": "normal",
+  "current_border_width": -1,
+  "floating": "auto_off",
+  "fullscreen_mode": 0,
+  "geometry": {
+    "x": 0,
+    "y": 0,
+    "width": 0,
+    "height": 0
+  },
+  "layout": "splith",
+  "name": "1: task-management",
+  "orientation": "horizontal",
+  "percent": null,
+  "scratchpad_state": "none",
+  "sticky": false,
+  "type": "workspace",
+  "workspace_layout": "default",
+  "nodes": [
+    {
+      "border": "pixel",
+      "current_border_width": 1,
+      "floating": "auto_off",
+      "fullscreen_mode": 0,
+      "geometry": {
+        "x": 0,
+        "y": 0,
+        "width": 644,
+        "height": 388
+      },
+      "layout": "splith",
+      "name": "vimwiki",
+      "orientation": "none",
+      "percent": 0.5,
+      "scratchpad_state": "none",
+      "sticky": false,
+      "type": "con",
+      "workspace_layout": "default",
+      "swallows": [
+        {
+          "class": "^Alacritty$",
+          "instance": "vimwiki"
+        }
+      ]
+    },
+    {
+      "border": "normal",
+      "current_border_width": -1,
+      "floating": "auto_off",
+      "fullscreen_mode": 0,
+      "geometry": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "layout": "splitv",
+      "name": null,
+      "orientation": "vertical",
+      "percent": 0.5,
+      "scratchpad_state": "none",
+      "sticky": false,
+      "type": "con",
+      "workspace_layout": "default",
+      "nodes": [
+        {
+          "border": "pixel",
+          "current_border_width": 1,
+          "floating": "auto_off",
+          "fullscreen_mode": 0,
+          "geometry": {
+            "x": 0,
+            "y": 0,
+            "width": 644,
+            "height": 388
+          },
+          "layout": "splith",
+          "name": "taskschedule",
+          "orientation": "none",
+          "percent": 0.7600000000000002,
+          "scratchpad_state": "none",
+          "sticky": false,
+          "type": "con",
+          "workspace_layout": "default",
+          "swallows": [
+            {
+              "class": "^Alacritty$",
+              "instance": "taskschedule"
+            }
+          ]
+        },
+        {
+          "border": "pixel",
+          "current_border_width": 1,
+          "floating": "auto_off",
+          "fullscreen_mode": 0,
+          "geometry": {
+            "x": 0,
+            "y": 0,
+            "width": 644,
+            "height": 388
+          },
+          "layout": "splith",
+          "name": "nicole@duotine:~",
+          "orientation": "none",
+          "percent": 0.2399999999999998,
+          "scratchpad_state": "none",
+          "sticky": false,
+          "type": "con",
+          "workspace_layout": "default",
+          "swallows": [
+            {
+              "class": "^Alacritty$",
+              "instance": "^Alacritty$"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
