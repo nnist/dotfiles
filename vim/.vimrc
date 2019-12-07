@@ -321,6 +321,14 @@ map <Leader>gc :Gcommit<CR>
 "nmap <Leader>gp :Gpush $USER HEAD:
 
 " }}} -------------------------------------------------------------------------
+" {{{ ----------  coverage-highlight  -----------------------------------------
+
+map <Leader>co :HighlightCoverageOff<CR>
+map <Leader>cr :HighlightCoverage<CR>
+map <Leader>cn :NextUncovered<CR>
+map <Leader>cp :PrevUncovered<CR>
+
+" }}} -------------------------------------------------------------------------
 " {{{ ----------  nerdtree  ---------------------------------------------------
 
 " Bind Ctrl-n to toggle NERD tree
