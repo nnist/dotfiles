@@ -32,7 +32,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'cespare/vim-toml'
 Plug 'leafgarland/typescript-vim'
-Plug 'alfredodeza/coveragepy.vim'
+Plug 'mgedmin/coverage-highlight.vim'
 
 call plug#end()
 
