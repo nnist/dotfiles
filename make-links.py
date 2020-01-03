@@ -27,7 +27,7 @@ TARGETS = ['bash/.bash_aliases', 'bash/.bashrc',
 DOTFILES_DIR = HOME_DIR + 'git/dotfiles/'
 
 
-def make_links(force=False):
+def make_links(force=False, dry_run=False):
     """Create symlinks."""
     num_success = 0
     num_failed = 0
@@ -39,10 +39,11 @@ def make_links(force=False):
         if force:
             options += 'f'
 
-        process = subprocess.run(['ln', '-s' + options, target, link],
-                                 stdout=subprocess.PIPE,
-                                 stderr=subprocess.PIPE)
-        if process.returncode == 0:
+        if not dry_run:
+            process = subprocess.run(['ln', '-s' + options, target, link],
+                                     stdout=subprocess.PIPE,
+                                     stderr=subprocess.PIPE)
+        if dry_run or process.returncode == 0:
             num_success += 1
             log.info("Made link from '%s' to '%s'.", link, target)
         else:
@@ -63,6 +64,9 @@ def main(argv):
     parser.add_argument(
         '-f', '--force', help="force overwriting links", action='store_true'
     )
+    parser.add_argument(
+        '--dry-run', help="don't actually make links", action='store_true'
+    )
     args = parser.parse_args(argv)
 
     if args.verbose:
@@ -74,7 +78,7 @@ def main(argv):
     if args.force:
         log.info('Force overwriting links.')
 
-    num_success, num_failed = make_links(args.force)
+    num_success, num_failed = make_links(args.force, args.dry_run)
     print('Done. Created {}/{} links.'.format(num_success, num_failed))
 
 
