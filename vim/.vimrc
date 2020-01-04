@@ -33,6 +33,7 @@ Plug 'junegunn/limelight.vim'
 Plug 'cespare/vim-toml'
 Plug 'leafgarland/typescript-vim'
 Plug 'mgedmin/coverage-highlight.vim'
+Plug 'jpalardy/vim-slime'
 
 call plug#end()
 
@@ -190,6 +191,13 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " {{{ ----------  Beancount  -------------------------------------------------- 
 
 autocmd FileType beancount setlocal foldlevel=0
+
+" }}} ------------------------------------------------------------------------- 
+" {{{ ----------  vim-slime  -------------------------------------------------- 
+
+let g:slime_target = "tmux"
+let g:slime_paste_file = "$HOME/.slime_paste"
+let g:slime_python_ipython = 1
 
 " }}} ------------------------------------------------------------------------- 
 " }}} =========================================================================
