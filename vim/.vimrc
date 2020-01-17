@@ -239,6 +239,7 @@ set backspace=indent,eol,start         " Allow backspacing over autoindent, line
 "set scrolljump=5
 set scrolloff=5                        " Set scroll offset
 set ttyfast                            " Faster redrawing
+set relativenumber
 
 " }}} =========================================================================
 " {{{ =====  OTHER  ===========================================================
