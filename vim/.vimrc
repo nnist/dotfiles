@@ -88,6 +88,8 @@ autocmd ColorScheme * highlight VimwikiHeader3 term=bold cterm=bold ctermfg=4
 autocmd ColorScheme * highlight VimwikiHeader4 term=bold cterm=bold ctermfg=4
 autocmd ColorScheme * highlight VimwikiHeader5 term=bold cterm=bold ctermfg=4
 autocmd ColorScheme * highlight VimwikiHeader6 term=bold cterm=bold ctermfg=4
+autocmd ColorScheme * highlight VimwikiCellSeparator ctermfg=8
+autocmd ColorScheme * highlight VimwikiDelText cterm=strikethrough
 
 
 " }}} ------------------------------------------------------------------------- 
