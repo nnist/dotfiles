@@ -1,0 +1,51 @@
+[
+  {
+    "command": [
+      "firefox"
+    ],
+    "working_directory": "/home/nicole"
+  },
+  {
+    "command": [
+      "/usr/bin/alacritty",
+      "-d",
+      "0",
+      "0"
+    ],
+    "working_directory": "/home/nicole/git"
+  },
+  {
+    "command": [
+      "/usr/bin/alacritty",
+      "-d",
+      "0",
+      "0",
+      "--class",
+      "vimwiki",
+      "-e",
+      "/home/nicole/git/dotfiles/scripts/run-vimwiki-dark.sh"
+    ],
+    "working_directory": "/home/nicole/.vimwiki"
+  },
+  {
+    "command": [
+      "/usr/bin/alacritty",
+      "-d",
+      "0",
+      "0"
+    ],
+    "working_directory": "/home/nicole/git"
+  },
+  {
+    "command": [
+      "/usr/bin/alacritty"
+    ],
+    "working_directory": "/home/nicole/git"
+  },
+  {
+    "command": [
+      "/usr/bin/alacritty"
+    ],
+    "working_directory": "/home/nicole/git"
+  }
+]
