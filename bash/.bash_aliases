@@ -12,7 +12,7 @@ alias tmux-dev='tmux new-session \; \
     split-window -h -p 39\; \
     split-window -v -p 1\; \
     select-pane -t 0 \;'
-alias ports="netstat -tulpn" # List open ports and programs which use them
+alias ports="ss -tulpn" # List open ports and programs which use them
 alias lock="i3lock -c 181818 -e -f"
 alias pip-update="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install --user -U"
 
