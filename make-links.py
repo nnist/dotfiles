@@ -13,17 +13,18 @@ HOME_DIR = os.path.expanduser('~') + '/'
 SOURCES = ['.bash_aliases', '.bashrc',
            '.bash_completion.d/task.sh',
            '.dircolors', '.gitignore', '.pylintrc',
-           '.tmux.conf', '.vim', '.vimrc', '.xinitrc', '.xprofile', '.vit',
-           'termux.properties', '.config/i3', '.config/i3-resurrect',
+           '.tmux.conf', '.vim', '.vimrc', '.xinitrc', '.xprofile', '.Xmodmap',
+           '.vit', 'termux.properties', '.config/i3', '.config/i3-resurrect',
            '.local/share/rofi', '.config/alacritty/alacritty.yml',
            '.config/dunst', '.config/polybar', '.local/bin/vimwiki', '.ipython']
 TARGETS = ['bash/.bash_aliases', 'bash/.bashrc',
            'bash/.bash_completion.d/task.sh',
            'bash/.dircolors', '.gitignore', 'pylint/.pylintrc',
            'tmux/.tmux.conf', 'vim/.vim', 'vim/.vimrc',
-           'xorg/.xinitrc', 'xorg/.xprofile', 'vit/.vit',
+           'xorg/.xinitrc', 'xorg/.xprofile', 'xorg/.Xmodmap', 'vit/.vit',
            'termux/termux.properties', 'i3', 'i3-resurrect', 'rofi',
-           'alacritty/alacritty.yml', 'dunst', 'polybar', 'scripts/vimwiki', 'ipython/.ipython']
+           'alacritty/alacritty.yml', 'dunst', 'polybar', 'scripts/vimwiki',
+           'ipython/.ipython']
 DOTFILES_DIR = HOME_DIR + 'git/dotfiles/'
 
 
