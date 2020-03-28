@@ -23,6 +23,9 @@ bindsym $mod+Shift+q kill
 # Start launcher
 bindsym $mod+d exec rofi -show run -theme base16-default-dark
 
+# Start util script launcher
+bindsym $mod+t exec "~/git/dotfiles/scripts/rofi-utils.sh"
+
 # Lock screen
 bindsym $mod+l exec "i3lock -c 181818 -e -f"
 
