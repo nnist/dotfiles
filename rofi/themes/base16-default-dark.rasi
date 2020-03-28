@@ -9,6 +9,7 @@
 * {
     red:                         rgba ( 171, 70, 66, 100 % );
     blue:                        rgba ( 124, 175, 194, 100 % );
+    yellow:                      rgba ( 247, 202, 136, 100 % );
     lightfg:                     rgba ( 232, 232, 232, 100 % );
     lightbg:                     rgba ( 40, 40, 40, 100 % );
     foreground:                  rgba ( 216, 216, 216, 100 % );
@@ -16,8 +17,8 @@
     background-color:            rgba ( 24, 24, 24, 0 % );
     separatorcolor:              @foreground;
     border-color:                @foreground;
-    selected-normal-foreground:  @lightbg;
-    selected-normal-background:  @lightfg;
+    selected-normal-foreground:  @background;
+    selected-normal-background:  @blue;
     selected-active-foreground:  @background;
     selected-active-background:  @blue;
     selected-urgent-foreground:  @background;
@@ -37,9 +38,10 @@
     spacing:                     2;
 }
 window {
+    font: "hack mono 11";
     background-color: @background;
     border-color:     @blue;
-    border:           2;
+    border:           1;
     padding:          5;
 }
 mainbox {
@@ -56,11 +58,11 @@ textbox {
 }
 listview {
     fixed-height:     0;
-    border:           2px dash 0px 0px ;
+    border:           1px 0px 0px ;
     border-color:     @separatorcolor;
     spacing:          2px ;
     scrollbar:        true;
-    padding:          2px 0px 0px ;
+    padding:          5px 0px 0px ;
 }
 element {
     border:           0;
@@ -91,16 +93,16 @@ element selected.active {
     text-color:       @selected-active-foreground;
 }
 element alternate.normal {
-    background-color: @alternate-normal-background;
-    text-color:       @alternate-normal-foreground;
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
 }
 element alternate.urgent {
-    background-color: @alternate-urgent-background;
-    text-color:       @alternate-urgent-foreground;
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
 }
 element alternate.active {
-    background-color: @alternate-active-background;
-    text-color:       @alternate-active-foreground;
+    background-color: @active-background;
+    text-color:       @active-foreground;
 }
 scrollbar {
     width:            4px ;
@@ -137,11 +139,11 @@ entry {
 }
 prompt {
     spacing:          0;
-    text-color:       @normal-foreground;
+    text-color:       @yellow;
 }
 textbox-prompt-colon {
     expand:           false;
-    str:              ":";
+    str:              " >";
     margin:           0px 0.3000em 0.0000em 0.0000em ;
     text-color:       inherit;
 }
