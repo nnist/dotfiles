@@ -1,3 +1,5 @@
 make screenshot (selection),$HOME/git/dotfiles/scripts/create-screenshot.sh
 fix keyboard,$HOME/git/dotfiles/scripts/fix-keyboard.sh
 toggle caps lock,$HOME/git/dotfiles/scripts/toggle-caps.sh
+enable external monitor,$HOME/git/dotfiles/scripts/enable-external-monitor.sh
+disable external monitor,$HOME/git/dotfiles/scripts/disable-external-monitor.sh
