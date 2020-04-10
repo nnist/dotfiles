@@ -1,3 +1,4 @@
 vim/.vim
 *.pyc
 *history.sqlite
+rofi/.workspace_name_history
