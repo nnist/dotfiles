@@ -366,10 +366,13 @@ _gen_fzf_default_opts() {
 _gen_fzf_default_opts
 
 # fssh_agent - start new ssh agent and select ssh-key to add
-function fssh_agent {
-    temp=$(grep -rl "$HOME/.ssh" -e 'BEGIN .*PRIVATE' | fzf)
-    eval "$(ssh-agent -s)" &> /dev/null
-    ssh-add "$temp"
+fssh_agent() {
+    local keyfile
+    keyfile=$(grep -rl "$HOME/.ssh" -e 'BEGIN .*PRIVATE' | fzf)
+    if [ "x$keyfile" != "x" ]; then
+        eval "$(ssh-agent -s)" &> /dev/null
+        ssh-add "$keyfile"
+    fi
 }
 
 # fkill - kill processes
