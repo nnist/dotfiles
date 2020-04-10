@@ -1,7 +1,7 @@
 #!/bin/bash
 
 HISTCONTROL=ignoreboth # Ignore duplicate lines and lines starting with space
-shopt -s histappend # Append history; don't overwrite
+shopt -s histappend    # Append history; don't overwrite
 HISTSIZE=1000
 HISTFILESIZE=2000
 HISTIGNORE="clear:exit*:poweroff*:reboot*:git checkout*"

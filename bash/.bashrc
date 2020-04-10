@@ -2,7 +2,6 @@
 [ -z "$PS1" ] && return
 
 # Load bashrc modules
-for file in ~/.bashrc.d/*.bashrc;
-do
+for file in ~/.bashrc.d/*.bashrc; do
     source "$file"
 done

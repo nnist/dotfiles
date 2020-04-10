@@ -1,9 +1,8 @@
 #!/bin/bash
 
 # Render a markdown file and reload Firefox
-rendermd()
-{
-    if [ "$1" ] ; then
+rendermd() {
+    if [ "$1" ]; then
         pandoc "$1" \
             --from gfm \
             --to html5 \
@@ -18,8 +17,8 @@ rendermd()
         xdotool search \
             --onlyvisible \
             --class "Firefox" windowfocus key \
-            --window %@ "ctrl+r" \
-            || { 1>&2 echo "unable to signal Firefox"; }
+            --window %@ "ctrl+r" ||
+            { echo 1>&2 "unable to signal Firefox"; }
         xdotool windowfocus "$focused_window"
     else
         echo "'$1' is not a valid file!"
@@ -28,9 +27,8 @@ rendermd()
 export -f rendermd
 
 # Reload a markdown file when it is changed
-function hotreloadmd
-{
-    if [ "$1" ] ; then
+function hotreloadmd() {
+    if [ "$1" ]; then
         find "$1" | entr -p sh -c "rendermd $1"
     else
         echo "'$1' is not a valid file!"

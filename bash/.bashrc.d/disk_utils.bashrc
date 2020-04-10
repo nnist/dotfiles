@@ -1,8 +1,7 @@
 #!/bin/bash
 
-function dirsize()
-{
-	du -k --max-depth=1 "$@" | sort -nr | awk '
+function dirsize() {
+    du -k --max-depth=1 "$@" | sort -nr | awk '
     BEGIN {
        split("KB,MB,GB,TB", Units, ",");
     }
