@@ -371,3 +371,29 @@ function fssh_agent {
     eval "$(ssh-agent -s)" &> /dev/null
     ssh-add "$temp"
 }
+
+# fkill - kill processes
+fkill() {
+    local processes
+    if [ "$UID" != "0" ]; then
+        processes=$(ps -f -u $UID)
+    else
+        processes=$(ps -ef)
+    fi
+
+    local selection
+    selection=$(echo "$processes" |\
+                sed 1d |\
+                fzf -m --header 'UID          PID    PPID  C STIME TTY          TIME CMD')
+
+    local names
+    names=$(echo "$selection" | awk '{print $8}' | sed ':a;N;$!ba;s/\n/'\'', '\''/g')
+
+    local pids
+    pids=$(echo "$selection" | awk '{print $2}')
+    if [ "x$pids" != "x" ]; then
+        if confirm "Please confirm: kill '$names'?" ; then
+            echo "$pids" | xargs kill "-${1:-9}"
+        fi
+    fi
+}
