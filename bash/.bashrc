@@ -364,3 +364,10 @@ _gen_fzf_default_opts() {
 }
 
 _gen_fzf_default_opts
+
+# fssh_agent - start new ssh agent and select ssh-key to add
+function fssh_agent {
+    temp=$(grep -rl "$HOME/.ssh" -e 'BEGIN .*PRIVATE' | fzf)
+    eval "$(ssh-agent -s)" &> /dev/null
+    ssh-add "$temp"
+}
