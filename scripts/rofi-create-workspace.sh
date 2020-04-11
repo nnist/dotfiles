@@ -4,7 +4,7 @@ HIST_FILE="$HOME/git/dotfiles/rofi/.workspace_name_history"
 PROFILES_DIR="$HOME/git/dotfiles/i3-resurrect/profiles/"
 
 # Create history file if it doesn't exist
-if [ ! -f /tmp/foo.txt ]; then
+if [ ! -f "$HIST_FILE" ]; then
     touch "$HIST_FILE"
 fi
 
