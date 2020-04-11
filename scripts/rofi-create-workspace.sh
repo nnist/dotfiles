@@ -1,7 +1,8 @@
 #!/bin/bash
 
 HIST_FILE="$HOME/git/dotfiles/rofi/.workspace_name_history"
-PROFILES_DIR="$HOME/git/dotfiles/i3-resurrect/profiles/"
+I3_RESURRECT_DIR="$HOME/git/dotfiles/i3-resurrect"
+PROFILES_DIR="$I3_RESURRECT_DIR/profiles/"
 
 # Create history file if it doesn't exist
 if [ ! -f "$HIST_FILE" ]; then
@@ -29,7 +30,7 @@ fi
 
 # Load workspace profile
 i3-resurrect restore \
-    -d ~/git/dotfiles/i3-resurrect \
+    -d "$I3_RESURRECT_DIR" \
     -w "$ws_num · $ws_name" \
     -p "$ws_profile"
 
