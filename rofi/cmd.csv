@@ -5,3 +5,4 @@ toggle caps lock,$HOME/git/dotfiles/scripts/toggle-caps.sh
 enable external monitor,$HOME/git/dotfiles/scripts/enable-external-monitor.sh
 disable external monitor,$HOME/git/dotfiles/scripts/disable-external-monitor.sh
 toggle redshift,$HOME/git/dotfiles/scripts/toggle-redshift.sh
+save workspace profile,$HOME/git/dotfiles/scripts/rofi-save-workspace.sh
