@@ -8,6 +8,7 @@ HISTIGNORE="clear:exit*:poweroff*:reboot*:git checkout*"
 
 shopt -s checkwinsize # Prevent terminal window from messing up
 export EDITOR=vim
+export TERM=xterm-256color
 
 # Alias definitions
 if [ -f ~/.bash_aliases ]; then
