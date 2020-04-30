@@ -11,14 +11,14 @@ import argparse
 
 HOME_DIR = os.path.expanduser('~') + '/'
 SOURCES = ['.bash_aliases', '.bashrc', '.bashrc.d',
-           '.bash_completion.d/task.sh',
+           '.bash_completion.d',
            '.dircolors', '.gitignore', '.pylintrc',
            '.tmux.conf', '.vim', '.vimrc', '.xinitrc', '.xprofile',
            '.vit', 'termux.properties', '.config/i3', '.config/i3-resurrect',
            '.local/share/rofi', '.config/alacritty/alacritty.yml',
            '.config/dunst', '.config/polybar', '.local/bin/vimwiki', '.ipython']
 TARGETS = ['bash/.bash_aliases', 'bash/.bashrc', 'bash/.bashrc.d',
-           'bash/.bash_completion.d/task.sh',
+           'bash/.bash_completion.d',
            'bash/.dircolors', '.gitignore', 'pylint/.pylintrc',
            'tmux/.tmux.conf', 'vim/.vim', 'vim/.vimrc',
            'xorg/.xinitrc', 'xorg/.xprofile', 'vit/.vit',
