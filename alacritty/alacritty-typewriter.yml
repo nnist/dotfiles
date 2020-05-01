@@ -83,7 +83,7 @@ tabspaces: 8
 font:
   # Normal (roman) font face
   normal:
-    family: Courier 10 Pitch
+    family: Courier
     hintstyle: hintslight
     rgba: rgb
     lcdfilter: lcddefault
@@ -93,7 +93,7 @@ font:
 
   # Bold font face
   bold:
-    family: Courier 10 Pitch
+    family: Courier
     hintstyle: hintslight
     rgba: rgb
     lcdfilter: lcddefault
@@ -103,7 +103,7 @@ font:
 
   # Italic font face
   italic:
-    family: Courier 10 Pitch
+    family: Courier
     hintstyle: hintfull
     rgba: rgb
     lcdfilter: lcddefault
