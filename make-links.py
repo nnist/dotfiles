@@ -15,7 +15,7 @@ SOURCES = ['.bash_aliases', '.bashrc', '.bashrc.d',
            '.dircolors', '.gitignore', '.pylintrc',
            '.tmux.conf', '.vim', '.vimrc', '.xinitrc', '.xprofile',
            '.vit', 'termux.properties', '.config/i3', '.config/i3-resurrect',
-           '.local/share/rofi', '.config/alacritty/alacritty.yml',
+           '.local/share/rofi', '.config/alacritty',
            '.config/dunst', '.config/polybar', '.local/bin/vimwiki', '.ipython']
 TARGETS = ['bash/.bash_aliases', 'bash/.bashrc', 'bash/.bashrc.d',
            'bash/.bash_completion.d',
@@ -23,7 +23,7 @@ TARGETS = ['bash/.bash_aliases', 'bash/.bashrc', 'bash/.bashrc.d',
            'tmux/.tmux.conf', 'vim/.vim', 'vim/.vimrc',
            'xorg/.xinitrc', 'xorg/.xprofile', 'vit/.vit',
            'termux/termux.properties', 'i3', 'i3-resurrect', 'rofi',
-           'alacritty/alacritty.yml', 'dunst', 'polybar', 'scripts/vimwiki',
+           'alacritty', 'dunst', 'polybar', 'scripts/vimwiki',
            'ipython/.ipython']
 DOTFILES_DIR = HOME_DIR + 'git/dotfiles/'
 
