@@ -27,7 +27,7 @@ bindsym $mod+d exec rofi -show drun -theme base16-default-dark
 bindsym $mod+t exec "~/git/dotfiles/scripts/rofi-utils.sh"
 
 # Lock screen
-bindsym $mod+l exec "i3lock -c 181818 -e -f"
+bindsym $mod+l exec "swaylock -f -c 181818"
 
 # Change focus
 bindsym $mod+Left focus left
@@ -198,11 +198,17 @@ input type:touchpad {
     tap enabled
 }
 
+##### Lockscreen ##############################################################
+exec swayidle -w \
+         timeout 300 'swaylock -f -c 181818' \
+         timeout 600 'swaymsg "output * dpms off"' \
+              resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock -f -c 181818'
+
 ##### Launch ##################################################################
 exec --no-startup-id nm-applet
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec "compton -b"
 exec "swaymsg output '*' bg '/usr/share/backgrounds/default.png' stretch"
 exec "~/git/dotfiles/scripts/create-workspace.sh 1 task-management "
-exec "xautolock -locker 'i3lock -c 181818 -e -f'"
 exec "redshift -l 52.09:5.11 -b 1.0:1.0 -t 6500:1900"
