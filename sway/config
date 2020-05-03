@@ -205,9 +205,34 @@ exec swayidle -w \
               resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock -f -c 181818'
 
+##### Status bar ##############################################################
+bar {
+    position bottom
+
+    font Hack 9
+
+    separator_symbol "·"
+
+    status_command while date +'%a %-d %b %H:%M:%S'; do sleep 1; done
+
+    tray_padding 2
+    tray_output *
+
+    colors {
+        statusline #D8D8D8
+        background #181818
+        separator  #D8D8D8
+        
+                           #border #bg     #text
+        focused_workspace  #7CAFC2 #7CAFC2 #181818
+        inactive_workspace #181818 #181818 #D8D8D8
+        active_workspace   #181818 #181818 #D8D8D8
+        urgent_workspace   #AB4642 #AB4642 #181818
+    }
+}
+
 ##### Launch ##################################################################
 exec --no-startup-id nm-applet
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec "compton -b"
 exec "swaymsg output '*' bg '/usr/share/backgrounds/default.png' stretch"
 exec "~/git/dotfiles/scripts/create-workspace.sh 1 task-management "
