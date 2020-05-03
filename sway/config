@@ -202,7 +202,7 @@ input type:touchpad {
 exec --no-startup-id nm-applet
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec "compton -b"
-exec "hsetroot -solid '#181818'"
+exec "swaymsg output '*' bg '/usr/share/backgrounds/default.png' stretch"
 exec "~/git/dotfiles/scripts/create-workspace.sh 1 task-management "
 exec "xautolock -locker 'i3lock -c 181818 -e -f'"
 exec "redshift -l 52.09:5.11 -b 1.0:1.0 -t 6500:1900"
