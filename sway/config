@@ -184,6 +184,15 @@ gaps inner 5
 #workspace $ws3 gaps left 596
 #workspace $ws3 gaps right 596
 
+##### Input settings ##########################################################
+input type:keyboard {
+    xkb_layout us
+    xkb_variant intl
+    xkb_options caps:hyper
+    repeat_delay 300
+    repeat_rate 50
+}
+
 ##### Launch ##################################################################
 exec --no-startup-id nm-applet
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
