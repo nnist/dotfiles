@@ -193,6 +193,11 @@ input type:keyboard {
     repeat_rate 50
 }
 
+input type:touchpad {
+    natural_scroll enabled
+    tap enabled
+}
+
 ##### Launch ##################################################################
 exec --no-startup-id nm-applet
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
