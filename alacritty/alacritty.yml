@@ -71,7 +71,7 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    family: Hack
+    family: Hack Nerd Font Mono
     hintstyle: hintslight
     rgba: rgb
     lcdfilter: lcddefault
@@ -81,7 +81,7 @@ font:
 
   # Bold font face
   bold:
-    family: Hack
+    family: Hack Nerd Font Mono
     hintstyle: hintslight
     rgba: rgb
     lcdfilter: lcddefault
@@ -91,7 +91,7 @@ font:
 
   # Italic font face
   italic:
-    family: Hack
+    family: Hack Nerd Font Mono
     hintstyle: hintfull
     rgba: rgb
     lcdfilter: lcddefault
