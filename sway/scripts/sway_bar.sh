@@ -2,11 +2,18 @@ date_formatted=$(date +'%a %-d %b · %H:%M')
 
 battery_charge=$(upower --show-info $(upower --enumerate | grep 'BAT') | egrep "percentage" | awk '{print $2}')
 battery_status=$(upower --show-info $(upower --enumerate | grep 'BAT') | egrep "state" | awk '{print $2}')
-
-battery_icon=''
+battery_icon=''
 if [ $battery_status = "discharging" ];
 then
-    battery_icon=''
+    if (( "${battery_charge//%}" < 10)); then
+        battery_num=0
+    elif (( "${battery_charge//%}" == 100)); then
+        battery_num=10
+    else
+        battery_num="${battery_charge:0:1}"
+    fi
+    battery_icons=(          )
+    battery_icon="${battery_icons[battery_num]}"
 fi
 
 vpn_status=''
