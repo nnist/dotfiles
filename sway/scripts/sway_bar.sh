@@ -1,4 +1,4 @@
-date_formatted=$(date +'%H:%M · %a %-d %b')
+date_formatted=$(date +'%a %-d %b · %H:%M')
 
 battery_charge=$(upower --show-info $(upower --enumerate | grep 'BAT') | egrep "percentage" | awk '{print $2}')
 battery_status=$(upower --show-info $(upower --enumerate | grep 'BAT') | egrep "state" | awk '{print $2}')
