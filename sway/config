@@ -222,7 +222,7 @@ bar {
 
     separator_symbol "·"
 
-    status_command while ~/.config/sway/scripts/sway_bar.sh; do sleep 10; done
+    status_command while ~/.config/sway/scripts/sway_bar.sh; do sleep 5; done
 
     tray_padding 2
     tray_output *
