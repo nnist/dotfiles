@@ -9,4 +9,9 @@ then
     battery_icon=''
 fi
 
-echo "$battery_icon $battery_charge · $date_formatted "
+vpn_status=''
+if [ -d "/proc/sys/net/ipv4/conf/tun0" ]; then
+    vpn_status=''
+fi
+
+echo "$vpn_status vpn · $battery_icon $battery_charge · $date_formatted "
