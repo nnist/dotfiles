@@ -1,7 +1,8 @@
 date_formatted=$(date +'%a %-d %b · %H:%M')
 
-battery_charge=$(upower --show-info $(upower --enumerate | grep 'BAT') | egrep "percentage" | awk '{print $2}')
-battery_status=$(upower --show-info $(upower --enumerate | grep 'BAT') | egrep "state" | awk '{print $2}')
+battery_raw=$(upower --show-info $(upower --enumerate | grep 'BAT'))
+battery_charge=$(echo "$battery_raw" | egrep "percentage" | awk '{print $2}')
+battery_status=$(echo "$battery_raw" | egrep "state" | awk '{print $2}')
 battery_icon=''
 if [ $battery_status = "discharging" ];
 then
@@ -14,9 +15,9 @@ then
     fi
     battery_icons=(          )
     battery_icon="${battery_icons[battery_num]}"
-    battery_time="$(upower -i $(upower -e | grep 'BAT') | grep "time\ to\ empty" | awk '{print $4 substr ($5, 0, 1)}')"
+    battery_time="$(echo "$battery_raw" | grep "time\ to\ empty" | awk '{print $4 substr ($5, 0, 1)}')"
 else
-    battery_time="$(upower -i $(upower -e | grep 'BAT') | grep "time\ to\ full" | awk '{print $4 substr ($5, 0, 1)}')"
+    battery_time="$(echo "$battery_raw" | grep "time\ to\ full" | awk '{print $4 substr ($5, 0, 1)}')"
 fi
 battery_status="$battery_icon $battery_charge ($battery_time)"
 
