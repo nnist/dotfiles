@@ -247,7 +247,4 @@ for_window [app_id="^launcher$"] floating enable, border pixel
 
 ##### Launch ##################################################################
 output '*' bg '~/Pictures/background.jpg' fill
-exec --no-startup-id nm-applet
-exec "compton -b"
 exec "~/git/dotfiles/scripts/create-workspace.sh 1 task-management "
-exec "redshift -l 52.09:5.11 -b 1.0:1.0 -t 6500:1900"
