@@ -1,5 +1,7 @@
 #!/bin/bash
-redshift -x
+if ! [[ $DESKTOP_SESSION == "sway" ]]; then
+    redshift -x
+fi
 if pgrep -x redshift &> /dev/null; then
     killall -q redshift
 else
