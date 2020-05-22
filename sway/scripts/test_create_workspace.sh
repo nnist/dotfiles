@@ -11,7 +11,7 @@ swaymsg rename workspace to "$ws_num · $ws_name"
 
 swaymsg layout splith
 
-firefox --no-remote &> /dev/null &
+firejail --private=~/firejails/firefox-dev firefox --no-remote &> /dev/null &
 sleep $long_delay
 swaymsg border normal
 swaymsg mark num_0
