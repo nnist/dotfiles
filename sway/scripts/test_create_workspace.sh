@@ -32,9 +32,19 @@ alacritty &> /dev/null &
 sleep $delay
 swaymsg border normal
 swaymsg mark num_3
+swaymsg resize set height 20 ppt
 
 alacritty &> /dev/null &
 sleep $delay
 swaymsg border normal
 swaymsg mark num_4
-swaymsg resize set height 30 ppt
+
+swaymsg splith
+
+alacritty &> /dev/null &
+sleep $delay
+swaymsg border normal
+swaymsg mark num_5
+
+swaymsg layout tabbed
+swaymsg resize set height 15 ppt
