@@ -36,7 +36,10 @@ async def create_workspace(ws_num, ws_name):
     
     # Create workspace
     await conn.command(f"workspace {ws_num}")
-    await conn.command(f"rename workspace to {ws_num} · {ws_name}")
+
+    if ws_name:
+        await conn.command(f"rename workspace to {ws_num} · {ws_name}")
+
     await conn.command("gaps outer current set 0")
 
     # Launch apps
@@ -64,6 +67,12 @@ def main(argv):
     parser.add_argument(
         '-v', '--verbose', help="verbose mode", action='store_true'
     )
+    parser.add_argument(
+        'num', help="workspace number", type=int
+    )
+    parser.add_argument(
+        '-n', '--name', help="workspace name", type=str
+    )
     args = parser.parse_args(argv)
 
     if args.verbose:
@@ -72,8 +81,8 @@ def main(argv):
     else:
         log.basicConfig(format="%(levelname)s: %(message)s")
 
-    ws_num = 4
-    ws_name = "web-dev"
+    ws_num = args.num
+    ws_name = args.name
     asyncio.get_event_loop().run_until_complete(create_workspace(ws_num, ws_name))
 
 
