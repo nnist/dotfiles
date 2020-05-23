@@ -1,3 +1,5 @@
+#!/bin/python3
+
 from i3ipc.aio import Connection
 from i3ipc import Event
 import time
