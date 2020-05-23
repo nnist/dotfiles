@@ -67,7 +67,7 @@ def main(argv):
         '-v', '--verbose', help="verbose mode", action='store_true'
     )
     parser.add_argument(
-        'num', help="workspace number", type=int
+        '--num', help="workspace number", type=int, default=0
     )
     parser.add_argument(
         '-n', '--name', help="workspace name", type=str
