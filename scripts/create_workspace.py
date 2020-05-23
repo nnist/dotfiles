@@ -25,7 +25,7 @@ async def launch_app(conn, app_name):
         await asyncio.sleep(.1)
 
     _timing = time.time() - timing
-    print(f"({_timing:.4f}s) Launched {app_name}")
+    log.info(f"({_timing:.4f}s) Launched {app_name}")
 
 
 async def create_workspace(ws_num, ws_name, working_dir):
