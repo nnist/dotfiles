@@ -41,6 +41,8 @@ async def main():
     await launch_app(conn, "alacritty --title frontend")
     await conn.command("layout tabbed")
     await conn.command("resize set height 15 ppt")
-
+    await conn.command("focus left")
+    await conn.command("focus up")
+    await conn.command("focus left")
 
 asyncio.get_event_loop().run_until_complete(main())
