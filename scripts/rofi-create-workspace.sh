@@ -1,8 +1,7 @@
 #!/bin/bash
 
 HIST_FILE="$HOME/git/dotfiles/rofi/.workspace_name_history"
-I3_RESURRECT_DIR="$HOME/git/dotfiles/i3-resurrect"
-PROFILES_DIR="$I3_RESURRECT_DIR/profiles/"
+LAUNCH_SCRIPT="$HOME/git/dotfiles/scripts/create_workspace.py"
 
 # Create history file if it doesn't exist
 if [ ! -f "$HIST_FILE" ]; then
@@ -11,7 +10,7 @@ fi
 
 # Select profle
 workspaces=$(find "$PROFILES_DIR"*layout.json | sed "s#$PROFILES_DIR##;s#_layout.json##")
-ws_profile=$(echo "$workspaces" | rofi -dmenu -theme base16-default-dark -p "(1/3) Select profile")
+ws_profile=$($LAUNCH_SCRIPT -l | rofi -dmenu -theme base16-default-dark -p "(1/3) Select profile")
 if [ "x$ws_profile" == "x" ]; then
     exit 0
 fi
@@ -29,10 +28,7 @@ if [ "x$ws_num" == "x" ]; then
 fi
 
 # Load workspace profile
-i3-resurrect restore \
-    -d "$I3_RESURRECT_DIR" \
-    -w "$ws_num · $ws_name" \
-    -p "$ws_profile"
+$($LAUNCH_SCRIPT --num $ws_num --name $ws_name)
 
 # Add workspace name to history
 if ! grep "$ws_name" "$HIST_FILE"; then
