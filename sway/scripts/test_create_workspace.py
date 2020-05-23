@@ -26,19 +26,22 @@ async def launch_app(conn, app_name):
 
 
 async def main():
+    working_dir = "~/git"
+
     conn = await Connection().connect()
     conn.locked = False
     
     await create_workspace(conn, 4, "dev")
+    await conn.command("gaps outer current set 0")
     await launch_app(conn, "firejail --private=~/firejails/firefox-dev firefox --no-remote")
-    await launch_app(conn, "alacritty")
+    await launch_app(conn, f"alacritty --working-directory {working_dir}")
     await launch_app(conn, "~/git/dotfiles/scripts/vimwiki-dark")
     await conn.command("splitv")
-    await launch_app(conn, "alacritty")
+    await launch_app(conn, f"alacritty --working-directory {working_dir}")
     await conn.command("resize set height 30 ppt")
-    await launch_app(conn, "alacritty --title backend")
+    await launch_app(conn, f"alacritty --title backend --working-directory {working_dir}")
     await conn.command("splith")
-    await launch_app(conn, "alacritty --title frontend")
+    await launch_app(conn, f"alacritty --title frontend --working-directory {working_dir}")
     await conn.command("layout tabbed")
     await conn.command("resize set height 15 ppt")
     await conn.command("focus left")
