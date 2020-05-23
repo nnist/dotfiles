@@ -28,9 +28,7 @@ async def launch_app(conn, app_name):
     print(f"({_timing:.4f}s) Launched {app_name}")
 
 
-async def create_workspace(ws_num, ws_name):
-    working_dir = "~/git"
-
+async def create_workspace(ws_num, ws_name, working_dir):
     conn = await Connection().connect()
     conn.locked = False
     
@@ -73,6 +71,9 @@ def main(argv):
     parser.add_argument(
         '-n', '--name', help="workspace name", type=str
     )
+    parser.add_argument(
+        '-d', '--dir', help="workspace working directory", type=str, default="~/git"
+    )
     args = parser.parse_args(argv)
 
     if args.verbose:
@@ -83,7 +84,7 @@ def main(argv):
 
     ws_num = args.num
     ws_name = args.name
-    asyncio.get_event_loop().run_until_complete(create_workspace(ws_num, ws_name))
+    asyncio.get_event_loop().run_until_complete(create_workspace(ws_num, ws_name, args.dir))
 
 
 if __name__ == "__main__":
