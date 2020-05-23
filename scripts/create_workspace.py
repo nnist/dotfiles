@@ -11,6 +11,7 @@ import sys
 import os
 import argparse
 
+PROFILES = ["web-dev", "dev"]
 
 async def launch_app(conn, app_name):
     def on_new_window(self, e):
@@ -74,7 +75,14 @@ def main(argv):
     parser.add_argument(
         '-d', '--dir', help="workspace working directory", type=str, default="~/git"
     )
+    parser.add_argument(
+        '-l', '--list', help="list workspace profiles", action='store_true'
+    )
     args = parser.parse_args(argv)
+
+    if args.list:
+        print("\n".join(PROFILES))
+        sys.exit(0)
 
     if args.verbose:
         log.basicConfig(format="%(levelname)s: %(message)s", level=log.INFO)
