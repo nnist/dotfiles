@@ -46,6 +46,19 @@ async def workspace_web_dev(conn, ws_num, ws_name, working_dir):
     await conn.command("focus up")
     await conn.command("focus left")
 
+
+async def workspace_dev(conn, ws_num, ws_name, working_dir):
+    await conn.command("gaps outer current set 0")
+    await launch_app(conn, f"alacritty --working-directory {working_dir}")
+    await launch_app(conn, "~/git/dotfiles/scripts/vimwiki-dark")
+    await conn.command("splitv")
+    await launch_app(conn, f"alacritty --working-directory {working_dir}")
+    await conn.command("resize set height 30 ppt")
+    await launch_app(conn, f"alacritty --working-directory {working_dir}")
+    await conn.command("resize set height 15 ppt")
+    await conn.command("focus up")
+    await conn.command("focus left")
+
 async def create_workspace(ws_num, ws_name, working_dir, profile):
     conn = await Connection().connect()
     conn.locked = False
@@ -58,6 +71,8 @@ async def create_workspace(ws_num, ws_name, working_dir, profile):
 
     if profile == "web-dev":
         await workspace_web_dev(conn, ws_num, ws_name, working_dir)
+    elif profile == "dev":
+        await workspace_dev(conn, ws_num, ws_name, working_dir)
     else:
         raise Exception("Unknown profile!")
 
