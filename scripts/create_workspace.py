@@ -29,19 +29,8 @@ async def launch_app(conn, app_name):
     log.info(f"({_timing:.4f}s) Launched {app_name}")
 
 
-async def create_workspace(ws_num, ws_name, working_dir):
-    conn = await Connection().connect()
-    conn.locked = False
-    
-    # Create workspace
-    await conn.command(f"workspace {ws_num}")
-
-    if ws_name:
-        await conn.command(f"rename workspace to {ws_num} · {ws_name}")
-
+async def workspace_web_dev(conn, ws_num, ws_name, working_dir):
     await conn.command("gaps outer current set 0")
-
-    # Launch apps
     await launch_app(conn, "firejail --private=~/firejails/firefox-dev firefox --no-remote")
     await launch_app(conn, f"alacritty --working-directory {working_dir}")
     await launch_app(conn, "~/git/dotfiles/scripts/vimwiki-dark")
@@ -56,6 +45,21 @@ async def create_workspace(ws_num, ws_name, working_dir):
     await conn.command("focus left")
     await conn.command("focus up")
     await conn.command("focus left")
+
+async def create_workspace(ws_num, ws_name, working_dir, profile):
+    conn = await Connection().connect()
+    conn.locked = False
+    
+    # Create workspace
+    await conn.command(f"workspace {ws_num}")
+
+    if ws_name:
+        await conn.command(f"rename workspace to {ws_num} · {ws_name}")
+
+    if profile == "web-dev":
+        await workspace_web_dev(conn, ws_num, ws_name, working_dir)
+    else:
+        raise Exception("Unknown profile!")
 
 
 def main(argv):
@@ -78,6 +82,9 @@ def main(argv):
     parser.add_argument(
         '-l', '--list', help="list workspace profiles", action='store_true'
     )
+    parser.add_argument(
+        '-p', '--profile', help="workspace profile", type=str
+    )
     args = parser.parse_args(argv)
 
     if args.list:
@@ -92,7 +99,7 @@ def main(argv):
 
     ws_num = args.num
     ws_name = args.name
-    asyncio.get_event_loop().run_until_complete(create_workspace(ws_num, ws_name, args.dir))
+    asyncio.get_event_loop().run_until_complete(create_workspace(ws_num, ws_name, args.dir, args.profile))
 
 
 if __name__ == "__main__":

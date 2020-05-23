@@ -34,7 +34,7 @@ if [ "x$ws_dir" == "x" ]; then
 fi
 
 # Load workspace profile
-$($LAUNCH_SCRIPT --num $ws_num --name $ws_name -d $ws_dir)
+$($LAUNCH_SCRIPT --profile $ws_profile --num $ws_num --name $ws_name -d $ws_dir)
 
 # Add workspace name to history
 if ! grep "$ws_name" "$HIST_FILE"; then
