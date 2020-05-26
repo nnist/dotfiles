@@ -1,5 +1,10 @@
 # Sway config file
 
+##### Clamshell mode ##########################################################
+set $laptop eDP-1
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+
 ##### General #################################################################
 # Font for window titles and bar
 font pango:Hack 9
