@@ -1,9 +1,15 @@
 # Sway config file
 
-##### Clamshell mode ##########################################################
+##### Monitor settings ########################################################
+set $external DP-1
 set $laptop eDP-1
+
+# Clamshell mode
 bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
+
+# Reduce latency
+output $external max_render_time 8
 
 ##### General #################################################################
 # Font for window titles and bar
