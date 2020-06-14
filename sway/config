@@ -201,6 +201,12 @@ input type:touchpad {
     tap enabled
 }
 
+input type:pointer {
+    accel_profile flat
+    pointer_accel .4
+    scroll_factor 1.5
+}
+
 # Special key bindings
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2%+ unmute && amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print substr($2, 0, length($2)-1) }' > $SWAYSOCK.wob
 bindsym XF86AudioLowerVolume exec amixer -q set Master 2%- unmute && amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print substr($2, 0, length($2)-1) }' > $SWAYSOCK.wob
