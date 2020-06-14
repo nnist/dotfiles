@@ -9,7 +9,7 @@ bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
 
 # Reduce latency
-output $external max_render_time 8
+output $external max_render_time 10
 
 ##### General #################################################################
 # Font for window titles and bar
