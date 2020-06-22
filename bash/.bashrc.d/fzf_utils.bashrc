@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# Show hidden files by default
-export FZF_DEFAULT_COMMAND='rg --files --hidden \
-    --no-ignore-vcs -g "!{.git/*,.mypy_cache/*,__pycache__/*}"'
+export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!{.git/*}"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 export BAT_THEME="base16"
