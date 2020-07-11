@@ -263,7 +263,7 @@ bindsym $mod+g exec alacritty  --class=launcher \
 for_window [app_id="^launcher$"] floating enable, border pixel
 
 ##### Field editor ############################################################
-bindsym $mod+c exec "~/git/dotfiles/utilities/field-editor/field-editor.py"
+bindsym $mod+c exec "~/git/sway-utils/sway-utils/field-editor/field-editor.py"
 for_window [app_id="^field-editor$"] floating enable, border pixel
 
 ##### Dialog ##################################################################
