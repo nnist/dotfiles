@@ -266,6 +266,12 @@ for_window [app_id="^launcher$"] floating enable, border pixel
 bindsym $mod+v exec "~/git/dotfiles/scripts/edit-in-vim.py"
 for_window [app_id="^clipboard-editor$"] floating enable, border pixel
 
+##### Dialog ##################################################################
+for_window [app_id="^dialog$"] floating enable, border pixel
+no_focus [app_id="^dialog$"]
+for_window [app_id="^dialog-fullscreen$"] fullscreen
+no_focus [app_id="^dialog-fullscreen$"]
+
 ##### Launch ##################################################################
 output '*' bg '~/Pictures/background.jpg' fill
 output 'eDP-1' scale 2
