@@ -20,7 +20,7 @@ def dialog(message, x, y, fullscreen=False, timeout=2) -> None:
             str(y),
             f"--class={class_}",
             "-e",
-            "/home/nicole/git/dotfiles/scripts/dialog",
+            "/home/nicole/git/dotfiles/utilities/dialog/dialog.sh",
             message,
             str(x),
             str(y),

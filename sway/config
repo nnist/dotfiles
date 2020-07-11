@@ -262,9 +262,9 @@ bindsym $mod+g exec alacritty  --class=launcher \
     -e "./git/dotfiles/scripts/fzf-launcher.sh"
 for_window [app_id="^launcher$"] floating enable, border pixel
 
-##### Clipboard editor ########################################################
-bindsym $mod+v exec "~/git/dotfiles/scripts/edit-in-vim.py"
-for_window [app_id="^clipboard-editor$"] floating enable, border pixel
+##### Field editor ############################################################
+bindsym $mod+c exec "~/git/dotfiles/utilities/field-editor/field-editor.py"
+for_window [app_id="^field-editor$"] floating enable, border pixel
 
 ##### Dialog ##################################################################
 for_window [app_id="^dialog$"] floating enable, border pixel

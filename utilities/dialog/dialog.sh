@@ -3,9 +3,8 @@
 source "$HOME/.config/base16-shell/scripts/base16-default-dark.sh"
 
 if test -n "$1"; then
-    sleep .02
-    swaymsg "resize set 700px 975px"
-    vim --cmd "let g:gitgutter_enabled=0" $1
+    python3 $HOME/git/dotfiles/utilities/dialog/dialog.py "$1" $2 $3 $4
 else
-    echo "error: no filename provided"
+    echo "error: no message provided"
+    sleep 1
 fi

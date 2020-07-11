@@ -32,9 +32,9 @@ def edit_clipboard(filename) -> None:
     subprocess.run(
         [
             "alacritty",
-            "--class=clipboard-editor",
+            "--class=field-editor",
             "-e",
-            "/home/nicole/git/dotfiles/scripts/vim-clipboard-editor",
+            "/home/nicole/git/dotfiles/utilities/field-editor/field-editor.sh",
             filename,
         ]
     )
