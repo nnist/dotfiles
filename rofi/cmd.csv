@@ -1,4 +1,5 @@
 create workspace,$HOME/git/dotfiles/scripts/rofi-create-workspace.sh
+edit field in vim,$HOME/git/dotfiles/scripts/edit-in-vim.py
 make screenshot (selection),$HOME/git/dotfiles/scripts/create-screenshot-selection.sh
 fix keyboard,$HOME/git/dotfiles/scripts/fix-keyboard.sh
 toggle caps lock,$HOME/git/dotfiles/scripts/toggle-caps.sh

@@ -262,6 +262,10 @@ bindsym $mod+g exec alacritty  --class=launcher \
     -e "./git/dotfiles/scripts/fzf-launcher.sh"
 for_window [app_id="^launcher$"] floating enable, border pixel
 
+##### Clipboard editor ########################################################
+bindsym $mod+v exec "~/git/dotfiles/scripts/edit-in-vim.py"
+for_window [app_id="^clipboard-editor$"] floating enable, border pixel
+
 ##### Launch ##################################################################
 output '*' bg '~/Pictures/background.jpg' fill
 output 'eDP-1' scale 2
