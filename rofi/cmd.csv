@@ -12,3 +12,4 @@ save workspace profile,$HOME/git/dotfiles/scripts/rofi-save-workspace.sh
 vimwiki,$HOME/git/dotfiles/scripts/vimwiki
 vimwiki-dark,$HOME/git/dotfiles/scripts/vimwiki-dark
 suspend,$HOME/git/dotfiles/scripts/suspend.sh
+toggle swayidle,$HOME/git/dotfiles/scripts/toggle-swayidle.sh
