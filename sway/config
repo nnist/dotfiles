@@ -164,6 +164,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+##### Recording mode ##########################################################
+mode "recording" {
+        bindsym $mod+Escape exec "killall wf-recorder"; mode "default"
+}
+
 ##### Colors ##################################################################
 # Class                 Border  Back    Text    Indic.  Child border
 client.focused          #7CAFC2 #7CAFC2 #181818 #181818 #7CAFC2
