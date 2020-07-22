@@ -7,7 +7,7 @@ battery_status=$(echo "$battery_raw" | grep -E "state" | awk '{print $2}')
 
 if (("${battery_charge//%/}" < 10)); then
     battery_num=0
-elif (("${battery_charge//%/}" == 100)); then
+elif (("${battery_charge//%/}" >= 99)); then
     battery_num=10
 else
     battery_num="${battery_charge:0:1}"
