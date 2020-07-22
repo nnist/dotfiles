@@ -4,9 +4,9 @@ battery_raw=$(upower --show-info $(upower --enumerate | grep 'BAT'))
 battery_charge=$(echo "$battery_raw" | egrep "percentage" | awk '{print $2}')
 battery_status=$(echo "$battery_raw" | egrep "state" | awk '{print $2}')
 
-if (( "${battery_charge//%}" < 10)); then
+if (("${battery_charge//%/}" < 10)); then
     battery_num=0
-elif (( "${battery_charge//%}" == 100)); then
+elif (("${battery_charge//%/}" == 100)); then
     battery_num=10
 else
     battery_num="${battery_charge:0:1}"
@@ -15,8 +15,7 @@ battery_icons=(          )
 battery_icon="${battery_icons[battery_num]}"
 battery_charge_icon=""
 
-if [ $battery_status = "discharging" ];
-then
+if [ $battery_status = "discharging" ]; then
     battery_time="$(echo "$battery_raw" | grep "time\ to\ empty" | awk '{print $4 substr ($5, 0, 1)}')"
 else
     battery_charge_icon=""
