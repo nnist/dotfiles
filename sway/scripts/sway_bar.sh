@@ -36,4 +36,10 @@ if [ $(echo $audio_raw | awk -F'[][]' '{ print $4 }') = "on" ]; then
     audio_status="墳 $audio_volume"
 fi
 
-echo "$vpn_status vpn · $audio_status · $battery_status · $date_formatted "
+if pgrep -x swayidle &>/dev/null; then
+    swayidle_status=""
+else
+    swayidle_status=" autolock off ·"
+fi
+
+echo "$swayidle_status $vpn_status vpn · $audio_status · $battery_status · $date_formatted "
