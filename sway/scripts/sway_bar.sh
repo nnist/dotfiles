@@ -1,5 +1,6 @@
 date_formatted=$(date +'%a %-d %b · %H:%M')
 
+# Battery
 battery_raw=$(upower --show-info "$(upower --enumerate | grep 'BAT')")
 battery_charge=$(echo "$battery_raw" | grep -E "percentage" | awk '{print $2}')
 battery_status=$(echo "$battery_raw" | grep -E "state" | awk '{print $2}')
@@ -23,11 +24,13 @@ else
 fi
 battery_status="$battery_charge_icon$battery_icon $battery_charge ($battery_time)"
 
+# VPN
 vpn_status=''
 if [ -d "/proc/sys/net/ipv4/conf/tun0" ]; then
     vpn_status=''
 fi
 
+# Audio
 audio_raw=$(amixer sget Master | grep 'Right:')
 audio_status="婢"
 if [ "$(echo "$audio_raw" | awk -F'[][]' '{ print $4 }')" = "on" ]; then
@@ -35,6 +38,7 @@ if [ "$(echo "$audio_raw" | awk -F'[][]' '{ print $4 }')" = "on" ]; then
     audio_status="墳 $audio_volume"
 fi
 
+# Swayidle
 if pgrep -x swayidle &>/dev/null; then
     swayidle_status=""
 else
