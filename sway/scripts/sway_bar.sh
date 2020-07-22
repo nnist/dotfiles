@@ -9,6 +9,7 @@ if (("${battery_charge//%/}" < 10)); then
     battery_num=0
 elif (("${battery_charge//%/}" >= 99)); then
     battery_num=10
+    battery_charge="100%"
 else
     battery_num="${battery_charge:0:1}"
 fi
