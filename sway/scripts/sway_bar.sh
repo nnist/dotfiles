@@ -22,7 +22,12 @@ else
     battery_charge_icon=""
     battery_time="$(echo "$battery_raw" | grep "time\ to\ full" | awk '{print $4 substr ($5, 0, 1)}')"
 fi
-battery_status="$battery_charge_icon$battery_icon $battery_charge ($battery_time)"
+
+if [ -n "$battery_time" ]; then
+    battery_time=" ($battery_time)"
+fi
+
+battery_status="$battery_charge_icon$battery_icon $battery_charge$battery_time"
 
 # VPN
 vpn_status=''
