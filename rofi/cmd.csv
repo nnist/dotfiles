@@ -13,3 +13,4 @@ vimwiki,$HOME/git/dotfiles/scripts/vimwiki
 vimwiki-dark,$HOME/git/dotfiles/scripts/vimwiki-dark
 suspend,$HOME/git/dotfiles/scripts/suspend.sh
 toggle swayidle,$HOME/git/dotfiles/scripts/toggle-swayidle.sh
+rename workspace,$HOME/git/dotfiles/scripts/rofi-rename-workspace.sh
