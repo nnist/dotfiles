@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# TODO Increase contrast with convert
-
 selection=$(grim -g "$(slurp)" - | base64 -)
 
 background_color_hex=$(echo "$selection" | base64 --decode - | convert -resize 1x1 - txt:- | awk 'FNR==2{print substr($3,2)}')
