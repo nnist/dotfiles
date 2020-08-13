@@ -4,7 +4,10 @@
 selection=$(grim -g "$(slurp)" - | base64 -)
 
 # Get the average background color
-background_color_hex=$(echo "$selection" | base64 --decode - | convert -resize 1x1 - txt:- | awk 'FNR==2{print substr($3,2)}')
+background_color_hex=$(echo "$selection" |
+    base64 --decode - |
+    convert -resize 1x1 - txt:- |
+    awk 'FNR==2{print substr($3,2)}')
 
 # Convert the hex color to int
 background_color_int=$(echo "ibase=16; $background_color_hex" | bc)
