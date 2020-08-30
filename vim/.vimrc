@@ -100,7 +100,7 @@ autocmd ColorScheme * highlight VimwikiDelText cterm=strikethrough
 
 let g:indentLine_color_term = 18
 let g:indentLine_char_list = ['•']
-let g:indentLine_fileTypeExclude = ['markdown', 'json', 'vimwiki']
+let g:indentLine_concealcursor = ""
 
 " }}} ------------------------------------------------------------------------- 
 " {{{ ----------  jedi  -------------------------------------------------------
