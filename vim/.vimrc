@@ -37,6 +37,7 @@ Plug 'jpalardy/vim-slime'
 Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'heavenshell/vim-pydocstring'
 
 call plug#end()
 
@@ -203,6 +204,13 @@ autocmd FileType beancount setlocal foldlevel=0
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
 let g:slime_python_ipython = 1
+
+" }}} ------------------------------------------------------------------------- 
+" {{{ ----------  pydocstring  ------------------------------------------------
+
+let g:pydocstring_doq_path = '~/.local/bin/doq'
+let g:pydocstring_formatter = 'sphinx'
+let g:pydocstring_templates_path = '~/.vim/pydocstring/templates'
 
 " }}} ------------------------------------------------------------------------- 
 " }}} =========================================================================
