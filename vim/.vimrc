@@ -16,7 +16,6 @@ function FixupBase16(info)
     !sed -i '/Base16hi/\! s/a:\(attr\|guisp\)/l:\1/g' ~/.vim/plugged/base16-vim/colors/*.vim
 endfunction
 Plug 'chriskempson/base16-vim', { 'do': function('FixupBase16') }
-Plug 'davidhalter/jedi-vim'
 Plug 'nathangrigg/vim-beancount'
 Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
@@ -40,6 +39,7 @@ Plug 'tpope/vim-repeat'
 Plug 'heavenshell/vim-pydocstring'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'ycm-core/YouCompleteMe'
 
 call plug#end()
 
