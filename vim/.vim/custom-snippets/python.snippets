@@ -1,5 +1,5 @@
 # Wagtail Block
-snippet wblock
+snippet wagblock "Wagtail block"
 from typing import Dict
 
 from django.core.exceptions import ValidationError
@@ -38,14 +38,14 @@ class ${1:ClassName}(blocks.StructBlock):
 endsnippet
 
 # Wagtail Block get_context method
-snippet wbctx
+snippet wagblockcontext "Wagtail block get_context() method"
 def get_context(self, value: Dict, parent_context: Dict = None) -> Dict:
     ctx = super().get_context(value, parent_context)
     return ctx
 endsnippet
 
 # Wagtail Block clean method
-snippet wbclean
+snippet wagblockclean "Wagtail block clean() method"
 def clean(self, value: Dict) -> Dict:
     cleaned = super().clean(value)
     errors = {}
