@@ -217,9 +217,9 @@ let g:pydocstring_templates_path = '~/.vim/pydocstring/templates'
 " }}} ------------------------------------------------------------------------- 
 " {{{ ----------  UltiSnips  --------------------------------------------------
 
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger = '<C-Right>'
+let g:UltiSnipsJumpForwardTrigger = '<C-Down>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-Up>'
 let g:UltiSnipsSnippetDirectories=["UltiSnips", $HOME.'/.vim/custom-snippets']
 
 " }}} ------------------------------------------------------------------------- 
