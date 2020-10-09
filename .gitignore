@@ -1,4 +1,7 @@
-vim/.vim
+vim/.vim/autoload
+vim/.vim/plugged
+vim/.vim/view
+vim/.vim/.*
 *.pyc
 *history.sqlite
 rofi/.workspace_name_history

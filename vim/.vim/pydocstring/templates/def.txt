@@ -1,0 +1,16 @@
+"""Summary of {{ name }}.
+{% if params %}
+{%- for p in params %}
+:param {{ p.argument }}: Description of {{ p.argument }}.{% if p.default %} Defaults to {{ p.default }}.{% endif -%}
+{% endfor %}
+{% endif -%}
+{% if return_type %}
+:return: Description of returned value.
+:rtype: {{ return_type }}
+{% endif -%}
+{% if exceptions %}
+{%- for e in exceptions %}
+:raises {{ e }}: Description of exception.
+{%- endfor %}
+{% endif -%}
+"""

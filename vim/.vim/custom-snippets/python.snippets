@@ -1,0 +1,63 @@
+# Wagtail Block
+snippet wblock
+from typing import Dict
+
+from django.core.exceptions import ValidationError
+from django.forms.utils import ErrorList
+from django.utils.translation import ugettext_lazy as _
+from wagtail.core import blocks
+
+class ${1:ClassName}(blocks.StructBlock):
+    """${2:Docstring for $1.}"""
+    
+    text = blocks.CharBlock(label=_("Text"), max_length=100, required=False)
+
+    class Meta:
+        icon = "fa-block"
+        template = "cms/blocks/${3:template_name}.html"
+        label = _("${4:Block label}")
+
+    def get_context(self, value: Dict, parent_context: Dict = None) -> Dict:
+        ctx = super().get_context(value, parent_context)
+        return ctx
+
+    def clean(self, value: Dict) -> Dict:
+        cleaned = super().clean(value)
+        errors = {}
+
+        text = value.get("text")
+
+        if text != "foo":
+            msg = _("Text must be foo.")
+            errors["foo"] = ErrorList([msg])
+
+        if errors:
+            raise ValidationError("Validation error in $1", params=errors)
+
+        return cleaned
+endsnippet
+
+# Wagtail Block get_context method
+snippet wbctx
+def get_context(self, value: Dict, parent_context: Dict = None) -> Dict:
+    ctx = super().get_context(value, parent_context)
+    return ctx
+endsnippet
+
+# Wagtail Block clean method
+snippet wbclean
+def clean(self, value: Dict) -> Dict:
+    cleaned = super().clean(value)
+    errors = {}
+
+    text = value.get("text")
+
+    if text != "foo":
+        msg = _("Text must be foo.")
+        errors["foo"] = ErrorList([msg])
+
+    if errors:
+        raise ValidationError("Validation error in $1", params=errors)
+
+    return cleaned
+endsnippet
