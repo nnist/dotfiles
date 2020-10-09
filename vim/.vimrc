@@ -38,6 +38,8 @@ Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'heavenshell/vim-pydocstring'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 call plug#end()
 
@@ -211,6 +213,14 @@ let g:slime_python_ipython = 1
 let g:pydocstring_doq_path = '~/.local/bin/doq'
 let g:pydocstring_formatter = 'sphinx'
 let g:pydocstring_templates_path = '~/.vim/pydocstring/templates'
+
+" }}} ------------------------------------------------------------------------- 
+" {{{ ----------  UltiSnips  --------------------------------------------------
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsSnippetDirectories=["UltiSnips", $HOME.'/.vim/custom-snippets']
 
 " }}} ------------------------------------------------------------------------- 
 " }}} =========================================================================
