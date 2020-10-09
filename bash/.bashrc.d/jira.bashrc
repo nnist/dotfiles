@@ -1,1 +1,1 @@
-eval "$(jira --completion-script-bash)"
+eval "$(jira --completion-script-bash &> /dev/null)"
