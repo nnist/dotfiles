@@ -223,6 +223,19 @@ let g:UltiSnipsJumpBackwardTrigger = '<C-Up>'
 let g:UltiSnipsSnippetDirectories=["UltiSnips", $HOME.'/.vim/custom-snippets']
 
 " }}} ------------------------------------------------------------------------- 
+" {{{ ----------  YouCompleteMe -----------------------------------------------
+
+augroup YCMCustom
+  autocmd!
+  autocmd FileType python let b:ycm_hover = {
+    \ 'command': 'GetDoc',
+    \ 'syntax': 'rst'
+    \ }
+augroup END
+
+let g:ycm_auto_hover=''
+
+" }}} ------------------------------------------------------------------------- 
 " }}} =========================================================================
 " {{{ =====  BASIC CONFIG  ====================================================
 
@@ -375,6 +388,11 @@ map <C-n> :NERDTreeToggle<CR>
 
 " Close buffer without killing window
 nnoremap <leader>q :bp<cr>:bd #<cr>
+
+" }}} -------------------------------------------------------------------------
+" {{{ ----------  YouCompleteMe  ----------------------------------------------
+
+nmap <Leader>D <plug>(YCMHover)
 
 " }}} -------------------------------------------------------------------------
 " }}} =========================================================================
