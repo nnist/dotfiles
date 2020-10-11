@@ -235,6 +235,24 @@ augroup END
 
 let g:ycm_auto_hover=''
 
+let g:ycm_filetype_specific_completion_to_disable = {
+      \ 'gitcommit': 1
+      \}
+let g:ycm_filetype_blacklist = {
+      \ 'tagbar': 1,
+      \ 'notes': 1,
+      \ 'markdown': 1,
+      \ 'netrw': 1,
+      \ 'unite': 1,
+      \ 'text': 1,
+      \ 'vimwiki': 1,
+      \ 'pandoc': 1,
+      \ 'infolog': 1,
+      \ 'leaderf': 1,
+      \ 'mail': 1,
+      \ 'gitcommit': 1
+      \}
+
 " }}} ------------------------------------------------------------------------- 
 " }}} =========================================================================
 " {{{ =====  BASIC CONFIG  ====================================================
