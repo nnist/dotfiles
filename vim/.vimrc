@@ -411,6 +411,8 @@ nnoremap <leader>q :bp<cr>:bd #<cr>
 " {{{ ----------  YouCompleteMe  ----------------------------------------------
 
 nmap <Leader>D <plug>(YCMHover)
+nmap <Leader>d :YcmCompleter GoToDefinition<CR>
+nmap <Leader>r :YcmCompleter RefactorRename 
 
 " }}} -------------------------------------------------------------------------
 " }}} =========================================================================
