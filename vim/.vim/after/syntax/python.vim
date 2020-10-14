@@ -16,6 +16,13 @@ if !exists("prior_isk")
     " Clear hyperlink targets to prevent breakage for i.e. ':param dry_run:'
     syn clear rstHyperlinkTarget
 
+    " Prevent having multiple quotes under a text from breaking highlighting
+    syn clear rstSections
+    syn match   rstSections "\v^%(([=`:.~^_*+#-])\1+\n)?.{1,2}\n([=`:.~^_*+#-])\2+$"
+        \ contains=@Spell
+    syn match   rstSections "\v^%(([=`:.~^_*+#-])\1{2,}\n)?.{3,}\n([=`:.~^_*+#-])\2{2,}$"
+        \ contains=@Spell
+
     " Style field lists, as they aren't styled in the rst syntax file
     syn match docstringFieldListContents / :.*: /hs=s+2,he=e-2 contained
     syn match docstringFieldList / :.*: /hs=s+1,he=e-1 contains=docstringFieldListContents
