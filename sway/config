@@ -218,6 +218,10 @@ input type:pointer {
     scroll_factor 1.5
 }
 
+input type:tablet_tool {
+    left_handed enabled
+}
+
 seat seat0 hide_cursor 10000
 
 # Special key bindings
