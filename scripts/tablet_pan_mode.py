@@ -23,7 +23,7 @@ def initialize():
     # TODO Get sway socket
     # TODO Exec swaymsg --socket $SWAYSOCK input 1:1:virtual-mouse-device scroll_factor 1.0
     # TODO Exec swaymsg --socket $SWAYSOCK input 1:1:virtual-mouse-device scroll_method on_button_down
-    # TODO Exec swaymsg --socket $SWAYSOCK input 1:1:virtual-mouse-device scroll_button BTN_SIDE
+    # TODO Exec swaymsg --socket $SWAYSOCK input 1:1:virtual-mouse-device scroll_button BTN_TASK
     ...
 
 
@@ -58,7 +58,7 @@ while True:
 
         if not scroll_button_down:
             scroll_button_down = True
-            ui.write(ecodes.EV_KEY, ecodes.BTN_SIDE, 1)
+            ui.write(ecodes.EV_KEY, ecodes.BTN_TASK, 1)
             ui.syn()
 
         x_info = pen.absinfo(ecodes.ABS_X)
@@ -78,7 +78,7 @@ while True:
 
         if scroll_button_down:
             scroll_button_down = False
-            ui.write(ecodes.EV_KEY, ecodes.BTN_SIDE, 0)
+            ui.write(ecodes.EV_KEY, ecodes.BTN_TASK, 0)
             ui.syn()
 
     time.sleep(DELAY)
