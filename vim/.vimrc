@@ -321,6 +321,10 @@ autocmd BufRead,BufNewFile
 " }}} -------------------------------------------------------------------------
 " {{{ ---------- Enable indent and manual folding -----------------------------
 
+autocmd BufRead,BufNewFile 
+      \ *.go
+      \ setlocal foldmethod=indent
+
 augroup vimrc
   au BufReadPre * setlocal foldmethod=indent
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
