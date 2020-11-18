@@ -363,6 +363,11 @@ let mapleader = ','
 map <F5> :setlocal spell! spelllang=en_us<cr>
 map <F6> :setlocal spell! spelllang=nl<cr>
 
+" Map F10 to show syntax highlight group
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
 " {{{ ----------  gitgutter  --------------------------------------------------
 
 nmap <Leader>ga <Plug>(GitGutterStageHunk)
