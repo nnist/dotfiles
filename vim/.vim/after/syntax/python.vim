@@ -15,6 +15,10 @@ if !exists("prior_isk")
     
     " Clear hyperlink targets to prevent breakage for i.e. ':param dry_run:'
     syn clear rstHyperlinkTarget
+    
+    " Clear explicit markup to prevent breakage on code blocks
+    " TODO Rewrite regex to prevent having to disable this
+    syn clear rstExplicitMarkup
 
     " Prevent having multiple quotes under a text from breaking highlighting
     syn clear rstSections
