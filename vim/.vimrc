@@ -279,6 +279,7 @@ set lazyredraw	                       " Only redraw when needed
 set showmatch	                         " Highlight matching [{()}]
 set mouse=n                            " Enable mouse scrolling and selection
 set visualbell                         " Use visual bell instead of beeping when doing something wrong
+set t_vb=                              " Disable visual bell
 set foldenable                         " Enable folding
 set foldlevelstart=10                  " Enable most folds by default
 set foldnestmax=10                     " Limit fold levels
