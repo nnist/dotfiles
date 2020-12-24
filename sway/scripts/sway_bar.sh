@@ -13,14 +13,14 @@ elif (("${battery_charge//%/}" >= 99)); then
 else
     battery_num="${battery_charge:0:1}"
 fi
-battery_icons=(          )
+battery_icons=(▁ ▂ ▃ ▄ ▅ ▅ ▆ ▆ ▇ ▇ █)
 battery_icon="${battery_icons[battery_num]}"
 battery_charge_icon=""
 
 if [ "$battery_status" = "discharging" ]; then
     battery_time="$(echo "$battery_raw" | grep "time\ to\ empty" | awk '{print $4 substr ($5, 0, 1)}')"
 else
-    battery_charge_icon=""
+    battery_charge_icon=" "
     battery_time="$(echo "$battery_raw" | grep "time\ to\ full" | awk '{print $4 substr ($5, 0, 1)}')"
 fi
 
@@ -28,12 +28,12 @@ if [ -n "$battery_time" ]; then
     battery_time=" ($battery_time)"
 fi
 
-battery_status="$battery_charge_icon$battery_icon $battery_charge$battery_time"
+battery_status="▕$battery_icon▏$battery_charge$battery_charge_icon$battery_time"
 
 # VPN
-vpn_status=''
+vpn_status='⦸ '
 if [ -d "/proc/sys/net/ipv4/conf/tun0" ]; then
-    vpn_status=''
+    vpn_status=''
 fi
 
 # Audio
@@ -48,7 +48,7 @@ fi
 if pgrep -x swayidle &>/dev/null; then
     swayidle_status=""
 else
-    swayidle_status=" autolock off ·"
+    swayidle_status="⦸  autolock off ·"
 fi
 
 # Taskwarrior

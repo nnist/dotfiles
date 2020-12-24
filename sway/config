@@ -238,7 +238,7 @@ exec swayidle -w \
 bar {
     position bottom
 
-    font Hack 9
+    font Fira Code Regular 10
 
     separator_symbol "·"
 
