@@ -51,18 +51,4 @@ else
     swayidle_status="⦸  autolock off ·"
 fi
 
-# Taskwarrior
-task_id=$(task rc.report.next.sort=start- +ACTIVE limit:1 2>/dev/null | awk 'FNR == 4 {print $1}')
-if [ -n "$task_id" ]; then
-    task_json=$(task "$task_id" export)
-    task_desc=$(echo "$task_json" | jq -r ".[0].description")
-    task_project=$(echo "$task_json" | jq -r ".[0].project")
-    if [ "$task_project" != "null" ]; then
-        task_project=" ($task_project)"
-    else
-        task_project=""
-    fi
-    active_task=" $task_id: $task_desc$task_project · "
-fi
-
-echo "$active_task$swayidle_status $vpn_status vpn · $audio_status · $battery_status · $date_formatted "
+echo "$swayidle_status $vpn_status vpn · $audio_status · $battery_status · $date_formatted "
