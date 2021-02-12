@@ -33,6 +33,7 @@ SOURCES = [
     ".config/polybar",
     ".local/bin/vimwiki",
     ".ipython",
+    ".spacemacs",
 ]
 TARGETS = [
     "bash/.bash_aliases",
@@ -57,6 +58,7 @@ TARGETS = [
     "polybar",
     "scripts/vimwiki",
     "ipython/.ipython",
+    "spacemacs/.spacemacs",
 ]
 DOTFILES_DIR = HOME_DIR + "git/dotfiles/"
 
