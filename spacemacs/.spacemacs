@@ -530,6 +530,13 @@ before packages are loaded."
     ;; Start folded
     (setq org-startup-folded t)
 
+    ;; To-do states
+    (setq org-todo-keywords
+      (quote
+       ((sequence "TODO" "NEXT" "|" "DONE"))))
+    (setq org-todo-keyword-faces
+      '(("TODO" . "#dc322f") ("NEXT" . "#268bd2") ("DONE" . "#93a1a1")))
+
     ;; Pretty bullets
     (setq org-superstar-headline-bullets-list
           '(
@@ -547,6 +554,7 @@ before packages are loaded."
     ;;       )
     (setq org-superstar-todo-bullet-alist
           '(("TODO" . ?•)
+            ("NEXT" . ?•)
             ("DONE" . ?✖))
           )
     (setq org-superstar-special-todo-items t)
