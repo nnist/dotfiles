@@ -526,6 +526,9 @@ before packages are loaded."
     :ensure t)
 
   (with-eval-after-load 'org
+    ;; Start folded
+    (setq org-startup-folded t)
+
     ;; Pretty bullets
     (setq org-superstar-headline-bullets-list
           '(
