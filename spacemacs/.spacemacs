@@ -562,6 +562,29 @@ before packages are loaded."
     ;; Hide emphasis markers
     (setq org-hide-emphasis-markers t)
 
+    ;; Set capture templates
+    (setq org-capture-templates
+      (quote (
+              ("t"                 ; hotkey
+               "Add task to inbox" ; name
+               entry               ; type
+               (file+headline "~/syncthing/org/inbox.org" "Tasks") ; target
+               "* TODO %^{Task}"   ; template
+               )
+              ("n"
+               "Add note to inbox"
+               entry
+               (file+headline "~/syncthing/org/inbox.org" "Notes")
+               "* %^{Note}"
+               )
+              ("s"
+               "Schedule an event or a task"
+               entry
+               (file+datetree "~/syncthing/org/inbox.org")
+               "* %^{Event or Task}\nSCHEDULED: %^t"
+               )
+              )))
+
     ;; Custom faces
     (custom-theme-set-faces
      'user
