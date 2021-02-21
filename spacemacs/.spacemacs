@@ -533,9 +533,9 @@ before packages are loaded."
     ;; To-do states
     (setq org-todo-keywords
       (quote
-       ((sequence "TODO" "NEXT" "|" "DONE"))))
+       ((sequence "TODO" "NEXT" "DOING" "|" "DONE"))))
     (setq org-todo-keyword-faces
-      '(("TODO" . "#dc322f") ("NEXT" . "#268bd2") ("DONE" . "#93a1a1")))
+      '(("TODO" . "#dc322f") ("NEXT" . "#6c71c4") ("DOING" . "#268bd2") ("DONE" . "#93a1a1")))
 
     ;; Pretty bullets
     (setq org-superstar-headline-bullets-list
@@ -547,6 +547,7 @@ before packages are loaded."
     (setq org-superstar-todo-bullet-alist
           '(("TODO" . ?□)
             ("NEXT" . ?◪)
+            ("DOING" . ?◧)
             ("DONE" . ?■))
           )
     (setq org-superstar-special-todo-items t)
