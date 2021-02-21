@@ -540,22 +540,14 @@ before packages are loaded."
     ;; Pretty bullets
     (setq org-superstar-headline-bullets-list
           '(
-            ?⯁
+            ?◆
             ?●
-            ?●
-            ?●)
+            )
           )
-    ;; (setq org-superstar-headline-bullets-list
-    ;;       '(
-    ;;         ?■
-    ;;         ?◆
-    ;;         ?●
-    ;;         ?▶)
-    ;;       )
     (setq org-superstar-todo-bullet-alist
-          '(("TODO" . ?•)
-            ("NEXT" . ?•)
-            ("DONE" . ?✖))
+          '(("TODO" . ?□)
+            ("NEXT" . ?◪)
+            ("DONE" . ?■))
           )
     (setq org-superstar-special-todo-items t)
 
@@ -635,7 +627,7 @@ before packages are loaded."
      `(org-level-4 ((t (,@headline ,@variable-tuple :height 1.1))))
      `(org-level-3 ((t (,@headline ,@variable-tuple :height 1.1))))
      `(org-level-2 ((t (,@headline ,@variable-tuple :height 1.2))))
-     `(org-level-1 ((t (,@headline ,@variable-tuple :height 1.3))))
+     `(org-level-1 ((t (,@headline ,@variable-tuple :height 1.4))))
      `(org-document-title ((t (,@headline ,@variable-tuple :height 1.3))))))
     )
 )
