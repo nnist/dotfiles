@@ -562,6 +562,14 @@ before packages are loaded."
     (setq org-agenda-files
       '("~/syncthing/org/work.org" "~/syncthing/org/main.org"))
 
+    ;; Refile targets
+    (setq org-refile-targets
+          '((("~/syncthing/org/main.org") :maxlevel . 3)
+            (("~/syncthing/org/backlog.org") :maxlevel . 3)
+            (("~/syncthing/org/work.org") :maxlevel . 3)
+            (("~/syncthing/org/work_backlog.org") :maxlevel . 3)
+            ))
+
     ;; Set capture templates
     (setq org-capture-templates
       (quote (
