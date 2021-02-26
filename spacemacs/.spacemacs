@@ -556,7 +556,6 @@ before packages are loaded."
     (setq org-hide-emphasis-markers t)
 
     ;; Agenda settings
-    (setq org-agenda-compact-blocks t)
     (setq org-agenda-skip-deadline-if-done t)
     (setq org-agenda-skip-scheduled-if-done t)
     (setq org-agenda-files
@@ -574,6 +573,50 @@ before packages are loaded."
     (setq org-agenda-todo-ignore-scheduled 'future)
     (setq org-agenda-tags-todo-honor-ignore-options t)
     (setq org-agenda-skip-deadline-prewarning-if-scheduled t)
+
+    ;; Custom agenda commands
+    (setq org-agenda-custom-commands
+          '(
+            ("w" "Work agenda"
+             ((agenda "" ((org-agenda-span 2)))
+              ;; Urgent: time sensitive; must be done first
+              (tags-todo "DEADLINE<=\"<+7d>\"|+urgent"
+                         ((org-agenda-overriding-header "Urgent")))
+              ;; Important
+              (tags-todo "PRIORITY=\"A\"&-urgent"
+                         ((org-agenda-overriding-header "Important")))
+              ;; Next: immediately actionable
+              (tags-todo "TODO=\"NEXT\"&-PRIORITY=\"A\""
+                         ((org-agenda-overriding-header "Next")))
+              ;; Active: to help stay on-task
+              (tags-todo "TODO=\"DOING\"&-PRIORITY=\"A\""
+                         ((org-agenda-overriding-header "Active"))))
+             ((org-agenda-compact-blocks t)
+              (org-agenda-files '("~/syncthing/org/work.org")))
+             );; options set here apply to the entire block
+            ("h" "Home agenda"
+             ((agenda "" ((org-agenda-span 2)))
+              ;; Urgent: time sensitive; must be done first
+              (tags-todo "DEADLINE<=\"<+7d>\"|+urgent"
+                         ((org-agenda-overriding-header "Urgent")))
+              ;; Important
+              (tags-todo "PRIORITY=\"A\"&-urgent"
+                         ((org-agenda-overriding-header "Important")))
+              ;; Next: immediately actionable
+              (tags-todo "TODO=\"NEXT\"&-PRIORITY=\"A\""
+                         ((org-agenda-overriding-header "Next")))
+              ;; Active: to help stay on-task
+              (tags-todo "TODO=\"DOING\"&-PRIORITY=\"A\""
+                         ((org-agenda-overriding-header "Active"))))
+             ((org-agenda-compact-blocks t)
+              (org-agenda-files '("~/syncthing/org/main.org")))
+            );; options set here apply to the entire block
+            ("W" "Waiting"
+             ((tags-todo "WAIT"
+                         ((org-agenda-overriding-header "Waiting tasks"))))
+             )
+            )
+          )
 
     ;; Set capture templates
     (setq org-capture-templates
