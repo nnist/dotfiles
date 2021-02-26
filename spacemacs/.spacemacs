@@ -570,6 +570,11 @@ before packages are loaded."
             (("~/syncthing/org/work_backlog.org") :maxlevel . 3)
             ))
 
+    ;; Hide scheduled tasks in future
+    (setq org-agenda-todo-ignore-scheduled 'future)
+    (setq org-agenda-tags-todo-honor-ignore-options t)
+    (setq org-agenda-skip-deadline-prewarning-if-scheduled t)
+
     ;; Set capture templates
     (setq org-capture-templates
       (quote (
