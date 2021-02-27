@@ -533,6 +533,16 @@ before packages are loaded."
     ;; Enable habit module
     (add-to-list 'org-modules 'org-habit)
 
+    ;; Enable babel
+    (org-babel-do-load-languages
+     'org-babel-load-languages
+     '(
+       (python . t)
+       (ipython . t)
+       (sh . t)
+       (shell . t)
+       ))
+
     ;; To-do states
     (setq org-todo-keywords
       (quote
