@@ -539,8 +539,6 @@ before packages are loaded."
      'org-babel-load-languages
      '(
        (python . t)
-       (ipython . t)
-       (sh . t)
        (shell . t)
        ))
 
