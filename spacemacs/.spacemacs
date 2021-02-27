@@ -530,6 +530,9 @@ before packages are loaded."
     ;; Start folded
     (setq org-startup-folded t)
 
+    ;; Enable habit module
+    (add-to-list 'org-modules 'org-habit)
+
     ;; To-do states
     (setq org-todo-keywords
       (quote
