@@ -532,6 +532,7 @@ before packages are loaded."
 
     ;; Enable habit module
     (add-to-list 'org-modules 'org-habit)
+    (setq org-habit-graph-column 52)
 
     ;; Enable babel
     (org-babel-do-load-languages
