@@ -588,10 +588,13 @@ before packages are loaded."
     (setq org-agenda-skip-deadline-prewarning-if-scheduled t)
 
     ;; Custom agenda commands
+    (setq org-agenda-start-day "-1d")
+    (setq org-agenda-span 9)
+    (setq org-agenda-start-on-weekday nil)
     (setq org-agenda-custom-commands
           '(
             ("w" "Work agenda"
-             ((agenda "" ((org-agenda-span 2)))
+             ((agenda "")
               ;; Urgent: time sensitive; must be done first
               (tags-todo "DEADLINE<=\"<+7d>\"|+urgent"
                          ((org-agenda-overriding-header "Urgent")))
@@ -608,7 +611,7 @@ before packages are loaded."
               (org-agenda-files '("~/syncthing/org/work.org")))
              );; options set here apply to the entire block
             ("h" "Home agenda"
-             ((agenda "" ((org-agenda-span 2)))
+             ((agenda "")
               ;; Urgent: time sensitive; must be done first
               (tags-todo "DEADLINE<=\"<+7d>\"|+urgent"
                          ((org-agenda-overriding-header "Urgent")))
