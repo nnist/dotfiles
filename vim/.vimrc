@@ -40,6 +40,7 @@ Plug 'heavenshell/vim-pydocstring'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'ycm-core/YouCompleteMe'
+Plug 'hsanson/vim-openapi'
 
 call plug#end()
 
