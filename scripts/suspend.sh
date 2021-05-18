@@ -1,1 +1,1 @@
-bash -c "swaylock -f -c 181818; systemctl suspend"
+bash -c "~/git/sway-utils/sway_utils/effects/crt.py --lock; systemctl suspend"
