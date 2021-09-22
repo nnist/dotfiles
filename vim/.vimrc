@@ -398,7 +398,7 @@ nmap <C-B> :Buffers<cr>
 "map <Leader>gr :Gread<CR>
 "map <Leader>gw :Gwrite<CR>
 "map <Leader>gB :Gbrowse <C-R>='<C-R><C-G>' =~ ':' ? '<C-R><C-G>' : '-'<CR><CR>
-map <Leader>gc :Gcommit<CR>
+map <Leader>gc :Git commit -v<CR>
 "map <Leader>ge :Gedit<CR>
 "nmap <Leader>gl :Gpull<cr>
 "nmap <Leader>gp :Gpush $USER HEAD:
