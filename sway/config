@@ -285,4 +285,4 @@ output 'eDP-1' scale 2
 exec "~/git/dotfiles/scripts/create-workspace.sh 1 task-management "
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob -o 4 -b 0 -p 0 -a bottom -M 100
 exec "~/.local/bin/redshift -l 52.09:5.11 -b 1.0:1.0 -t 6500:1900"
-exec --no-startup-id dunst
+exec --no-startup-id mako
