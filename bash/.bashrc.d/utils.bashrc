@@ -37,3 +37,9 @@ confirm() {
 
     done
 }
+
+# settitle - set the current window's title
+settitle() {
+    title="$1"
+    PROMPT_COMMAND='echo -ne "\033]2;$title\007"'
+}
