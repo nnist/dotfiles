@@ -16,3 +16,4 @@ suspend,$HOME/git/dotfiles/scripts/suspend.sh
 toggle autolock,$HOME/git/dotfiles/scripts/toggle-autolock.sh
 rename workspace,$HOME/git/dotfiles/scripts/rofi-rename-workspace.sh
 intention,$HOME/git/sway-utils/intention.py
+pick color,$HOME/git/dotfiles/scripts/color_picker.sh
