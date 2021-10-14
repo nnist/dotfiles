@@ -279,6 +279,12 @@ no_focus [app_id="^dialog$"]
 for_window [app_id="^dialog-fullscreen$"] fullscreen
 no_focus [app_id="^dialog-fullscreen$"]
 
+##### Overlay #################################################################
+for_window [app_id="^overlay$"] floating enable, border pixel 0
+no_focus [app_id="^overlay$"]
+for_window [app_id="^overlay-fullscreen$"] fullscreen
+no_focus [app_id="^overlay-fullscreen$"]
+
 ##### Launch ##################################################################
 output '*' bg '~/Pictures/background.jpg' fill
 output 'eDP-1' scale 2
