@@ -1,0 +1,20 @@
+anchor=top-right
+font=Hack Nerd Font Mono 10
+
+[urgency=low]
+default-timeout=6000
+background-color=#181818
+text-color=#D8D8D8
+border-color=#383838
+
+[urgency=normal]
+default-timeout=6000
+background-color=#181818
+text-color=#D8D8D8
+border-color=#383838
+
+[urgency=critical]
+default-timeout=0
+background-color=#AB4642
+text-color=#FFFFFF
+border-color=#383838
