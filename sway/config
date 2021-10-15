@@ -38,7 +38,7 @@ bindsym $mod+d exec rofi -show drun -theme base16-default-dark
 bindsym $mod+t exec "~/git/dotfiles/scripts/rofi-utils.sh"
 
 # Lock screen
-bindsym $mod+l exec "~/git/sway-utils/sway_utils/effects/overlay_term.sh ~/git/sway-utils/sway_utils/effects/lock_animation.py && ~/git/sway-utils/sway_utils/effects/crt.py --lock"
+bindsym $mod+l exec "~/git/sway-utils/sway_utils/effects/overlay_term.sh '~/git/sway-utils/sway_utils/effects/alert.py LOCKING yellow' && ~/git/sway-utils/sway_utils/effects/crt.py --lock"
 
 # Change focus
 bindsym $mod+Left focus left
