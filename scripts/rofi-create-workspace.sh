@@ -11,7 +11,6 @@ if [ ! -f "$HIST_FILE" ]; then
 fi
 
 # Select profle
-workspaces=$(find "$PROFILES_DIR"*layout.json | sed "s#$PROFILES_DIR##;s#_layout.json##")
 ws_profile=$($LAUNCH_SCRIPT -l | rofi -dmenu -theme base16-default-dark -p "(1/4) Select profile")
 if [ "x$ws_profile" == "x" ]; then
     exit 0
