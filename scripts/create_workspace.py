@@ -1,15 +1,15 @@
 #!/bin/python3
 
-from i3ipc.aio import Connection
-from i3ipc import Event
-import time
+import argparse
 import asyncio
-import argparse
-import subprocess
 import logging as log
-import sys
 import os
-import argparse
+import subprocess
+import sys
+import time
+
+from i3ipc import Event
+from i3ipc.aio import Connection
 
 PROFILES = ["web-dev", "dev"]
 
