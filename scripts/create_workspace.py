@@ -13,6 +13,7 @@ from i3ipc.aio import Connection
 
 PROFILES = ["web-dev", "dev"]
 
+
 async def launch_app(conn, app_name):
     def on_new_window(self, e):
         self.locked = False
@@ -23,7 +24,7 @@ async def launch_app(conn, app_name):
     await conn.command(f"exec {app_name}")
 
     while conn.locked:
-        await asyncio.sleep(.1)
+        await asyncio.sleep(0.1)
 
     _timing = time.time() - timing
     log.info(f"({_timing:.4f}s) Launched {app_name}")
@@ -37,9 +38,13 @@ async def workspace_web_dev(conn, ws_num, ws_name, working_dir):
     await conn.command("splitv")
     await launch_app(conn, f"alacritty --working-directory {working_dir}")
     await conn.command("resize set height 30 ppt")
-    await launch_app(conn, f"alacritty --title backend --working-directory {working_dir}")
+    await launch_app(
+        conn, f"alacritty --title backend --working-directory {working_dir}"
+    )
     await conn.command("splith")
-    await launch_app(conn, f"alacritty --title frontend --working-directory {working_dir}")
+    await launch_app(
+        conn, f"alacritty --title frontend --working-directory {working_dir}"
+    )
     await conn.command("layout tabbed")
     await conn.command("resize set height 15 ppt")
     await conn.command("focus left")
@@ -59,10 +64,11 @@ async def workspace_dev(conn, ws_num, ws_name, working_dir):
     await conn.command("focus up")
     await conn.command("focus left")
 
+
 async def create_workspace(ws_num, ws_name, working_dir, profile):
     conn = await Connection().connect()
     conn.locked = False
-    
+
     # Create workspace
     await conn.command(f"workspace {ws_num}")
 
@@ -79,27 +85,17 @@ async def create_workspace(ws_num, ws_name, working_dir, profile):
 
 def main(argv):
     """Create i3/sway workspaces."""
-    parser = argparse.ArgumentParser(
-        description="""Create an i3/sway workspace."""
+    parser = argparse.ArgumentParser(description="""Create an i3/sway workspace.""")
+    parser.add_argument("-v", "--verbose", help="verbose mode", action="store_true")
+    parser.add_argument("--num", help="workspace number", type=int, default=0)
+    parser.add_argument("-n", "--name", help="workspace name", type=str)
+    parser.add_argument(
+        "-d", "--dir", help="workspace working directory", type=str, default="~/git"
     )
     parser.add_argument(
-        '-v', '--verbose', help="verbose mode", action='store_true'
+        "-l", "--list", help="list workspace profiles", action="store_true"
     )
-    parser.add_argument(
-        '--num', help="workspace number", type=int, default=0
-    )
-    parser.add_argument(
-        '-n', '--name', help="workspace name", type=str
-    )
-    parser.add_argument(
-        '-d', '--dir', help="workspace working directory", type=str, default="~/git"
-    )
-    parser.add_argument(
-        '-l', '--list', help="list workspace profiles", action='store_true'
-    )
-    parser.add_argument(
-        '-p', '--profile', help="workspace profile", type=str
-    )
+    parser.add_argument("-p", "--profile", help="workspace profile", type=str)
     args = parser.parse_args(argv)
 
     if args.list:
@@ -114,14 +110,16 @@ def main(argv):
 
     ws_num = args.num
     ws_name = args.name
-    asyncio.get_event_loop().run_until_complete(create_workspace(ws_num, ws_name, args.dir, args.profile))
+    asyncio.get_event_loop().run_until_complete(
+        create_workspace(ws_num, ws_name, args.dir, args.profile)
+    )
 
 
 if __name__ == "__main__":
     try:
         main(sys.argv[1:])
     except KeyboardInterrupt:
-        print('Interrupted by user.')
+        print("Interrupted by user.")
         try:
             sys.exit(0)
         except SystemExit:
