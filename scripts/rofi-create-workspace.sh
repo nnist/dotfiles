@@ -2,6 +2,8 @@
 
 HIST_FILE="$HOME/git/dotfiles/rofi/.workspace_name_history"
 LAUNCH_SCRIPT="$HOME/git/dotfiles/scripts/create_workspace.py"
+EFFECT="$HOME/git/sway-utils/sway_utils/effects/alert.py"
+EFFECT_RUNNER="$HOME/git/sway-utils/sway_utils/effects/overlay_term.sh"
 
 # Create history file if it doesn't exist
 if [ ! -f "$HIST_FILE" ]; then
@@ -33,8 +35,13 @@ if [ "x$ws_dir" == "x" ]; then
     exit 0
 fi
 
+$EFFECT_RUNNER "$EFFECT 'LOADING...' 'yellow'" &
+sleep .5
+
 # Load workspace profile
 $($LAUNCH_SCRIPT --profile $ws_profile --num $ws_num --name $ws_name -d $ws_dir)
+
+$EFFECT_RUNNER "$EFFECT 'WORKSPACE CREATED' 'white'"
 
 # Add workspace name to history
 if ! grep "$ws_name" "$HIST_FILE"; then
