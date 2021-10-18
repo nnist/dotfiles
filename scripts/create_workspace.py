@@ -33,7 +33,7 @@ async def workspace_web_dev(conn, ws_num, ws_name, working_dir):
     await conn.command("gaps outer current set 0")
     await launch_app(conn, "firefox")
     await launch_app(conn, f"alacritty --working-directory {working_dir}")
-    await launch_app(conn, "~/git/dotfiles/scripts/vimwiki-dark")
+    await launch_app(conn, "emacsclient -c")
     await conn.command("splitv")
     await launch_app(conn, f"alacritty --working-directory {working_dir}")
     await conn.command("resize set height 30 ppt")
@@ -50,7 +50,7 @@ async def workspace_web_dev(conn, ws_num, ws_name, working_dir):
 async def workspace_dev(conn, ws_num, ws_name, working_dir):
     await conn.command("gaps outer current set 0")
     await launch_app(conn, f"alacritty --working-directory {working_dir}")
-    await launch_app(conn, "~/git/dotfiles/scripts/vimwiki-dark")
+    await launch_app(conn, "emacsclient -c")
     await conn.command("splitv")
     await launch_app(conn, f"alacritty --working-directory {working_dir}")
     await conn.command("resize set height 30 ppt")
