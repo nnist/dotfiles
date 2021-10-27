@@ -610,6 +610,9 @@ before packages are loaded."
               ;; Next: immediately actionable
               (tags-todo "TODO=\"NEXT\"&-PRIORITY=\"A\""
                          ((org-agenda-overriding-header "Next")))
+              ;; Delegated
+              (tags-todo "TODO=\"DELEGATED\"&-PRIORITY=\"A\""
+                         ((org-agenda-overriding-header "Delegated")))
               ;; Waiting
               (tags-todo "TODO=\"WAIT\"&-PRIORITY=\"A\""
                          ((org-agenda-overriding-header "Waiting"))))
@@ -630,6 +633,9 @@ before packages are loaded."
               ;; Next: immediately actionable
               (tags-todo "TODO=\"NEXT\"&-PRIORITY=\"A\""
                          ((org-agenda-overriding-header "Next")))
+              ;; Delegated
+              (tags-todo "TODO=\"DELEGATED\"&-PRIORITY=\"A\""
+                         ((org-agenda-overriding-header "Delegated")))
               ;; Waiting
               (tags-todo "TODO=\"WAIT\"&-PRIORITY=\"A\""
                          ((org-agenda-overriding-header "Waiting"))))
