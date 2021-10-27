@@ -599,13 +599,13 @@ before packages are loaded."
             ("w" "Work agenda"
              ((agenda "")
               ;; Active: to help stay on-task
-              (tags-todo "TODO=\"DOING\"&-PRIORITY=\"A\""
+              (tags-todo "TODO=\"DOING\""
                          ((org-agenda-overriding-header "Active")))
               ;; Urgent: time sensitive; must be done first
               (tags-todo "DEADLINE<=\"<+7d>\"|+urgent"
                          ((org-agenda-overriding-header "Urgent")))
               ;; Important
-              (tags-todo "PRIORITY=\"A\"&-urgent"
+              (tags-todo "PRIORITY=\"A\"&-urgent&-TODO=\"DOING\""
                          ((org-agenda-overriding-header "Important")))
               ;; Next: immediately actionable
               (tags-todo "TODO=\"NEXT\"&-PRIORITY=\"A\""
@@ -619,13 +619,13 @@ before packages are loaded."
             ("h" "Home agenda"
              ((agenda "")
               ;; Active: to help stay on-task
-              (tags-todo "TODO=\"DOING\"&-PRIORITY=\"A\""
+              (tags-todo "TODO=\"DOING\""
                          ((org-agenda-overriding-header "Active")))
               ;; Urgent: time sensitive; must be done first
               (tags-todo "DEADLINE<=\"<+7d>\"|+urgent"
                          ((org-agenda-overriding-header "Urgent")))
               ;; Important
-              (tags-todo "PRIORITY=\"A\"&-urgent"
+              (tags-todo "PRIORITY=\"A\"&-urgent&-TODO=\"DOING\""
                          ((org-agenda-overriding-header "Important")))
               ;; Next: immediately actionable
               (tags-todo "TODO=\"NEXT\"&-PRIORITY=\"A\""
