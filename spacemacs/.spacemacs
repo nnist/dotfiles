@@ -597,6 +597,9 @@ before packages are loaded."
           '(
             ("w" "Work agenda"
              ((agenda "")
+              ;; Active: to help stay on-task
+              (tags-todo "TODO=\"DOING\"&-PRIORITY=\"A\""
+                         ((org-agenda-overriding-header "Active")))
               ;; Urgent: time sensitive; must be done first
               (tags-todo "DEADLINE<=\"<+7d>\"|+urgent"
                          ((org-agenda-overriding-header "Urgent")))
@@ -608,15 +611,15 @@ before packages are loaded."
                          ((org-agenda-overriding-header "Next")))
               ;; Waiting
               (tags-todo "TODO=\"WAIT\"&-PRIORITY=\"A\""
-                         ((org-agenda-overriding-header "Waiting")))
-              ;; Active: to help stay on-task
-              (tags-todo "TODO=\"DOING\"&-PRIORITY=\"A\""
-                         ((org-agenda-overriding-header "Active"))))
+                         ((org-agenda-overriding-header "Waiting"))))
              ((org-agenda-compact-blocks t)
               (org-agenda-files '("~/syncthing/org/work.org")))
              );; options set here apply to the entire block
             ("h" "Home agenda"
              ((agenda "")
+              ;; Active: to help stay on-task
+              (tags-todo "TODO=\"DOING\"&-PRIORITY=\"A\""
+                         ((org-agenda-overriding-header "Active")))
               ;; Urgent: time sensitive; must be done first
               (tags-todo "DEADLINE<=\"<+7d>\"|+urgent"
                          ((org-agenda-overriding-header "Urgent")))
@@ -628,10 +631,7 @@ before packages are loaded."
                          ((org-agenda-overriding-header "Next")))
               ;; Waiting
               (tags-todo "TODO=\"WAIT\"&-PRIORITY=\"A\""
-                         ((org-agenda-overriding-header "Waiting")))
-              ;; Active: to help stay on-task
-              (tags-todo "TODO=\"DOING\"&-PRIORITY=\"A\""
-                         ((org-agenda-overriding-header "Active"))))
+                         ((org-agenda-overriding-header "Waiting"))))
              ((org-agenda-compact-blocks t)
               (org-agenda-files '("~/syncthing/org/main.org")))
             );; options set here apply to the entire block
