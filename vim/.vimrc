@@ -41,6 +41,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'hsanson/vim-openapi'
+Plug 'hashivim/vim-terraform'
 
 call plug#end()
 
@@ -261,6 +262,11 @@ let g:ycm_language_server =
   \     'filetypes': [ 'terraform', 'tf' ]
   \   }
   \ ]
+
+" }}} ------------------------------------------------------------------------- 
+" {{{ ----------  vim-terraform -----------------------------------------------
+
+let g:terraform_fold_sections = 1
 
 " }}} ------------------------------------------------------------------------- 
 " }}} =========================================================================
