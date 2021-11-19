@@ -43,3 +43,9 @@ settitle() {
     title="$1"
     PROMPT_COMMAND='echo -ne "\033]2;$title\007"'
 }
+
+# settitle_pwd - set the current window's title based on last part of pwd
+settitle_pwd() {
+    title=$(basename "$(pwd)")
+    PROMPT_COMMAND='echo -ne "\033]2;$title\007"'
+}
