@@ -253,6 +253,14 @@ let g:ycm_filetype_blacklist = {
       \ 'mail': 1,
       \ 'gitcommit': 1
       \}
+let g:ycm_language_server =
+  \ [
+  \   {
+  \     'name': 'terraform',
+  \     'cmdline': [ 'terraform-ls', 'serve' ],
+  \     'filetypes': [ 'terraform', 'tf' ]
+  \   }
+  \ ]
 
 " }}} ------------------------------------------------------------------------- 
 " }}} =========================================================================
