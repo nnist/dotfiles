@@ -678,7 +678,7 @@ before packages are loaded."
      ;;'(default ((t (:family "Courier Prime Sans"))))
      ;;'(org-default ((t (:family "Courier Prime Sans"))))
      ;;'(org-block ((t (:inherit fixed-pitch))))
-     '(org-code ((t (:weight normal :foreground "#b58900"))))
+     '(org-code ((t (:weight normal :foreground "#cb4b16" :font "monospace"))))
      '(org-document-info ((t (:foreground "dark orange"))))
      '(org-document-info-keyword ((t (:inherit (shadow)))))
      ;;'(org-indent ((t (:inherit fixed-pitch))))
