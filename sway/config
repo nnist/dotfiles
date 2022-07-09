@@ -166,7 +166,7 @@ bindsym $mod+r mode "resize"
 
 ##### Recording mode ##########################################################
 mode "recording" {
-        bindsym $mod+Escape exec "killall wf-recorder"; mode "default"
+        bindsym $mod+Escape exec "killall wf-recorder -s SIGINT"; mode "default"
 }
 
 ##### Colors ##################################################################
