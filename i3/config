@@ -185,10 +185,10 @@ for_window [class=".*"] border pixel 1
 #workspace $ws3 gaps right 596
 
 ##### Launch ##################################################################
-exec --no-startup-id nm-applet
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec "compton -b"
 exec "hsetroot -solid '#181818'"
-exec "~/git/dotfiles/scripts/create-workspace.sh 1 task-management "
 exec "xautolock -locker 'i3lock -c 181818 -e -f'"
-exec "redshift -l 52.09:5.11 -b 1.0:1.0 -t 6500:1900"
+
+exec "setxkbmap -option 'caps:hyper'"
+exec "setxkbmap -layout us"
+exec "xset r rate 300 50"
