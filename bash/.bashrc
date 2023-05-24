@@ -7,3 +7,4 @@ for file in ~/.bashrc.d/*.bashrc; do
 done
 
 xbindkeys -p
+export PATH="/home/nicole:$PATH"
