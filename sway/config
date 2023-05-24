@@ -1,15 +1,15 @@
 # Sway config file
 
 ##### Monitor settings ########################################################
-set $external DP-1
-set $laptop eDP-1
+# set $external DP-1
+# set $laptop eDP-1
 
 # Clamshell mode
-bindswitch --reload --locked lid:on output $laptop disable
-bindswitch --reload --locked lid:off output $laptop enable
+# bindswitch --reload --locked lid:on output $laptop disable
+# bindswitch --reload --locked lid:off output $laptop enable
 
 # Reduce latency
-output $external max_render_time 10
+# output $external max_render_time 10
 
 ##### General #################################################################
 # Font for window titles and bar
@@ -38,7 +38,7 @@ bindsym $mod+d exec rofi -show drun -theme base16-default-dark
 bindsym $mod+t exec "~/git/dotfiles/scripts/rofi-utils.sh"
 
 # Lock screen
-bindsym $mod+l exec "~/git/sway-utils/sway_utils/effects/overlay_term.sh '~/git/sway-utils/sway_utils/effects/alert.py LOCKING yellow' && ~/git/sway-utils/sway_utils/effects/crt.py --lock"
+# bindsym $mod+l exec "~/git/sway-utils/sway_utils/effects/overlay_term.sh '~/git/sway-utils/sway_utils/effects/alert.py LOCKING yellow' && ~/git/sway-utils/sway_utils/effects/crt.py --lock"
 
 # Change focus
 bindsym $mod+Left focus left
@@ -232,11 +232,11 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 5%- && brightnessctl -m | c
 bindsym XF86MonBrightnessUp exec brightnessctl set +5% && brightnessctl -m | cut -d',' -f4 | sed 's/%//g' > $SWAYSOCK.wob
 
 ##### Lockscreen ##############################################################
-exec swayidle -w \
-         timeout 300 'swaylock -f -c 181818' \
-         timeout 600 'swaymsg "output * dpms off"' \
-              resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -f -c 181818'
+# exec swayidle -w \
+#          timeout 300 'swaylock -f -c 181818' \
+#          timeout 600 'swaymsg "output * dpms off"' \
+#               resume 'swaymsg "output * dpms on"' \
+#          before-sleep 'swaylock -f -c 181818'
 
 ##### Status bar ##############################################################
 bar {
@@ -286,10 +286,14 @@ for_window [app_id="^overlay-fullscreen$"] fullscreen
 no_focus [app_id="^overlay-fullscreen$"]
 
 ##### Launch ##################################################################
-output '*' bg '~/Pictures/background.jpg' fill
-output 'eDP-1' scale 2
-exec "~/git/dotfiles/scripts/create-workspace.sh 1 task-management "
-exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob -o 4 -b 0 -p 0 -a bottom -M 100
-exec "~/.local/bin/redshift -l 52.09:5.11 -b 1.0:1.0 -t 6500:1900"
-exec --no-startup-id mako
-exec "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway"
+# output '*' bg '~/Pictures/background.jpg' fill
+# output 'eDP-1' scale 2
+# exec "~/git/dotfiles/scripts/create-workspace.sh 1 task-management "
+# exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob -o 4 -b 0 -p 0 -a bottom -M 100
+# exec "~/.local/bin/redshift -l 52.09:5.11 -b 1.0:1.0 -t 6500:1900"
+# exec --no-startup-id mako
+# exec "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway"
+
+output HDMI-A-1 {
+    modeline 185.58 2560 2624 2688 2784 1080 1083 1093 1111 -hsync -vsync
+}
