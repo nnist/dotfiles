@@ -8,3 +8,7 @@ done
 
 xbindkeys -p
 export PATH="/home/nicole:$PATH"
+
+# Disable system beep
+xset b off
+xset b 0 0 0
