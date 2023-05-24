@@ -34,3 +34,8 @@ fi
 if [ -d ~/.local/bin ]; then
     export PATH=$PATH:~/.local/bin
 fi
+
+# Add gobin to path
+if [ -d ~/go ]; then
+    export PATH=$PATH:~/go/bin
+fi
