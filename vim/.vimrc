@@ -42,6 +42,7 @@ Plug 'honza/vim-snippets'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'hsanson/vim-openapi'
 Plug 'hashivim/vim-terraform'
+Plug 'github/copilot.vim'
 
 call plug#end()
 
@@ -112,6 +113,17 @@ let g:indentLine_concealcursor = ""
 
 " Disable Jedi docstring popup during completion
 autocmd FileType python setlocal completeopt-=preview
+
+" }}} -------------------------------------------------------------------------
+" {{{ ----------  copilot  ----------------------------------------------------
+
+let g:copilot_enabled = v:false
+let g:copilot_filetypes = {
+      \ '*': v:false,
+      \ 'python': v:true,
+      \ 'sh': v:true,
+      \ 'markdown': v:true,
+      \ }
 
 " }}} -------------------------------------------------------------------------
 " {{{ ----------  lightline  --------------------------------------------------
