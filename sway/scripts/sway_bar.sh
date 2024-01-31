@@ -18,10 +18,10 @@ battery_icon="${battery_icons[battery_num]}"
 battery_charge_icon=""
 
 if [ "$battery_status" = "discharging" ]; then
-    battery_time="$(echo "$battery_raw" | grep "time\ to\ empty" | awk '{print $4 substr ($5, 0, 1)}')"
+    battery_time="$(echo "$battery_raw" | grep "time to empty" | awk '{print $4 substr ($5, 0, 1)}')"
 else
     battery_charge_icon=" "
-    battery_time="$(echo "$battery_raw" | grep "time\ to\ full" | awk '{print $4 substr ($5, 0, 1)}')"
+    battery_time="$(echo "$battery_raw" | grep "time to full" | awk '{print $4 substr ($5, 0, 1)}')"
 fi
 
 if [ -n "$battery_time" ]; then
