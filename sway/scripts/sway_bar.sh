@@ -48,7 +48,7 @@ fi
 if pgrep -x swayidle &>/dev/null; then
     swayidle_status=""
 else
-    swayidle_status="⦸  autolock off ·"
+    swayidle_status="⦸  autolock off  ·"
 fi
 
-echo "$swayidle_status $vpn_status vpn · $audio_status · $battery_status · $date_formatted "
+echo "$swayidle_status  $vpn_status vpn  ·  $audio_status  · $battery_status  ·  $date_formatted "
