@@ -287,7 +287,7 @@ for_window [app_id="^overlay-fullscreen$"] fullscreen
 no_focus [app_id="^overlay-fullscreen$"]
 
 ##### Launch ##################################################################
-# output '*' bg '~/Pictures/background.jpg' fill
+output * background #181818 solid_color
 # output 'eDP-1' scale 2
 # exec "~/git/dotfiles/scripts/create-workspace.sh 1 task-management "
 # exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob -o 4 -b 0 -p 0 -a bottom -M 100
