@@ -37,10 +37,15 @@ if [ -d "/proc/sys/net/ipv4/conf/tun0" ]; then
 fi
 
 # Audio
-audio_status="婢"
+audio_status="󰝟"
 if [ "$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{ print $2 }')" = "no" ]; then
     audio_volume=$(pactl get-sink-volume @DEFAULT_SINK@ | grep 'front-right' | awk '{print $12}')
-    audio_status="墳 $audio_volume"
+    headphones=$(pactl list sinks | grep "Active Port: \[Out\] Headphones")
+    if [ "x$headphones" == "x" ]; then
+        audio_status="󰕾 $audio_volume"
+    else
+        audio_status="󰋋 $audio_volume"
+    fi
 fi
 
 # Swayidle
