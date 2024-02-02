@@ -219,8 +219,12 @@ input type:pointer {
     scroll_factor 1.5
 }
 
-input type:tablet_tool {
-    left_handed enabled
+input 1386:884:Wacom_Intuos_S_Pen {
+    events disabled
+}
+
+input 1386:884:Wacom_Intuos_S_Pad {
+    events disabled
 }
 
 # Special key bindings
@@ -294,6 +298,7 @@ output * background #181818 solid_color
 # exec "~/.local/bin/redshift -l 52.09:5.11 -b 1.0:1.0 -t 6500:1900"
 # exec --no-startup-id mako
 # exec "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway"
+exec_always otd-daemon
 
 output HDMI-A-1 {
     modeline 185.58 2560 2624 2688 2784 1080 1083 1093 1111 -hsync -vsync
