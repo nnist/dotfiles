@@ -300,6 +300,6 @@ output * background #181818 solid_color
 # exec "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway"
 exec_always otd-daemon
 
-output HDMI-A-1 {
-    modeline 185.58 2560 2624 2688 2784 1080 1083 1093 1111 -hsync -vsync
-}
+# output HDMI-A-1 {
+#     modeline 185.58 2560 2624 2688 2784 1080 1083 1093 1111 -hsync -vsync
+# }
