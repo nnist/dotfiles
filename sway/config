@@ -247,7 +247,7 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +5% && brightnessctl -m | cut
 bar {
     position bottom
 
-    font Fira Code Regular 10
+    font Hack Nerd Font 9
 
     separator_symbol "·"
 

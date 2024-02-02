@@ -13,7 +13,7 @@ elif (("${battery_charge//%/}" >= 99)); then
 else
     battery_num="${battery_charge:0:1}"
 fi
-battery_icons=(▁ ▂ ▃ ▄ ▅ ▅ ▆ ▆ ▇ ▇ █)
+battery_icons=(          )
 battery_icon="${battery_icons[battery_num]}"
 battery_charge_icon=""
 
@@ -28,10 +28,10 @@ if [ -n "$battery_time" ]; then
     battery_time=" ($battery_time)"
 fi
 
-battery_status="▕$battery_icon▏$battery_charge$battery_charge_icon$battery_time"
+battery_status="$battery_icon  $battery_charge$battery_charge_icon$battery_time"
 
 # VPN
-vpn_status='⦸ '
+vpn_status='⦸'
 if [ -d "/proc/sys/net/ipv4/conf/tun0" ]; then
     vpn_status=''
 fi
@@ -52,7 +52,7 @@ fi
 if pgrep -x swayidle &>/dev/null; then
     swayidle_status=""
 else
-    swayidle_status="⦸  autolock off  ·"
+    swayidle_status="⦸ autolock off  ·"
 fi
 
-echo "$swayidle_status  $vpn_status vpn  ·  $audio_status  · $battery_status  ·  $date_formatted "
+echo "$swayidle_status  $vpn_status vpn  ·  $audio_status  ·  $battery_status  ·  $date_formatted  "
