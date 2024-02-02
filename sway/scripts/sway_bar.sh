@@ -37,10 +37,9 @@ if [ -d "/proc/sys/net/ipv4/conf/tun0" ]; then
 fi
 
 # Audio
-audio_raw=$(amixer sget Master | grep 'Right:')
 audio_status="婢"
-if [ "$(echo "$audio_raw" | awk -F'[][]' '{ print $4 }')" = "on" ]; then
-    audio_volume=$(echo "$audio_raw" | awk -F'[][]' '{ print $2 }')
+if [ "$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{ print $2 }')" = "no" ]; then
+    audio_volume=$(pactl get-sink-volume @DEFAULT_SINK@ | grep 'front-right' | awk '{print $12}')
     audio_status="墳 $audio_volume"
 fi
 
