@@ -53,6 +53,8 @@ call plug#end()
 let g:ale_fix_on_save = 1
 "let g:ale_lint_on_text_changed = 'never'
 "let g:ale_lint_on_enter = 0
+autocmd ColorScheme * highlight ALEWarning term=reverse ctermfg=18 ctermbg=3 guifg=#282828 guibg=#f7ca88
+autocmd ColorScheme * highlight ALEError term=reverse ctermfg=0 ctermbg=1 guifg=#181818 guibg=#ab4642
 
 " }}} ------------------------------------------------------------------------- 
 " {{{ ----------  vimwiki and taskwiki  --------------------------------------- 
